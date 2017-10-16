@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <classCategory android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Import" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Sitting" />
+
+    </classCategory>
+    <!--android:title="Share" />-->
+    <item
+        android:id="@+id/action_resturantoffer"
+        android:orderInCategory="100"
+        android:icon="@drawable/home"
+        android:title="@string/Resturantnbyoffers"
+        />
+    <item android:title="@string/action_settings">
+        <menu>
+
+            <item
+                android:id="@+id/action_settings"
+                android:orderInCategory="100"
+                android:icon="@drawable/sitting"
+                android:title="@string/action_settings"
+                 />
+            <!--android:title="Share" />-->
+            <item
+                android:id="@+id/action_home"
+                android:orderInCategory="100"
+                android:icon="@drawable/home"
+                android:title="@string/action_home"
+                />
+
+        </menu>
+    </item>
+
+</menu>

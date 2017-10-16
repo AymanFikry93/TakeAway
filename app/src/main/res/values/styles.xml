@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/category_resturant</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <item name="colorPrimary">#FF8342</item>
+        <item name="colorPrimaryDark">#FF8342</item>
+        <item name="colorAccent">#FF8342</item>
+        <!--to customize the size of text in app-->
+        <item name="android:textSize">10sp</item>
+        <item name="actionBarSize">40dp</item>
+    </style>
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionBarSize">40dp</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Widget.MyApp.ActionBar" parent="@android:style/Widget.ActionBar">
+        <item name="android:background">#FF8342</item>
+        <item name="android:height">8dp</item>
+
+    </style>
+
+    <style name="RatingBar">
+        <item name="colorControlNormal">#b3ff00</item>
+        <item name="colorControlActivated">#a3f107</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="tabBackground">@drawable/atab_color_selector</item>
+        <!--<item name="tabIndicatorColor">#ff00ff</item>-->
+        <!--<item name="tabIndicatorHeight">2dp</item>-->
+        <item name="tabTextAppearance">@style/MyTabTextAppearance</item>
+    </style>
+    <style name="MyTabTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">10sp</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="sectionHeader"   parent="android:Widget.Holo.Light.TextView">
+        <item name="android:drawableBottom">@drawable/section_header</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#000</item>
+    </style>
+
+
+    <style name="Regular" parent="android:TextAppearance">
+        <item name="fontPath">Fonts/GESSTwoLight.otf</item>
+    </style>
+</resources>

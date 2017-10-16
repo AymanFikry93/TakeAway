@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/aselector_tab_text" android:state_selected="true" />
+    <item android:drawable="@drawable/unselector_tab_text" android:state_selected="false" android:state_focused="false" android:state_pressed="false" />
+</selector>
+
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:shape="oval">-->
+    <!--<corners android:radius="20dp"/>-->
+    <!--<stroke android:color="#FF8342" android:width="20dp"/>-->
+    <!--<solid android:color="@android:color/transparent"/>-->
+<!--</shape>-->

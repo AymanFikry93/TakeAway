@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_offer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.srccode.takeawayproject.Activities.ActivityRestOffer">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchlayout"
+        android:background="#FF8342"
+        >
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/Restaurantsearch"
+            android:background="#fff"
+
+            />
+        <!--android:fontPath="fonts/GESSTwoLight.otf"-->
+
+    </LinearLayout>
+
+    <!--<ListView-->
+        <!--android:id="@+id/list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--tools:listitem="@layout/rest_offer_row"-->
+        <!--android:layout_below="@+id/searchlayout"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--&gt;-->
+    <!--</ListView>-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/searchlayout"
+        android:scrollbars="vertical"
+        />
+
+</RelativeLayout>

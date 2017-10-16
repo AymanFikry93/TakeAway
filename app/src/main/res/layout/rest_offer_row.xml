@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:elevation="3dp"
+    card_view:cardCornerRadius="0dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/resturantlogo"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_margin="8dp" />
+
+        <!-- Movie Title -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/orderlayout"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/restName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:hint="resturant name"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/restrating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF8342"
+                android:progressTint="#FF8342"
+                android:progressBackgroundTint="#FF8342"
+                android:layout_below="@+id/restName"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5"
+                android:rating="2.5"
+                android:stepSize="0.5"
+                android:isIndicator="true"
+                />
+            <!--android:scaleX="0.5"-->
+            <!--android:scaleY="0.5"-->
+        </LinearLayout>
+
+        <!-- quantity -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pricelayout"
+
+            android:orientation="horizontal"
+            android:layout_weight="0.76">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/quantitylayout"
+
+                android:orientation="vertical">
+                <!-- mincharge -->
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/minchargerest"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#666666"
+                    android:textSize="13dip" />
+                <TextView
+                    android:id="@+id/minchargeid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="$10"
+                    android:layout_margin="5dp"
+                    android:textColor="#666666"
+                    android:textSize="13dip" />
+
+                <!-- restdelivery -->
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/deliveryrest"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#666666"
+                    android:textSize="13dip" />
+                <TextView
+                    android:id="@+id/restdeliveryid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="$10"
+                    android:layout_margin="5dp"
+                    android:textColor="#666666"
+                    android:textSize="13dip" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/resturantofferlogo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/offer"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+
+

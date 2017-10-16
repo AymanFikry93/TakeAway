@@ -1,0 +1,171 @@
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_gravity="center_horizontal"-->
+     <!--android:gravity="center_horizontal"-->
+    <!--tools:context="com.example.srccode.takeawayproject.Activities.MainFragment"-->
+
+    <!--&gt;-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homerelative"
+      android:background="@drawable/homeimage"
+    tools:context="com.example.srccode.takeawayproject.Activities.MainFragment"
+
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+
+      <!--<ImageView    #f9f3f3-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="match_parent"-->
+          <!--android:background="@drawable/takeawaylogo"-->
+          <!--android:layout_marginTop="56dp"-->
+          <!--android:id="@+id/dynamichomeimg"-->
+
+          <!--/>-->
+
+    <!--<TextView-->
+        <!--android:text="@string/FirstTitle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:typeface="serif"-->
+        <!--android:textStyle="bold"-->
+        <!--android:id="@+id/hometitleId"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"-->
+        <!--android:layout_marginTop="70dp"-->
+        <!--android:layout_below="@+id/takeawaylogoId"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <!--<ImageView-->
+        <!--android:layout_width="80dp"-->
+        <!--android:layout_height="110dp"-->
+        <!--android:id="@+id/takeawaylogoId"-->
+       <!--android:src="@drawable/homeimage"-->
+        <!--android:layout_marginTop="65dp"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignEnd="@+id/hometitleId"-->
+        <!--android:layout_alignStart="@+id/hometitleId" />-->
+
+
+
+    <Button
+        android:text="@string/FindResturants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Resturantsbutton"
+        android:onClick="Press"
+        android:textSize="10sp"
+        android:background="@drawable/btn_place_order_style"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/findbymap"
+        android:layout_centerHorizontal="true"
+        />
+        <!--android:gravity="center_horizontal"-->
+
+        <!--<Button-->
+        <!--android:text="log in"-->
+        <!--android:layout_width="250dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/lastorderbutton"-->
+        <!--android:onClick="gotolastorder"-->
+        <!--android:textSize="15sp"-->
+        <!--android:background="@drawable/btn_place_order_style"-->
+        <!--android:textColor="#fff"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_below="@+id/Resturantsbutton"-->
+        <!--/>-->
+    <Spinner
+        android:id="@+id/spinner_city"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:background="@drawable/spinnershape"
+        android:elevation="20dp"
+        android:layout_marginTop="250dp"
+        android:layout_below="@+id/hometitleId"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/countryspinnerId"
+        android:background="@drawable/spinnershape"
+        android:gravity="center"
+        android:elevation="20dp"
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        />
+        <!--android:layout_toEndOf="@+id/StreetTextView"-->
+    <Spinner
+        android:id="@+id/spinner_Street"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:layout_below="@+id/spinner_city"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/spinnershape"
+        android:elevation="20dp"
+        android:visibility="gone"
+          />
+    <!--android:layout_toEndOf="@+id/StreetTextView"-->
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/map_select_blue"
+        android:layout_below="@+id/spinner_Street"
+        android:layout_toLeftOf="@+id/findbymap"
+        />
+    <TextView
+        android:id="@+id/findbymap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/findresturantbymap"
+        android:layout_below="@+id/spinner_Street"
+        android:layout_marginTop="10dp"
+        android:textColor="#4527d2"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        />
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/sittingbutton"
+
+    android:text="@string/action_settings"
+    android:textColor="#000"
+    android:layout_alignParentBottom="true"
+    android:layout_margin="20dp"
+    android:background="@drawable/sitting"
+
+    />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lastorderbutton"
+        android:text="@string/LastOrder"
+        android:textColor="#000"
+        android:layout_alignParentBottom="true"
+       android:layout_alignParentLeft="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/orders"
+        />
+
+</RelativeLayout>
+<!--</ScrollView>-->

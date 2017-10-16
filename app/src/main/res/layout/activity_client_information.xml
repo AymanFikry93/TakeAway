@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    tools:context="com.example.srccode.takeawayproject.Activities.ActivityClientInformation">
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_client_information"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+    <!--android:background="@drawable/registerbckgnd"-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:padding="16dp">
+            <Button
+                android:text="@string/Getlocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/locationbutton"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_place_order_style"
+                android:textColor="#fff"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#5fff"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+                <Spinner
+                    android:id="@+id/spinner_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="@drawable/spinnershape"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#5fff"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+                <Spinner
+                android:id="@+id/spinner_Street"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/spinnershape"
+          />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#5fff"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#5fff"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/email"
+                    android:layout_gravity="center"
+                    android:background="#000"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addresstxt"
+                    android:gravity="center"
+                    android:hint="Enter Address"
+                    android:textColorHint="#ec7441"
+                    android:layout_marginLeft="15dp"
+                    android:background="#00000000"
+                    android:letterSpacing="0.2"
+                    android:textSize="16dp"
+                    android:textColor="#ec7441"
+                    android:inputType="text"
+                    />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        >
+        <Button
+            android:id="@+id/addressbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Addaddress"
+            android:textColor="#fff"
+            android:background="@drawable/btn_place_order_style"
+            android:padding="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textStyle="bold"
+
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:text="@string/Country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CountrytetxtId"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:visibility="invisible"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/countryspinnerId"
+        android:background="@drawable/spinnershape"
+        android:layout_alignBaseline="@+id/CountrytetxtId"
+        android:layout_alignBottom="@+id/CountrytetxtId"
+        android:layout_toEndOf="@+id/CountrytetxtId"
+        android:layout_marginStart="18dp"
+        android:visibility="invisible"/>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/City"-->
+        <!--android:id="@+id/CityTextView"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"-->
+        <!--android:layout_above="@+id/StreetTextView"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/Area"-->
+        <!--android:id="@+id/StreetTextView"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"-->
+
+        <!--android:layout_below="@+id/spinner_city"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginTop="14dp" />-->
+
+    <!--<Spinner-->
+        <!--android:id="@+id/spinner_Street"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:gravity="center"-->
+        <!--android:background="@drawable/spinnershape"-->
+        <!--android:layout_alignBaseline="@+id/StreetTextView"-->
+        <!--android:layout_alignBottom="@+id/StreetTextView"-->
+        <!--android:layout_alignStart="@+id/spinner_city" />-->
+
+    <!--<Spinner-->
+        <!--android:id="@+id/spinner_city"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:background="@drawable/spinnershape"-->
+        <!--android:layout_below="@+id/countryspinnerId"-->
+        <!--android:layout_alignStart="@+id/countryspinnerId"-->
+
+        <!--/>-->
+
+
+
+
+
+</RelativeLayout>
+
+    </ScrollView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center_horizontal"
+    android:background="#f9f3f3"
+    android:gravity="center_horizontal"
+    tools:context="com.example.srccode.takeawayproject.Activities.ActivityLastOrder">
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_last_order"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#f9f3f3"
+    android:orientation="vertical">
+    <!--<ListView-->
+        <!--android:id="@+id/vieworderlist"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:divider="#fff"-->
+        <!--android:dividerHeight="5dp"-->
+        <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+        <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+        <!--/>-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:divider="#fff"
+        android:dividerHeight="5dp"
+        android:scrollbars="vertical"/>
+    <!--<ImageView-->
+        <!--android:id="@+id/toolbar_bottom"-->
+        <!--android:layout_height="65dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@drawable/takeawayfooter"-->
+        <!--android:minHeight="?attr/actionBarSize" />-->
+</LinearLayout>
+    </ScrollView>

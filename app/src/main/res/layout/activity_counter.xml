@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="#f9f3f3"
+    android:gravity="center_horizontal" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_counter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#f9f3f3"
+    tools:context="com.example.srccode.takeawayproject.Activities.ActivityCounter">
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:id="@+id/welcome_img"-->
+        <!--android:src="@drawable/smile"-->
+        <!--/>-->
+    <!--android:src="@drawable/smile"-->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:id="@+id/welcomelayoutid"
+       android:background="@drawable/arest_header_style"
+       android:layout_marginTop="5dp"
+       android:layout_marginLeft="@dimen/activity_horizontal_margin"
+       android:layout_marginRight="@dimen/activity_horizontal_margin"
+       >
+       <!--android:layout_below="@+id/welcome_img"-->
+       <android.support.v7.widget.CardView
+           xmlns:card_view="http://schemas.android.com/apk/res-auto"
+           xmlns:android="http://schemas.android.com/apk/res/android"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:padding="8dp"
+           android:layout_gravity="center"
+           android:elevation="3dp"
+           card_view:cardCornerRadius="0dp">
+       <TextView
+           android:id="@+id/welcome_txt"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/thanks"
+           style="@style/sectionHeader"
+           android:fontFamily=""
+           android:lines="2"
+           android:maxLines="3"
+           android:layout_marginTop="5pt"
+           android:textAppearance="?android:attr/textAppearanceLarge" />
+       </android.support.v7.widget.CardView>
+       <android.support.v7.widget.CardView
+           xmlns:card_view="http://schemas.android.com/apk/res-auto"
+           xmlns:android="http://schemas.android.com/apk/res/android"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:padding="8dp"
+           android:layout_gravity="center"
+           android:elevation="3dp"
+           card_view:cardCornerRadius="0dp">
+       <TextView
+           android:id="@+id/finish_txt"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/laststring"
+           android:gravity="center"
+           android:lines="4"
+           android:layout_marginRight="5dp"
+           android:layout_marginLeft="5dp"
+           android:textAppearance="?android:attr/textAppearanceLarge" />
+       </android.support.v7.widget.CardView>
+
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="160dp"
+        android:layout_weight="1"
+        android:background="#FF8342"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_below="@+id/welcomelayoutid"
+        android:layout_centerHorizontal="true">
+
+    <TextView
+        android:id="@+id/counter_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="95"
+        android:textSize="35sp"
+        android:textColor="#fff"/>
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

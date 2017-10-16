@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.v7.widget.CardView-->
+    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="8dp"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_margin="5dp"-->
+    <!--android:elevation="3dp"-->
+    <!--card_view:cardCornerRadius="0dp">-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:background="@drawable/arest_header_style">
+
+
+    <!-- Thumbnail Image com.android.volley.toolbox.NetworkImageView -->
+    <!--android:src="@drawable/foodex"
+    com.android.volley.toolbox.Network-->
+
+    <ImageView
+        android:id="@+id/itemfood_image"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pricelayout"
+        android:orientation="vertical"
+        >
+    <!-- itemfood_name Title -->
+    <TextView
+        android:id="@+id/itemfood_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#000"
+        android:textStyle="bold"
+
+        />
+        <TextView
+            android:id="@+id/itemfood_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="#000"
+            android:layout_marginTop="10dp"
+            android:text="@string/Price"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/offertextid"
+            android:layout_marginTop="10dp"
+            android:textColor="#f90a3e"
+            android:text="new price : 0.00"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/priceofferlayout"
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        >
+        <TextView
+            android:id="@+id/itemfood_offerimage"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/offer"
+            />
+
+        <!--offersicon-->
+    </LinearLayout>
+
+</LinearLayout>
+<!--</android.support.v7.widget.CardView>-->

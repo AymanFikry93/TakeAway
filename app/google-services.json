@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "551771805260",
+    "firebase_url": "https://takeaway3project.firebaseio.com",
+    "project_id": "takeaway3project",
+    "storage_bucket": "takeaway3project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551771805260:android:d10468d9787e8bc4",
+        "android_client_info": {
+          "package_name": "com.example.srccode.takeawayproject.Activities"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551771805260-91peh3tahn36kjhrqv6ufgup44qduqk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7YK4lddt_1be97i7BVAVkab3coH2PJ_4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

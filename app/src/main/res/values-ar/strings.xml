@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">تيك اواي</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!-- translate name for phrases [CHAR LIMIT=20] -->
+    <string name="action_settings">الاعدادات</string>
+    <string name="action_home">الصفحة الرئيسية</string>
+
+    <string name="category_resturants">المطاعم</string>
+    <string name="FirstTitle">طعامك المفضل يصلك اينما كنت ...</string>
+    <string name="selectlangauge"> اختر اللغة</string>
+    <string name="checkedlangauge">R.id.arlanguague </string>
+    <string name="notifyme">الاشعارات</string>
+    <string name="welcome">مرحبااا!</string>
+    <string name="CookingCatName"> CookingCatNameAR </string>
+    <string name="OrderStatus"> OrderStatus_ar </string>
+    <string name="ResturantnbyRegions">بحث عن المطاعم</string>
+    <string name="findresturantbymap"> المطاعم بالخريطة </string>
+    <string name="Search"> بحث </string>
+
+
+    <string name="LastOrder">الطلبات السابقة</string>
+    <string name="Resturantnbyoffers">عروض المطاعم</string>
+    <string name="City">المدينة </string>
+    <string name="Area">المنطقة</string>
+    <string name="Country">الدولة</string>
+    <string name="FindResturants"> عرض المطاعم</string>
+    <string name="selectancity"> اختر المدينة </string>
+    <string name="selectanarea"> اختر المنطقة </string>
+    <string name="CountryName"> CountryNameAr </string>
+    <string name="cityname"> CityAr </string>
+    <string name="areaname"> RegionAr </string>
+    <string name="Restaurantsearch">ابحث عن المطعم...</string>
+    <string name="RestaurantnameAsc">تصاعديا حسب الاسم</string>
+    <string name="RestaurantnameDsc">تنازليا حسب الاسم</string>
+    <string name="RestaurantrateDsc">تنازليا حسب المعدل</string>
+    <string name="RestaurantrateAsc">تصاعديا حسب المعدل</string>
+    <string name="minchargerest">الحد الادني</string>
+    <string name="deliveryrest">التوصيل</string>
+
+    <string name="Restaurantname">RestNameAr</string>
+    <string name="RestDataname">RestDatanameAr </string>
+    <string name="RestaurantDescrption">RestaurantDescrption</string>
+    <string name="OpenOrClose">OpenorCloseAr</string>
+    <string name="DeliveryWay">DeliveryWayNameAr</string>
+    <string name="FeeType">FeeTypeAr</string>
+    <string name="PayWayName">PayWayNameAr</string>
+
+
+    <!-- translate name for category activity [CHAR LIMIT=20] -->
+    <string name="Menulist">قائمة الطعام</string>
+    <string name="Menu">القائمة </string>
+    <string name="Reviews">التقييمات </string>
+    <string name="ResturantInformation">معلومات المطعم</string>
+
+    <string name="ItemFood">ItemFood</string>
+    <string name="OfferType">OfferTypeAr</string>
+
+
+    <string name="Price">  السعر : </string>
+    <string name="newprice">  السعر الجديد : </string>
+
+
+    <string name="OpenOrClosetxt">الحالة</string>
+    <string name="PayWaytxt">طريقة الدفع    </string>
+    <string name="DeliveryWaytxt">طريقة التوصيل</string>
+    <string name="FeeTypetxt">نوع الضريبة</string>
+    <string name="PayWayNametxt">طريقة الدفع</string>
+    <string name="FeeTypeValuetxt"> قيمة الضريبة</string>
+    <string name="qualitytxt"> الجودة</string>
+    <string name="pricevsvaluetxt"> القيمة مقابل السعر </string>
+    <string name="deliverytimetxt"> وقت التوصيل </string>
+
+    <string name="putreview">ضع تقييمك هنا </string>
+    <string name="qualtity">الجودة : </string>
+    <string name="pricevsvalue">السعر مقابل القيمة : </string>
+    <string name="deliverytime">وقت التوصيل : </string>
+
+    <!-- translate name for ItemDetails activity [CHAR LIMIT=20] -->
+    <string name="addtochart">أضف الي السلة</string>
+
+    <string name="Fooditemsdetails">تفاصيل الوجبة</string>
+    <string name="ViewOrderdetails">تفاصيل الطلب</string>
+    <string name="LastOrderdetails"> الطلبات السابقة</string>
+    <string name="PlaceOrder"> تنفيذ الطلب</string>
+    <string name="Addressinformation">  العنوان</string>
+    <string name="quantity">الكمية</string>
+    <string name="TotalPrice">السعر الكلي :</string>
+    <string name="FeePrice"> رسوم توصيل :</string>
+
+    <string name="submitorder">تنفيذ الطلب </string>
+    <string name="saveandaddmore"> حفظ واضافة المزيد </string>
+    <string name="submit"> اطلب </string>
+
+    <string name="thanks"> شكرا لاستخدامكم تطبيق تيك اواي </string>
+    <string name="laststring"> سيقوم المطعم بتوصيل الطعام باسرع وقتولكن من الممكن ان يكون هناك تأخير بسبب وقت الصلاة </string>
+
+
+
+    <string name="title_activity_maps">خريظة</string>
+
+    <string name="err_region">Telephone Number please</string>
+    <string name="err_street">Telephone Number please</string>
+    <string name="err_floornum">Telephone Number please</string>
+    <string name="err_apartmentnum">Telephone Number please</string>
+    <string name="err_buildingnum">Telephone Number please</string>
+
+    <string name="err_tel">Telephone Number please</string>
+
+    <string name="Addaddress">اضف عنوان  </string>
+    <string name="Address"> العنوان</string>
+    <string name="puturaddresshere">ضع عنوانك هنا </string>
+    <string name="AddressView">عرض العناوين </string>
+
+
+    <string name="writeyourqualityreviewhere"> اكتب تقييمك الجودة هنا </string>
+    <string name="writeyourpricereviewhere"> اكتب تقييمك للسعر هنا</string>
+    <string name="writeyourdeliveryreviewhere">اكتب تقييمك لسرعه التوصيل هنا  </string>
+
+    <string name="PostReviews"> حفظ</string>
+
+    <string name="Getlocation"> حدد موقعي</string>
+
+    <string name="addnewaddress"> اضافة عنوان جديد</string>
+    <string name="GetnewCobon"> اضافة كوبون جديد</string>
+
+    <string name="location">موقع </string>
+    <string name="region">منطقة </string>
+
+
+    <!--// login and register-->
+    <string name="Login">دخول </string>
+    <string name="SignUp">اضافة اكونت  </string>
+    <string name="Username">اسم المستخدم </string>
+    <string name="contactphone">رقم الاتصال</string>
+    <string name="Password">الباسوورد </string>
+    <string name="EmailAddress">الايميل </string>
+    <string name="contactname">اسم الاتصال </string>
+    <string name="confirmPassword">تاكيد الباسورد</string>
+    <string name="Register">تسجيل </string>
+    <string name="AlreadyHaveAnAccount">بالفعل لدي اكونت ! دخول</string>
+
+
+
+
+
+</resources>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#f4f4f4"
+    android:orientation="vertical"
+    tools:context="com.example.srccode.takeawayproject.Activities.PagerActivity"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="#FF8342"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/title"
+            android:text="@string/Menulist"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/backtoresturantbtn"
+           />
+    </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_margin="5dp"
+        android:id="@+id/restlayout"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:elevation="30dp"
+
+        >
+        <!--android:background="@drawable/arest_header_style"
+        de.hdodenhof.circleimageview.CircleImageView
+         com.android.volley.toolbox.Network  -->
+        <ImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:civ_border_width="5dp"
+            app:civ_border_color="#FF000000"
+        android:id="@+id/Resturantlogo"
+        android:src="@drawable/appetizers1"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.25"
+        />
+
+    <!--<ImageView-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:id="@+id/Resturantlogo"-->
+            <!--android:src="@mipmap/ic_launcher"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_weight="0.25" />-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/RestName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="resturant"
+                android:textColor="#000"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+
+            <!--android:scaleX="0.6"-->
+            <!--android:scaleY="0.6"-->
+            <RatingBar
+                android:id="@+id/Restrating_bar"
+                android:theme="@style/RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:backgroundTint="#FF8342"
+                android:progressTint="#FF8342"
+                android:progressBackgroundTint="#FF8342"
+                android:numStars="5"
+                android:rating="2.5"
+                android:stepSize="0.5"
+                android:isIndicator="true"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quantitylayout"
+
+            android:orientation="vertical">
+            <!-- mincharge -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/minchargerest"
+                android:layout_marginTop="5dp"
+                android:textColor="#666666"
+                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/minchargeid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="$10"
+                android:layout_margin="3dp"
+                android:textColor="#666666"
+                android:textStyle="bold"
+                android:textSize="10sp" />
+
+            <!-- restdelivery -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/deliveryrest"
+                android:layout_marginTop="3dp"
+                android:textColor="#666666"
+                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/restdeliveryid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="$10"
+                android:layout_margin="3dp"
+                android:textColor="#666666"
+                android:textStyle="bold"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/Restopening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="open and close "
+            android:textColor="#FF8342"
+            android:layout_margin="10dp"
+            android:layout_gravity="right"
+
+            />
+    </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/restlayout"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:elevation="20dp"
+        android:background="@drawable/arest_header_style"
+        app:tabSelectedTextColor="#fff"
+        app:tabTextColor="#000" />
+    />
+    <!--android:paddingTop="4dp"-->
+    <!--android:paddingRight="4dp"-->
+    <!--android:paddingBottom="4dp"-->
+    <!--android:paddingLeft="4dp"-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 1 "
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:id="@+id/backtovieworderbtn"
+        android:icon="@drawable/cart_white"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/btn_place_order_style"
+        android:drawableTop="@drawable/cart_white"
+        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height ="wrap_content"
+        android:layout_weight="5"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="20dp"
+        >
+
+    </android.support.v4.view.ViewPager>
+
+
+
+
+</LinearLayout>
+
+
+
+

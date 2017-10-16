@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.srccode.takeawayproject.Activities">
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_SMS" />
+
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.dev.cromer.jason.coverme.permission.MAPS_RECEIVE" />
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- android:name=".MyApplication" -->
+    <!-- android:name="android.support.multidex.MultiDexApplication" -->
+    <application
+        android:name="com.example.srccode.takeawayproject.WebServices.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/takeawaylogo"
+        android:label="TakeAway"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="AA_MODELS"
+            android:value="com.example.srccode.takeawayproject.Classes.ClassArea,
+            ,            com.example.srccode.takeawayproject.Classes.ClassCity,
+            ,            com.example.srccode.takeawayproject.Classes.ClassClientInformation,
+            ,            com.example.srccode.takeawayproject.Classes.ClassCookingDB,
+            ,            com.example.srccode.takeawayproject.Classes.ClassCountries,
+            ,            com.example.srccode.takeawayproject.Classes.ClassLastOrderDb,
+            ,            com.example.srccode.takeawayproject.Classes.ClassViewOrderDb
+            " />
+        <!--android:name="AA_DB_NAME"  OrderDataBase16-->
+
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/action_home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home_MainActivity"
+            android:label="@string/action_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivityResturants"
+            android:label="@string/category_resturants"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.Home_MainActivity" />
+        </activity>
+        <activity
+            android:name=".PagerActivity"
+            android:label="@string/Menulist"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.Home_MainActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityViewOrder"
+            android:label="@string/ViewOrderdetails">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.PagerActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityLastOrder"
+            android:label="@string/LastOrderdetails">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.Home_MainActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityItemDetailsTest"
+            android:label="@string/Fooditemsdetails"
+
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.PagerActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityPlaceOrder"
+            android:label="@string/PlaceOrder">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.PagerActivity" />
+        </activity>
+        <activity
+            android:name=".ActivityClientInformation"
+            android:label="@string/Addressinformation">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.PagerActivity" />
+        </activity>
+
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".ActivityMaps"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".ActivityLogin"
+            android:label="@string/Login" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityClientView" />
+        </activity>
+        <activity android:name=".ActivityRegister"
+            android:label="@string/Register" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityClientView" />
+        </activity>
+        <activity
+            android:name=".ActivityCounter"
+            android:label="Counter">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityResturants" />
+        </activity>
+        <!-- suppress AndroidDomInspection -->
+        <activity
+            android:name=".ActivityViewClientAddress"
+            android:label="Address"
+            android:launchMode="singleTop">
+
+            <!-- android:parentActivityName="com.example.srccode.takeawayproject.Sitting" -->
+            <!-- suppress AndroidDomInspection -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityViewOrder" />
+        </activity>
+        <activity
+            android:name=".ActivityRestOffer"
+            android:label="@string/category_resturants"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.srccode.takeawayproject.Activities.Home_MainActivity" />
+        </activity>
+        <activity android:name=".NotificationActivity" />
+
+        <!-- Firebase Notifications -->
+        <service android:name="com.example.srccode.takeawayproject.service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.example.srccode.takeawayproject.service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+        <activity
+            android:name=".ActivityClientReview"
+            android:label="Put Review">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PagerActivity" />
+        </activity>
+        <activity android:name=".ActivityClientView"
+            android:label="@string/AddressView">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityViewOrder" />
+        </activity>
+        <activity android:name=".ActivityCobon" />
+        <activity android:name=".SittingActivity"
+            android:label="Sittings">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home_MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

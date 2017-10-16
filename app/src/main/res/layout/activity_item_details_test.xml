@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_item_details_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.srccode.takeawayproject.Activities.ActivityItemDetailsTest"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--card_view:cardCornerRadius="0dp">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="20dp"
+        android:background="#FF8342"
+        android:id="@+id/linearlayoutparent">
+
+    <ImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+        android:layout_margin="5dp"
+    android:id="@+id/detailsimage"
+    android:layout_gravity="center_horizontal"
+    app:srcCompat="@drawable/appetizers1"
+    />
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="vertical"
+    android:id="@+id/LinearLayout_item_food_details"
+        >
+
+    <TextView
+    android:id="@+id/detailsName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Appetizer"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+    android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="10sp"
+    />
+
+    <TextView
+    android:id="@+id/detailsprice"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/Price"
+    android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+    android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        />
+    </LinearLayout>
+    </LinearLayout>
+        <!--</android.support.v7.widget.CardView>-->
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+        <Spinner
+            android:id="@+id/spinner_cooking"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:elevation="20dp"
+            android:layout_marginTop="17dp"
+           android:visibility="invisible"
+            android:background="@drawable/spinnershape"
+            />
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/explayout"
+        >
+
+        <ExpandableListView
+            android:id="@+id/exp_list_food"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="#00000000"
+            android:background="@drawable/arest_header_style"
+            android:elevation="20dp"
+            android:clickable="true"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dip"
+            android:fadingEdge="none"
+            android:groupIndicator="@android:color/transparent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dip"
+            android:scrollbars="none"
+            android:transcriptMode="disabled">
+
+        </ExpandableListView>
+
+
+
+
+
+    </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--android:layout_below="@+id/explayout"-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/liearlayoutbtn"
+        android:background="@drawable/arest_header_style"
+        android:elevation="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingTop="8dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginLeft="80dp"
+       android:layout_above="@+id/Purchasebutton2"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:text="+"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Purchaseincrementbutton2"
+            android:onClick="Purchaseincrement"
+            android:background="@drawable/buttonaddshape"
+            android:textColor="#ffffff"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/itemquantityId2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="1"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="20sp"
+            />
+
+        <Button
+            android:text="-"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Purchasedeccrementbutton2"
+            android:onClick="Purchasedeccrement"
+            android:background="@drawable/buttonaddshape"
+            android:textColor="#ffffff"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginEnd="15dp" />
+    </LinearLayout>
+
+    <Button
+        android:text="@string/addtochart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Purchasebutton2"
+        android:layout_marginTop="20dp"
+        android:onClick="addPurchase"
+        android:background="#FF8342"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>
