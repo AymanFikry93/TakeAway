@@ -117,7 +117,6 @@ public class PagerActivity extends FragmentActivity {
             public void onClick(View v) {
                 Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
                 startActivity(ResturantsIntent);
-
             }
         });
 
