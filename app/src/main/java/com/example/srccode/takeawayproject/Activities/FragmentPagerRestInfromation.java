@@ -27,6 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.GlobalRegionID;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.RegionId;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.Restname;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.ResturantLatitude;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.ResturantLongitude;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.deliveryWay;
@@ -96,8 +97,8 @@ public class FragmentPagerRestInfromation extends Fragment  {
                 mMap.clear();
                 LatLng sydney = new LatLng(ResturantLatitude,ResturantLongitude);//(24.68695241, 46.7578125);
                 //Adding marker to that coordinate
-                mMap.addMarker(new MarkerOptions().position(sydney).draggable(true).title("Here you are")
-                );
+                mMap.addMarker(new MarkerOptions().position(sydney).draggable(true).title(Restname)
+                ).showInfoWindow();
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
                 mMap.animateCamera(CameraUpdateFactory.zoomTo(20), 2000, null);
                 mMap.getUiSettings().setZoomGesturesEnabled(true);

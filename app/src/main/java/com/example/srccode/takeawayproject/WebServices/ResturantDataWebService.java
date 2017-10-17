@@ -63,8 +63,53 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
     protected Boolean doInBackground(String... params) {
 
 
-        makejsonobjreq();
+       // makejsonobjreq();
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, urlll, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
 
+                try {
+                    Iterator<String> key = response.keys();
+                    while (key.hasNext()) {
+                        String k = key.next();
+                        JSONArray ja = null;
+                        ja = response.getJSONArray(k);
+                        for (int i = 0; i < ja.length(); i++) {
+                            JSONObject object = ja.getJSONObject(i);
+                            ClassResturants classResturants = new ClassResturants(
+                                    object.getString("RestID"),
+                                    object.getString(mcontext.getResources().getString(R.string.RestDataname))//Restaurantname  RestDataname
+                                    ,object.getString(mcontext.getResources().getString(R.string.OpenOrClose)),object.getString("MinimumOrderPrice")
+                                    ,4,"http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg")
+                                    ,object.getDouble("OfferValue"),object.getInt("OfferFeeTypeId")
+                            );
+                            resturantDataId =object.getInt("RestDataID");
+                            classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname) ));
+                            classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
+                            classResturants.setofferID(object.getInt("OfferID"));
+
+                            FeeTypeid=1;
+                            classResturantsList.add(classResturants);
+                            originalList.add(classResturants);
+                        }
+                    } // while loop end
+
+                    adapterClassResturant.notifyDataSetChanged();
+                    restnumber.setText(classResturantsList.size()+mcontext.getResources().getString(R.string.Resturantsarefound));
+
+                    //   pDialog.hide();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //  PD.dismiss();
+                // pDialog.hide();
+            }
+        });
+        MyApplication.getInstance().addToReqQueue(jsonObjReq, "jreq");
         return null;
     }
     private  void makejsonobjreq() {

@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
-    android:background="#f9f3f3"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:gravity="center_horizontal"
-    >
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+     android:layout_width="match_parent"
     android:orientation="vertical"
     android:background="@drawable/arest_header_style"
-    >
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
-    android:layout_marginTop="5dp"
-    android:id="@+id/arealayout"
-    >
-    <TextView
-        android:text="@string/Area"
-        android:layout_width="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:id="@+id/textView2"
-        android:textColor="#000"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/arealayout"
+        >
+        <TextView
+            android:text="@string/Area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/textView2"
+            android:textColor="#000"
 
-         />
-    <TextView
-        android:text=" region "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
+            />
+        <TextView
+            android:text=" region "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
 
-        android:textColor="#FF8342"
-        android:id="@+id/region_rest_id" />
+            android:textColor="#FF8342"
+            android:id="@+id/region_rest_id" />
 
-</LinearLayout>
+    </LinearLayout>
 
     <View
         android:layout_width="fill_parent"
@@ -61,10 +56,10 @@
         android:layout_below="@+id/arealayout">
         <TextView
             android:text="@string/OpenOrClosetxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-        android:id="@+id/textView15"
+            android:id="@+id/textView15"
             android:textColor="#000"
 
             />
@@ -97,26 +92,26 @@
         android:textColor="#000"
         android:id="@+id/feelayout"
         android:layout_below="@+id/openlayout"
-       >
+        >
         <TextView
-        android:text="@string/FeeTypetxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="@string/FeeTypetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#000"
 
             android:id="@+id/textView16"
-         />
+            />
 
         <TextView
-        android:text="FeeType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="FeeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
             android:textColor="#FF8342"
             android:id="@+id/FeeTypeid"
-       />
+            />
         <!--android:paddingRight="25dp"-->
 
     </LinearLayout>
@@ -136,22 +131,22 @@
         android:id="@+id/feetypelayout"
         android:layout_below="@+id/feelayout">
         <TextView
-        android:text="@string/FeeTypeValuetxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="@string/FeeTypeValuetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#000"
             android:id="@+id/textView20"
-       />
+            />
         <TextView
-        android:text="FeeTypeValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="FeeTypeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="#FF8342"
             android:id="@+id/FeeTypeValueid"
-         />
+            />
     </LinearLayout>
     <View
         android:layout_width="fill_parent"
@@ -169,23 +164,23 @@
         android:id="@+id/paytypelayout"
         android:layout_below="@+id/feetypelayout">
         <TextView
-        android:text="@string/PayWaytxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="@string/PayWaytxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#000"
             android:id="@+id/textView18"
-        />
+            />
 
         <TextView
-        android:text="PayWay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="PayWay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="#FF8342"
             android:id="@+id/PayWayid"
-       />
+            />
     </LinearLayout>
     <View
         android:layout_width="fill_parent"
@@ -203,23 +198,23 @@
         android:id="@+id/deliverylayout"
         android:layout_below="@+id/paytypelayout">
         <TextView
-        android:text="@string/DeliveryWaytxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="@string/DeliveryWaytxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#000"
             android:id="@+id/textView14"
-       />
+            />
 
         <TextView
-        android:text="DeliveryWay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="DeliveryWay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
             android:textColor="#FF8342"
             android:id="@+id/DeliveryWayid"
-         />
+            />
         <!--android:paddingRight="30dp"-->
 
     </LinearLayout>
@@ -228,15 +223,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/map"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         />
-
 </LinearLayout>
-
-</ScrollView>
-
-
 
 
 
