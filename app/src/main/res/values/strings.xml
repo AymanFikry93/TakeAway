@@ -36,6 +36,8 @@
     <string name="RestaurantnameDsc">Descending by name</string>
     <string name="RestaurantrateDsc">Descending by rate</string>
     <string name="RestaurantrateAsc">Ascending by rate</string>
+    <string name="Resturantsarefound"> Resturants are found</string>
+
 
     <string name="Restaurantname">RestNameEn</string>
     <string name="RestDataname">RestDatanameEn</string>
@@ -120,9 +122,7 @@
     <string name="AddressView">Address View </string>
 
 
-
-
-<!--// login and register-->
+    <!--// login and register-->
 
     <string name="Login">Login </string>
     <string name="SignUp">SignUp </string>

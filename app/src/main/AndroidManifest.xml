@@ -11,15 +11,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <android:uses-permission android:name="android.permission.READ_SMS" />
-
     <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.dev.cromer.jason.coverme.permission.MAPS_RECEIVE" />
+
     <uses-feature android:name="android.hardware.location.gps" />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -35,15 +36,8 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="AA_MODELS"
-            android:value="com.example.srccode.takeawayproject.Classes.ClassArea,
-            ,            com.example.srccode.takeawayproject.Classes.ClassCity,
-            ,            com.example.srccode.takeawayproject.Classes.ClassClientInformation,
-            ,            com.example.srccode.takeawayproject.Classes.ClassCookingDB,
-            ,            com.example.srccode.takeawayproject.Classes.ClassCountries,
-            ,            com.example.srccode.takeawayproject.Classes.ClassLastOrderDb,
-            ,            com.example.srccode.takeawayproject.Classes.ClassViewOrderDb
-            " />
-        <!--android:name="AA_DB_NAME"  OrderDataBase16-->
+            android:value="com.example.srccode.takeawayproject.Classes.ClassArea,             ,            com.example.srccode.takeawayproject.Classes.ClassCity,             ,            com.example.srccode.takeawayproject.Classes.ClassClientInformation,             ,            com.example.srccode.takeawayproject.Classes.ClassCookingDB,             ,            com.example.srccode.takeawayproject.Classes.ClassCountries,             ,            com.example.srccode.takeawayproject.Classes.ClassLastOrderDb,             ,            com.example.srccode.takeawayproject.Classes.ClassViewOrderDb             " />
+        <!-- android:name="AA_DB_NAME"  OrderDataBase16 -->
 
         <meta-data
             android:name="AA_DB_VERSION"
@@ -95,9 +89,7 @@
         </activity>
         <activity
             android:name=".ActivityItemDetailsTest"
-            android:label="@string/Fooditemsdetails"
-
-            >
+            android:label="@string/Fooditemsdetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.srccode.takeawayproject.Activities.PagerActivity" />
@@ -117,7 +109,6 @@
                 android:value="com.example.srccode.takeawayproject.Activities.PagerActivity" />
         </activity>
 
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -133,14 +124,16 @@
         <activity
             android:name=".ActivityMaps"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".ActivityLogin"
-            android:label="@string/Login" >
+        <activity
+            android:name=".ActivityLogin"
+            android:label="@string/Login">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityClientView" />
         </activity>
-        <activity android:name=".ActivityRegister"
-            android:label="@string/Register" >
+        <activity
+            android:name=".ActivityRegister"
+            android:label="@string/Register">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityClientView" />
@@ -193,18 +186,26 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".PagerActivity" />
         </activity>
-        <activity android:name=".ActivityClientView"
+        <activity
+            android:name=".ActivityClientView"
             android:label="@string/AddressView">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityViewOrder" />
         </activity>
         <activity android:name=".ActivityCobon" />
-        <activity android:name=".SittingActivity"
+        <activity
+            android:name=".SittingActivity"
             android:label="Sittings">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Home_MainActivity" />
+        </activity>
+        <activity android:name=".ActivityCategory"
+            android:label="@string/Menulist">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityResturants" />
         </activity>
     </application>
 

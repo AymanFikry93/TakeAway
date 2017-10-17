@@ -25,6 +25,8 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.FeeTypeid;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.OpenOrClose;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.PayWay;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.Regionname;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.ResturantLatitude;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.ResturantLongitude;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.deliveryWay;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.feeType;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.feeTypeValue;
@@ -88,6 +90,9 @@ public class RestInformationJson  extends AsyncTask<String,Void,Boolean> {
                         FeeType="Fixed";//object.getString(mcontext.getResources().getString(R.string.FeeType));
                         FeeDeliveryValue=object.getDouble("DeliveryValue");
                         PayWay=object.getString(mcontext.getResources().getString(R.string.PayWayName));
+
+                        ResturantLatitude=object.getDouble("Latitude");
+                        ResturantLongitude=object.getDouble("Longitude");
 
                     }
                 }

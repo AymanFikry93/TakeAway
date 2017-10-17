@@ -16,6 +16,8 @@ public class ClassResturants {
     private int offerID ;
     private double offerValue ;
     private int OfferFeeTypeId ;
+    private double Longitude ;
+    private double Latitude ;
 
     public ClassResturants( ) {
 
@@ -111,6 +113,19 @@ public void setRating(int rating) {  this.rating = rating;}
 
 
 
+    public double getLongitude() {
+        return Longitude;
+    }
+    public void setLongitude(double Longitude) {
+        this.Longitude = Longitude;
+    }
+
+    public double getLatitude() {
+        return Latitude;
+    }
+    public void setLatitude(double Latitude) {
+        this.Latitude = Latitude;
+    }
 
 
 

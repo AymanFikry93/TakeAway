@@ -73,11 +73,11 @@
                 android:orientation="vertical">
                 <!-- mincharge -->
                 <TextView
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/minchargerest"
                     android:layout_marginTop="5dp"
-                    android:textColor="#666666"
+                    android:textColor="#000"
                     android:textSize="10sp" />
                 <TextView
                     android:id="@+id/minchargeid"

@@ -130,7 +130,7 @@ public class FragmentHomeResturant extends Fragment
                             // Write your code here to invoke YES event
                             Toast.makeText(getContext(), "You cleared your order", Toast.LENGTH_SHORT).show();
                             Toast.makeText(getContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
-                            Intent ResturantsIntent = new Intent(getContext(), PagerActivity.class);
+                            Intent ResturantsIntent = new Intent(getContext(), ActivityCategory.class);
                             resturantId = Integer.parseInt(classResturantsList.get(position).getId());
                             Restname = classResturantsList.get(position).getName();
                             Restimage = classResturantsList.get(position).getImage();
@@ -164,7 +164,7 @@ public class FragmentHomeResturant extends Fragment
                 }
                 else{
                     Toast.makeText(getContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
-                    Intent ResturantsIntent = new Intent(getContext(), PagerActivity.class);
+                    Intent ResturantsIntent = new Intent(getContext(), ActivityCategory.class);
                     resturantId = Integer.parseInt(classResturantsList.get(position).getId());
                     Restname = classResturantsList.get(position).getName();
                     Restimage = classResturantsList.get(position).getImage();

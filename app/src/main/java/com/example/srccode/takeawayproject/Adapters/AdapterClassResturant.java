@@ -93,7 +93,7 @@ Context mcontext;
             imageLoader = MyApplication.getInstance().getImageLoader();
         if(classResturantsList.get(position).getofferID()==0) {
             //  holder.restofferimageView.setPaintFlags(pv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-           holder.restofferimageView.setVisibility(View.GONE);
+           holder.restofferimageView.setVisibility(View.INVISIBLE);
         }
         holder.restName.setText(classResturantsList.get(position).getName());
         holder.restName.setTypeface(typeface);

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4f4f4"
+    android:background="#edd3c2"
     >
 
     <TextView
@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
         android:paddingTop="10dp"
+        android:layout_margin="10dp"
         android:textColor="#000"
         />
     <RadioGroup

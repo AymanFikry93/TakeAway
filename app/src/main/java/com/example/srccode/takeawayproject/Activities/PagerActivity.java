@@ -77,13 +77,7 @@ public class PagerActivity extends FragmentActivity {
         ImageView restimageView= (ImageView)findViewById(R.id.Resturantlogo);
           Glide.with(PagerActivity.this).load(Restimage).apply(RequestOptions.circleCropTransform()).into(restimageView);
 
-//        Glide.with(getApplicationContext()).load(Restimage).centerCrop()
-//                .crossFade()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .into(restimageView);
 
-//        restimageView.setImageUrl(Restimage,imageLoader);
-//        getCroppedBitmap(restimageView);
         mViewPager = (ViewPager) findViewById(R.id.pager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(viewPagerAdapter);
@@ -96,9 +90,9 @@ public class PagerActivity extends FragmentActivity {
 //            tabLayout.getTabAt(1).setIcon(R.drawable.rating);
 //            tabLayout.getTabAt(2).setIcon(R.drawable.orders1_select_blue);
 
-            tabLayout.getTabAt(0).setText(getString(R.string.Menu));
-            tabLayout.getTabAt(1).setText(getString(R.string.Reviews));
-            tabLayout.getTabAt(2).setText(getString(R.string.ResturantInformation));
+//            tabLayout.getTabAt(0).setText(getString(R.string.Menu));
+            tabLayout.getTabAt(0).setText(getString(R.string.Reviews));
+            tabLayout.getTabAt(1).setText(getString(R.string.ResturantInformation));
         }
 
         ImageButton imageButton=(ImageButton)findViewById(R.id.backtoresturantbtn);
@@ -121,54 +115,34 @@ public class PagerActivity extends FragmentActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityResturants.class);
+                Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
                 startActivity(ResturantsIntent);
 
             }
         });
 
-        Button cartimageButton=(Button)findViewById(R.id.backtovieworderbtn);
+//        Button cartimageButton=(Button)findViewById(R.id.backtovieworderbtn);
 
-        ActiveAndroid.initialize(this);
-        List<ClassViewOrderDb> tableviewOrderDb;
-        tableviewOrderDb =new Select().from(ClassViewOrderDb.class).execute();
-
-        if(tableviewOrderDb.size()==0){//&&!Restopening.equals("Opening")
-            cartimageButton.setVisibility(View.GONE);
-        }else {
-            cartimageButton.setVisibility(View.VISIBLE);
-            String viewOrderDbCount= String.valueOf(tableviewOrderDb.size());
-            cartimageButton.setText(viewOrderDbCount);
-        }
-        cartimageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityViewOrder.class);
-                startActivity(ResturantsIntent);
-            }
-        });
+//        ActiveAndroid.initialize(this);
+//        List<ClassViewOrderDb> tableviewOrderDb;
+//        tableviewOrderDb =new Select().from(ClassViewOrderDb.class).execute();
+//
+//        if(tableviewOrderDb.size()==0){//&&!Restopening.equals("Opening")
+//            cartimageButton.setVisibility(View.GONE);
+//        }else {
+//            cartimageButton.setVisibility(View.VISIBLE);
+//            String viewOrderDbCount= String.valueOf(tableviewOrderDb.size());
+//            cartimageButton.setText(viewOrderDbCount);
+//        }
+//        cartimageButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityViewOrder.class);
+//                startActivity(ResturantsIntent);
+//            }
+//        });
     }
-    public Bitmap getCroppedBitmap(Bitmap bitmap) {
-        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
-                bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(output);
 
-        final int color = 0xff424242;
-        final Paint paint = new Paint();
-        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-
-        paint.setAntiAlias(true);
-        canvas.drawARGB(0, 0, 0, 0);
-        paint.setColor(color);
-        // canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
-        canvas.drawCircle(bitmap.getWidth() / 2, bitmap.getHeight() / 2,
-                bitmap.getWidth() / 2, paint);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(bitmap, rect, rect, paint);
-        //Bitmap _bmp = Bitmap.createScaledBitmap(output, 60, 60, false);
-        //return _bmp;
-        return output;
-    }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {

@@ -41,6 +41,7 @@
     <string name="RestaurantrateAsc">تصاعديا حسب المعدل</string>
     <string name="minchargerest">الحد الادني</string>
     <string name="deliveryrest">التوصيل</string>
+    <string name="Resturantsarefound">مطاعم موجودين</string>
 
     <string name="Restaurantname">RestNameAr</string>
     <string name="RestDataname">RestDatanameAr </string>

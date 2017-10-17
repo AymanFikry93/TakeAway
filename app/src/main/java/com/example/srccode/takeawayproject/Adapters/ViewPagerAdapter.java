@@ -14,9 +14,9 @@ import com.example.srccode.takeawayproject.Activities.FragmentPagerReview;
  */
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    final int pageCount=3;
+    final int pageCount=2;
     Context context;
-    private  String tabTitles []=new  String[]{"Menu","Reviews ","Information"};
+    private  String tabTitles []=new  String[]{"Reviews ","Information"};
 
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -39,19 +39,19 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position){
+//            case 0:
+//
+//                FragmentCategory fragmentCategory=new FragmentCategory();
+//                return  fragmentCategory;
+
+
             case 0:
-
-                FragmentCategory fragmentCategory=new FragmentCategory();
-                return  fragmentCategory;
-
-
-            case 1:
                 FragmentPagerReview fragmentPagerReview=new FragmentPagerReview();
 
                 return  fragmentPagerReview;
 
 
-            case 2:
+            case 1:
                FragmentPagerRestInfromation fragmentPagerRestInfromation=new FragmentPagerRestInfromation();
                 return  fragmentPagerRestInfromation;
 

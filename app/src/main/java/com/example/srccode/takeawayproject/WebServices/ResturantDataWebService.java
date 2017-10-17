@@ -40,10 +40,10 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
         urlll=urll;
 
     }
-
     @Override
-    protected Boolean doInBackground(String... params) {
-         try {
+    protected void onPreExecute() {
+        super.onPreExecute();
+        try {
             pDialog = new ProgressDialog(mcontext);
             pDialog.setMessage("Loading...");
             pDialog.show();
@@ -52,6 +52,16 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
             e.getMessage();
 
         }
+
+//            dialog = new ProgressDialog(mcontext);
+//            dialog.setMessage("Please wait , Loading..");
+//            dialog.setTitle("Connecting Server");
+//            dialog.show();
+//            dialog.setCancelable(false);
+    }
+    @Override
+    protected Boolean doInBackground(String... params) {
+
 
         makejsonobjreq();
 
@@ -82,6 +92,7 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                                     classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname) ));
                                     classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
                                     classResturants.setofferID(object.getInt("OfferID"));
+
                                     FeeTypeid=1;
                                     classResturantsList.add(classResturants);
                                     originalList.add(classResturants);
@@ -89,9 +100,9 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                     } // while loop end
 
                     adapterClassResturant.notifyDataSetChanged();
-                    restnumber.setText("Found "+classResturantsList.size()+" Resturants");
+                    restnumber.setText(classResturantsList.size()+mcontext.getResources().getString(R.string.Resturantsarefound));
 
-                    // pDialog.hide();
+                  //   pDialog.hide();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

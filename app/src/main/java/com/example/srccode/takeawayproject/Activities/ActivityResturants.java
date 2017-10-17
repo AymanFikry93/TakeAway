@@ -107,9 +107,18 @@ public class ActivityResturants extends AppCompatActivity {
          }else {
              resturantofferFlag=0;
              findresturantmapflag=0;
-             new ResturantDataWebService(getApplicationContext(),"http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
+            // new ResturantDataWebService(getApplicationContext(),"http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
+//             Runnable RestWebServiceThread= new Runnable() {
+//                 @Override
+//                 public void run() {
+                     new ResturantDataWebService(getApplicationContext(),"http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID)
+                             .execute();
+//                 }
+//             };
+//
+//             Thread thread=new Thread(RestWebServiceThread);
+//             thread.start();
 
-             //new ResturantWebService(getApplicationContext()).execute("http://"+HostName+"/api/Restaurants?RegionID=" + RegionID);
          }
         tableviewOrderDb =new Select().from(ClassViewOrderDb.class).execute();
 
@@ -153,7 +162,7 @@ public class ActivityResturants extends AppCompatActivity {
                             // Write your code here to invoke YES event
                             Toast.makeText(getApplicationContext(), "You cleared your order", Toast.LENGTH_SHORT).show();
                             Toast.makeText(getApplicationContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
-                            Intent ResturantsIntent = new Intent(getApplicationContext(), PagerActivity.class);
+                            Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
                             resturantId = Integer.parseInt(classResturantsList.get(position).getId());
                             Restname = classResturantsList.get(position).getName();
                             Restimage = classResturantsList.get(position).getImage();
@@ -187,7 +196,7 @@ public class ActivityResturants extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(getApplicationContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
-                    Intent ResturantsIntent = new Intent(getApplicationContext(), PagerActivity.class);
+                    Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
                     resturantId = Integer.parseInt(classResturantsList.get(position).getId());
                     Restname = classResturantsList.get(position).getName();
                     Restimage = classResturantsList.get(position).getImage();

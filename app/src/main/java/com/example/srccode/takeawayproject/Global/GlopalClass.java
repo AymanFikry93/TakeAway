@@ -179,7 +179,8 @@ public class GlopalClass {
     public static String OpenOrClose;
     public static double OfferResturantValue;
     public static int OfferFeeTypeId;
-
+    public static double ResturantLatitude;
+    public static double  ResturantLongitude;
 
     ///////////////pager  review
     public static  TextView reviewprice,reviewdelivery,reviewquality;

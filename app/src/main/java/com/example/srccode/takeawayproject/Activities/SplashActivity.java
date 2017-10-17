@@ -5,10 +5,13 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
+import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,17 +39,34 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 public class SplashActivity extends AppCompatActivity {
 
+//    ProgressBar bar;
     boolean isnetwork;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
-
+//        bar = (ProgressBar) findViewById(R.id.progressBar);
+//        textView = (TextView) findViewById(R.id.textView);
+//        bar.setProgress(0);
+//        bar.setMax(100);
         ActiveAndroid.initialize(this);
         AssetManager am = getApplicationContext().getAssets();
         typeface = Typeface.createFromAsset(am,
                 String.format(Locale.US, "Fonts/%s", "GESSTwoLight.otf"));
+
+//        if(ActivityCompat.checkSelfPermission(SplashActivity.this,Manifest.permission.ACCESS_NETWORK_STATE
+//        )!= PackageManager.PERMISSION_GRANTED){
+//
+//        }
+//        else{
+//            ActivityCompat.requestPermissions(SplashActivity.this,new String[]{
+//                    Manifest.permission.ACCESS_NETWORK_STATE
+//            },1);
+//        }
+
+
+
         try{
             isnetwork=isNetworkConnected();
 
@@ -62,16 +82,6 @@ public class SplashActivity extends AppCompatActivity {
                 builder.show();
                 StartAnimations();
 
-//                Snackbar snackbar = Snackbar
-//                        .make(coordinatorLayout, "Message is deleted", Snackbar.LENGTH_LONG);
-//                        .setAction("UNDO", new View.OnClickListener() {
-//                            @Override
-//                            public void onClick(View view) {
-//                                Snackbar snackbar1 = Snackbar.make(getApplicationContext(), "Need Network", Snackbar.LENGTH_SHORT);
-//                                snackbar1.show();
-//                            }
-//                        });
-               // snackbar.show();
             }
         }
         catch (Exception e){
@@ -172,5 +182,50 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
+//    class ProgressTask extends AsyncTask<String, Integer, String> {
+//
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            // code will executed before task start (main thread)
+//        }
+//
+//        @Override
+//        protected String doInBackground(String... params) {
+//            // task will done in background
+//
+//            for (int i = 0; i < 100; i++) {
+//                try {
+//                    // sleep 100 millisecond every loop so progress will not finished fast with out see it
+//                    Thread.sleep(100);
+//                    publishProgress(i);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            return null;
+//
+//        }
+//
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//            // code executed after task finish hide progress and change text
+//            bar.animate().alpha(0).setDuration(2000).start();
+//            textView.setText("Don't wait any thing Do it Now");
+//        }
+//
+//        @Override
+//        protected void onProgressUpdate(Integer... values) {
+//            super.onProgressUpdate(values);
+//            // progress come as array maybe there is mote than one value or progress update so i put [0]
+//            bar.setProgress(values[0]);
+//
+//
+//        }
+//
+//
+//    }
 
 }
