@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/homerelative"
-    android:background="@drawable/homeimage"
+
     tools:context="com.example.srccode.takeawayproject.Activities.MainFragment"
     >
 
@@ -16,7 +16,6 @@
           <!--android:background="@drawable/takeawaylogo"-->
           <!--android:layout_marginTop="56dp"-->
           <!--android:id="@+id/dynamichomeimg"-->
-
           <!--/>-->
 
     <!--<TextView-->

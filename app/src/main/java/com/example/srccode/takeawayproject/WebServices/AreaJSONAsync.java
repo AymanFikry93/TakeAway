@@ -46,11 +46,11 @@ public class AreaJSONAsync  extends AsyncTask<String, Void, Boolean> {
     @Override
         protected void onPreExecute() {
             super.onPreExecute();
-//            dialog = new ProgressDialog(mcontext);
-//            dialog.setMessage("Please wait , Loading..");
-//            dialog.setTitle("Connecting Server");
-//            dialog.show();
-//            dialog.setCancelable(false);
+            dialog = new ProgressDialog(mcontext);
+            dialog.setMessage("Please wait , Loading..");
+            dialog.setTitle("Connecting Server");
+            dialog.show();
+            dialog.setCancelable(false);
         }
 
         @Override

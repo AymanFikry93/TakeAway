@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_category"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.srccode.takeawayproject.Activities.ActivityCategory"
+    android:orientation="vertical">
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:layout_margin="5dp"
+            android:id="@+id/restlayout"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:elevation="30dp"
+
+            >
+            <!--android:background="@drawable/arest_header_style"
+            de.hdodenhof.circleimageview.CircleImageView
+             com.android.volley.toolbox.Network  -->
+            <ImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:civ_border_width="5dp"
+                app:civ_border_color="#FF000000"
+                android:id="@+id/Resturantlogo"
+                android:src="@drawable/appetizers1"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.25"
+                />
+
+            <!--<ImageView-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:id="@+id/Resturantlogo"-->
+            <!--android:src="@mipmap/ic_launcher"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_weight="0.25" />-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/RestName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="resturant"
+                    android:textColor="#000"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+
+                <!--android:scaleX="0.6"-->
+                <!--android:scaleY="0.6"-->
+                <RatingBar
+                    android:id="@+id/Restrating_bar"
+                    android:theme="@style/RatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:backgroundTint="#FF8342"
+                    android:progressTint="#FF8342"
+                    android:progressBackgroundTint="#FF8342"
+                    android:numStars="5"
+                    android:rating="2.5"
+                    android:stepSize="0.5"
+                    android:isIndicator="true"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/quantitylayout"
+
+                android:orientation="vertical">
+                <!-- mincharge -->
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/minchargerest"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#666666"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/minchargeid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="$10"
+                    android:layout_margin="3dp"
+                    android:textColor="#666666"
+                    android:textStyle="bold"
+                    android:textSize="10sp" />
+
+                <!-- restdelivery -->
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/deliveryrest"
+                    android:layout_marginTop="3dp"
+                    android:textColor="#666666"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/restdeliveryid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="$10"
+                    android:layout_margin="3dp"
+                    android:textColor="#666666"
+                    android:textStyle="bold"
+                    android:textSize="10sp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/Restopening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="open and close "
+                android:textColor="#FF8342"
+                android:layout_margin="10dp"
+                android:layout_gravity="right"
+
+                />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text=" 1 "-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="20sp"-->
+        <!--android:id="@+id/backtovieworderbtn"-->
+        <!--android:icon="@drawable/cart_white"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:background="@drawable/btn_place_order_style"-->
+        <!--android:drawableTop="@drawable/cart_white"-->
+        <!--/>-->
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+       >
+    <ExpandableListView
+        android:id="@+id/exp_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:dividerHeight="2dp"
+        android:childDivider="#00ed8b8b"
+        android:cacheColorHint="#00000000"
+        android:scrollbarSize="10dp"
+        android:layout_marginLeft="5dp"
+        android:divider="#00000000"
+        android:background="@drawable/arest_header_style"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

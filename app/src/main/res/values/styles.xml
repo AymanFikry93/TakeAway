@@ -39,8 +39,9 @@
         <!-- Customize your theme here. @android:style/Theme.NoTitleBar.Fullscreen -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
     <item name="android:actionBarSize">40dp</item>
+        <!--<item name="android:windowFullscreen">true</item>-->
+
     </style>
 
     <style name="Widget.MyApp.ActionBar" parent="@android:style/Widget.ActionBar">

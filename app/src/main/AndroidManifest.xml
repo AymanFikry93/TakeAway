@@ -62,7 +62,8 @@
         <activity
             android:name=".ActivityResturants"
             android:label="@string/category_resturants"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.srccode.takeawayproject.Activities.Home_MainActivity" />
