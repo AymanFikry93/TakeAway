@@ -68,24 +68,24 @@ public class Home_MainActivity extends AppCompatActivity
         SharedPreferences sharedPreferences_notify_show=getSharedPreferences("notifydata", Context.MODE_PRIVATE);// to get the contetnt of the data base
        boolean notify =sharedPreferences_notify_show.getBoolean("notifytype",false);
 
-//        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(mToolbar);
-//        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-//        getSupportActionBar().setHomeButtonEnabled(false);
-//        TextView tv = new TextView(getApplicationContext());
-//        tv.setTextSize(10);
-//
-//        if (mToolbar != null) {
-//            this.getSupportActionBar()
-//                    .setDisplayHomeAsUpEnabled(true);
-//            this.getSupportActionBar()
-//                    .setCustomView(tv);
-//            mToolbar.setNavigationIcon(R.drawable.back_arrow);
-//        }
-//
-//        mToolbar.setTitleTextColor(Color.WHITE);
-//        mToolbar.setTitle("");//R.string.action_home
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(false);
+        TextView tv = new TextView(getApplicationContext());
+        tv.setTextSize(10);
+
+        if (mToolbar != null) {
+            this.getSupportActionBar()
+                    .setDisplayHomeAsUpEnabled(true);
+            this.getSupportActionBar()
+                    .setCustomView(tv);
+            mToolbar.setNavigationIcon(R.drawable.back_arrow);
+        }
+
+        mToolbar.setTitleTextColor(Color.WHITE);
+        mToolbar.setTitle("");//R.string.action_home
 //
         MainFragment fragment=new MainFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
@@ -110,16 +110,16 @@ public class Home_MainActivity extends AppCompatActivity
 //        }
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        final CustomDrawerButton customDrawerButton = (CustomDrawerButton)findViewById(R.id.btnOpenDrawer);
-        customDrawerButton.setDrawerLayout( drawer );
-        customDrawerButton.getDrawerLayout().addDrawerListener( customDrawerButton );
-        customDrawerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                customDrawerButton.changeState();
-            }
-        });
+//
+//        final CustomDrawerButton customDrawerButton = (CustomDrawerButton)findViewById(R.id.btnOpenDrawer);
+//        customDrawerButton.setDrawerLayout( drawer );
+//        customDrawerButton.getDrawerLayout().addDrawerListener( customDrawerButton );
+//        customDrawerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                customDrawerButton.changeState();
+//            }
+//        });
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
