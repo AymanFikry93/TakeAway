@@ -44,22 +44,22 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        Runnable runnable=new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    pDialog = new ProgressDialog(mcontext);
-                    pDialog.setMessage("Loading...");
-                    pDialog.show();
-                }catch (Exception e)
-                {
-                    e.getMessage();
-
-                }
-            }
-        };
-        Thread thread=new Thread(runnable);
-        thread.start();
+//        Runnable runnable=new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    pDialog = new ProgressDialog(mcontext);
+//                    pDialog.setMessage("Loading...");
+//                    pDialog.show();
+//                }catch (Exception e)
+//                {
+//                    e.getMessage();
+//
+//                }
+//            }
+//        };
+//        Thread thread=new Thread(runnable);
+//        thread.start();
 
 
 //            dialog = new ProgressDialog(mcontext);

@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -50,7 +51,7 @@ public class Home_MainActivity extends AppCompatActivity
     private ViewPager mViewPager;
     private TabLayout tabLayout;
     Toolbar mToolbar;
-
+    DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,23 +70,22 @@ public class Home_MainActivity extends AppCompatActivity
        boolean notify =sharedPreferences_notify_show.getBoolean("notifytype",false);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
-        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setHomeButtonEnabled(false);
-        TextView tv = new TextView(getApplicationContext());
-        tv.setTextSize(10);
-
-        if (mToolbar != null) {
-            this.getSupportActionBar()
-                    .setDisplayHomeAsUpEnabled(true);
-            this.getSupportActionBar()
-                    .setCustomView(tv);
-            mToolbar.setNavigationIcon(R.drawable.back_arrow);
-        }
-
-        mToolbar.setTitleTextColor(Color.WHITE);
-        mToolbar.setTitle("");//R.string.action_home
+//        setSupportActionBar(mToolbar);
+//        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+//
+//        TextView tv = new TextView(getApplicationContext());
+//        tv.setTextSize(10);
+//
+//        if (mToolbar != null) {
+//            this.getSupportActionBar()
+//                    .setDisplayHomeAsUpEnabled(true);
+//            this.getSupportActionBar()
+//                    .setCustomView(tv);
+//            mToolbar.setNavigationIcon(R.drawable.back_arrow);
+//        }
+//
+//        mToolbar.setTitleTextColor(Color.WHITE);
+//        mToolbar.setTitle("");//R.string.action_home
 //
         MainFragment fragment=new MainFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
@@ -109,8 +109,7 @@ public class Home_MainActivity extends AppCompatActivity
 //            tabLayout.getTabAt(2).setText(getString(R.string.Resturantnbyoffers));
 //        }
 
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//
+          drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 //        final CustomDrawerButton customDrawerButton = (CustomDrawerButton)findViewById(R.id.btnOpenDrawer);
 //        customDrawerButton.setDrawerLayout( drawer );
 //        customDrawerButton.getDrawerLayout().addDrawerListener( customDrawerButton );
@@ -128,7 +127,9 @@ public class Home_MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
+
     }
     @Override
     protected void onStop() {
@@ -141,7 +142,7 @@ public class Home_MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+       // DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -187,7 +188,7 @@ public class Home_MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
