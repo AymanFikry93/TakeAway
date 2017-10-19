@@ -31,32 +31,8 @@
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         />
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/bgetcobon"-->
-        <!--android:text="@string/GetnewCobon"-->
-        <!--android:paddingLeft="10dp"-->
-        <!--android:paddingRight="10dp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_below="@+id/addnewaddress"-->
-        <!--android:background="@drawable/btn_place_order_style"-->
-        <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
-        <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
-        <!--/>-->
-    <!--<ListView-->
-        <!--android:id="@+id/viewaddresslist"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:divider="#fff"-->
-        <!--android:dividerHeight="5dp"-->
-        <!--android:layout_marginBottom="@dimen/activity_vertical_margin"-->
-        <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
-        <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
-        <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
-        <!--android:layout_below="@+id/bgetcobon"-->
-       <!--android:clickable="true"-->
-        <!--/>-->
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
@@ -65,7 +41,7 @@
         android:divider="#fff"
         android:dividerHeight="5dp"
         android:scrollbars="vertical"
-        android:layout_below="@+id/bgetcobon"/>
+        android:layout_below="@+id/addnewaddress"/>
 
 </RelativeLayout>
 </ScrollView>

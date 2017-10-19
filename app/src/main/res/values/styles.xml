@@ -5,12 +5,12 @@
         <!-- Customize your theme here. NoActionBar -->
         <!--<item name="windowActionBar">false</item>-->
         <!--<item name="windowNoTitle">true</item>-->
-        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="android:windowFullscreen">true</item f15d10>-->
 
-        <item name="colorPrimary">#f15d10</item>
-        <item name="colorPrimaryDark">#f15d10</item>
-        <item name="colorAccent">#f15d10</item>
-        <!--to customize the size of text in app FF8342-->
+        <item name="colorPrimary">#FF9800</item>
+        <item name="colorPrimaryDark">#F57C00</item>
+        <item name="colorAccent">#E65100</item>
+        <!--to customize the size of text in app-->
         <item name="android:textSize">10sp</item>
         <item name="actionBarSize">60dp</item>
     </style>

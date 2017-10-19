@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/cobonbuttonid"
         android:layout_below="@+id/coboneditid"
+        android:layout_marginTop="30dp"
         android:hint="get the discount"
         android:background="@drawable/btn_place_order_style"
         />

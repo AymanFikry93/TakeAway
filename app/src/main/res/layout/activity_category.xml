@@ -29,26 +29,20 @@
             >
             <!--android:background="@drawable/arest_header_style"
             de.hdodenhof.circleimageview.CircleImageView
-             com.android.volley.toolbox.Network  -->
+             com.android.volley.toolbox.Network
+              app:civ_border_width="5dp"
+                app:civ_border_color="#FF000000"
+                -->
             <ImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                app:civ_border_width="5dp"
-                app:civ_border_color="#FF000000"
                 android:id="@+id/Resturantlogo"
                 android:src="@drawable/appetizers1"
                 android:layout_marginTop="5dp"
                 android:layout_weight="0.25"
                 />
 
-            <!--<ImageView-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="60dp"-->
-            <!--android:id="@+id/Resturantlogo"-->
-            <!--android:src="@mipmap/ic_launcher"-->
-            <!--android:layout_marginTop="5dp"-->
-            <!--android:layout_weight="0.25" />-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,7 +88,7 @@
                     android:hint="@string/minchargerest"
                     android:layout_marginTop="5dp"
                     android:textColor="#666666"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
                 <TextView
                     android:id="@+id/minchargeid"
                     android:layout_width="fill_parent"
@@ -103,7 +97,7 @@
                     android:layout_margin="3dp"
                     android:textColor="#666666"
                     android:textStyle="bold"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
                 <!-- restdelivery -->
                 <TextView
@@ -112,7 +106,7 @@
                     android:hint="@string/deliveryrest"
                     android:layout_marginTop="3dp"
                     android:textColor="#666666"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
                 <TextView
                     android:id="@+id/restdeliveryid"
                     android:layout_width="fill_parent"
@@ -121,13 +115,13 @@
                     android:layout_margin="3dp"
                     android:textColor="#666666"
                     android:textStyle="bold"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
             <TextView
                 android:id="@+id/Restopening"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="open and close "
+                android:text="open  close "
                 android:textColor="#FF8342"
                 android:layout_margin="10dp"
                 android:layout_gravity="right"
@@ -136,21 +130,7 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text=" 1 "-->
-        <!--android:textColor="#fff"-->
-        <!--android:textSize="20sp"-->
-        <!--android:id="@+id/backtovieworderbtn"-->
-        <!--android:icon="@drawable/cart_white"-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginLeft="20dp"-->
-        <!--android:background="@drawable/btn_place_order_style"-->
-        <!--android:drawableTop="@drawable/cart_white"-->
-        <!--/>-->
+
     <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_refresh"

@@ -251,12 +251,12 @@ public class MainFragment extends Fragment {
 
 
         });
-        Button gotositting= (Button) v.findViewById(R.id.sittingbutton);
+         Button gotositting= (Button) v.findViewById(R.id.sittingbutton);
         gotositting.setTypeface(typeface);
         gotositting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+               //final gotositting.setBackground();
                 Intent gotositting = new Intent(getContext(),SittingActivity.class);
                 startActivity(gotositting);
 

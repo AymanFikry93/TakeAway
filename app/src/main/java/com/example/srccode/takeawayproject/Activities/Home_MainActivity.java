@@ -108,19 +108,7 @@ public class Home_MainActivity extends AppCompatActivity
 //            tabLayout.getTabAt(1).setText(getString(R.string.LastOrder));
 //            tabLayout.getTabAt(2).setText(getString(R.string.Resturantnbyoffers));
 //        }
-//      Button button=(Button)findViewById(R.id.togglenavigationid);
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//                drawer.openDrawer(GravityCompat.START);
-//
-////                ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-////                        getParent(), drawer, null, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-////                drawer.setDrawerListener(toggle);
-////                toggle.syncState();
-//            }
-//        });
+
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         final CustomDrawerButton customDrawerButton = (CustomDrawerButton)findViewById(R.id.btnOpenDrawer);
