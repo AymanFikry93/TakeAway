@@ -31,11 +31,11 @@ public class BadgeDrawable extends Drawable {
         float mTextSize = context.getResources().getDimension(R.dimen.text_size_small);
 
         mBadgePaint = new Paint();
-        mBadgePaint.setColor(ContextCompat.getColor(context.getApplicationContext(), R.color.colorAccent));
+        mBadgePaint.setColor(ContextCompat.getColor(context.getApplicationContext(), R.color.category_family));
         mBadgePaint.setAntiAlias(true);
         mBadgePaint.setStyle(Paint.Style.FILL);
         mBadgePaint1 = new Paint();
-        mBadgePaint1.setColor(ContextCompat.getColor(context.getApplicationContext(), R.color.colorPrimary));
+        mBadgePaint1.setColor(ContextCompat.getColor(context.getApplicationContext(), R.color.White));
         mBadgePaint1.setAntiAlias(true);
         mBadgePaint1.setStyle(Paint.Style.FILL);
 

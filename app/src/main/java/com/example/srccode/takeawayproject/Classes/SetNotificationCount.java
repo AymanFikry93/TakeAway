@@ -25,7 +25,7 @@ public class SetNotificationCount {
             badge = new BadgeDrawable(context);
         }
 
-        badge.setCount(String.valueOf(count));
+        badge.setCount(String.valueOf(2));
         icon.mutate();
         icon.setDrawableByLayerId(R.id.ic_badge, badge);
     }
