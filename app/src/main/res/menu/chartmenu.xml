@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/action_cart"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityResturants" >
+
+
+    <item
         android:title="action_cart"
+
+        android:icon="@drawable/ic_menu_notifications"
         app:showAsAction="always"
-        android:icon="@drawable/cart_white"/>
+        android:id="@+id/action_cart"/>
+    <!--cart_white app_icon-->
 </menu>

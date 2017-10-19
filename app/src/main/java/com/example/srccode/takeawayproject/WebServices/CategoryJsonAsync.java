@@ -1,5 +1,6 @@
 package com.example.srccode.takeawayproject.WebServices;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 
 import com.android.volley.Request;
@@ -35,13 +36,23 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.url;
 
 public class CategoryJsonAsync {
     Context mcontext;
+    ProgressDialog pDialog;
+
     public CategoryJsonAsync(Context context){
         mcontext=context;
         makejsonobjreq();
 
     }
     private  void makejsonobjreq() {
+        try {
+            pDialog = new ProgressDialog(mcontext);
+            pDialog.setMessage("Loading...");
+            pDialog.show();
+        }catch (Exception e)
+        {
+            e.getMessage();
 
+        }
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override

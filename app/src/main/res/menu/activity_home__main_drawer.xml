@@ -9,7 +9,7 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Sitting" />
+            android:title="@string/action_settings" />
 
     </classCategory>
     <!--android:title="Share" />-->
@@ -18,6 +18,12 @@
         android:orderInCategory="100"
         android:icon="@drawable/home"
         android:title="@string/Resturantnbyoffers"
+        />
+    <item
+        android:id="@+id/action_cobon"
+        android:orderInCategory="100"
+        android:icon="@drawable/home"
+        android:title="@string/GetnewCobon"
         />
     <item android:title="@string/action_settings">
         <menu>

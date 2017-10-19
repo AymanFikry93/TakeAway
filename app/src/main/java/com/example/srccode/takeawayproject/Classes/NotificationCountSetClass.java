@@ -5,6 +5,8 @@ import android.content.Context;
 import android.graphics.drawable.LayerDrawable;
 import android.view.MenuItem;
 
+import com.example.srccode.takeawayproject.Activities.R;
+
 /**
  * Created by ayman on 2017-08-19.
  */
@@ -16,7 +18,8 @@ public class NotificationCountSetClass extends Activity {
     }
 
     public static void setAddToCart(Context context, MenuItem item, int numMessages) {
-        icon = (LayerDrawable) item.getIcon();
+//        icon = (LayerDrawable) item.getIcon();
+//        icon= R.drawable.cart_white;
         SetNotificationCount.setBadgeCount(context, icon, NotificationCountSetClass.setNotifyCount(numMessages));
 
     }

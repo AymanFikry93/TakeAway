@@ -34,9 +34,11 @@
         android:label="TakeAway"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--//.NoActionBar-->
         <meta-data
             android:name="AA_MODELS"
-            android:value="com.example.srccode.takeawayproject.Classes.ClassArea,             ,            com.example.srccode.takeawayproject.Classes.ClassCity,             ,            com.example.srccode.takeawayproject.Classes.ClassClientInformation,             ,            com.example.srccode.takeawayproject.Classes.ClassCookingDB,             ,            com.example.srccode.takeawayproject.Classes.ClassCountries,             ,            com.example.srccode.takeawayproject.Classes.ClassLastOrderDb,             ,            com.example.srccode.takeawayproject.Classes.ClassViewOrderDb             " />
+            android:value="com.example.srccode.takeawayproject.Classes.ClassArea,             ,
+                   com.example.srccode.takeawayproject.Classes.ClassCity,             ,            com.example.srccode.takeawayproject.Classes.ClassClientInformation,             ,            com.example.srccode.takeawayproject.Classes.ClassCookingDB,             ,            com.example.srccode.takeawayproject.Classes.ClassCountries,             ,            com.example.srccode.takeawayproject.Classes.ClassLastOrderDb,             ,            com.example.srccode.takeawayproject.Classes.ClassViewOrderDb             " />
         <!-- android:name="AA_DB_NAME"  OrderDataBase16 -->
 
         <meta-data
@@ -78,7 +80,7 @@
             android:label="@string/ViewOrderdetails">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.srccode.takeawayproject.Activities.PagerActivity" />
+                android:value="com.example.srccode.takeawayproject.Activities.ActivityCategory" />
         </activity>
         <activity
             android:name=".ActivityLastOrder"
@@ -193,7 +195,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityViewOrder" />
         </activity>
-        <activity android:name=".ActivityCobon" />
+        <activity android:name=".ActivityCobon"
+            android:label="@string/GetnewCobon">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home_MainActivity" />
+        </activity>
         <activity
             android:name=".SittingActivity"
             android:label="Sittings">

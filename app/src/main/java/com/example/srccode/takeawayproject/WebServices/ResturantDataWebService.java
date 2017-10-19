@@ -35,23 +35,23 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
     Context mcontext;
     String urlll;
     ProgressDialog pDialog;
-    public ResturantDataWebService(Context context,String urll){
+    public ResturantDataWebService(Context context){
         mcontext=context;
-        urlll=urll;
+//        urlll=urll;
 
     }
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        try {
-            pDialog = new ProgressDialog(mcontext);
-            pDialog.setMessage("Loading...");
-            pDialog.show();
-        }catch (Exception e)
-        {
-            e.getMessage();
-
-        }
+//        try {
+//            pDialog = new ProgressDialog(mcontext);
+//            pDialog.setMessage("Loading...");
+//            pDialog.show();
+//        }catch (Exception e)
+//        {
+//            e.getMessage();
+//
+//        }
 
 //            dialog = new ProgressDialog(mcontext);
 //            dialog.setMessage("Please wait , Loading..");
@@ -64,7 +64,7 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
 
 
        // makejsonobjreq();
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, urlll, null, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, params[0], null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
 
@@ -122,7 +122,7 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                     Iterator<String> key = response.keys();
                     while (key.hasNext()) {
                         String k = key.next();
-                        JSONArray ja = null;
+                        JSONArray ja =  null;
                         ja = response.getJSONArray(k);
                         for (int i = 0; i < ja.length(); i++) {
                                     JSONObject object = ja.getJSONObject(i);

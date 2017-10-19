@@ -4,8 +4,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
+import android.os.Build;
+import android.os.Handler;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
@@ -16,13 +21,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +40,7 @@ import com.activeandroid.query.Select;
 import com.example.srccode.takeawayproject.Adapters.AdapterClassResturant;
 import com.example.srccode.takeawayproject.Classes.ClassResturants;
 import com.example.srccode.takeawayproject.Classes.ClassViewOrderDb;
+import com.example.srccode.takeawayproject.Classes.SetNotificationCount;
 import com.example.srccode.takeawayproject.UI.RecyclerItemClickListener;
 import com.example.srccode.takeawayproject.WebServices.ResturantDataWebService;
 import com.example.srccode.takeawayproject.WebServices.ResturantWebService;
@@ -58,6 +64,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.classRestur
 import static com.example.srccode.takeawayproject.Global.GlopalClass.currentusedresturantId;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.findresturantmapflag;
 
+import static com.example.srccode.takeawayproject.Global.GlopalClass.languagetype;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.mincharge;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.offerID;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.originalList;
@@ -85,12 +92,25 @@ public class ActivityResturants extends AppCompatActivity {
 
 
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.activity_test_json);
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                finish();
-                startActivity(getIntent());
-                Toast.makeText(ActivityResturants.this,"Resturants are Refreshed.", Toast.LENGTH_SHORT).show();
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                        startActivity(getIntent());
+                        Toast.makeText(ActivityResturants.this,"Resturants are Refreshed.", Toast.LENGTH_SHORT).show();
+                        swipeContainer.setRefreshing(false);
+                    }
+                });
+
+
             }
         });
          restnumber=(TextView)findViewById(R.id.resttextid);
@@ -111,8 +131,8 @@ public class ActivityResturants extends AppCompatActivity {
 //             Runnable RestWebServiceThread= new Runnable() {
 //                 @Override
 //                 public void run() {
-                     new ResturantDataWebService(getApplicationContext(),"http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID)
-                             .execute();
+                     new ResturantDataWebService(getApplicationContext())
+                             .execute("http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
 //                 }
 //             };
 //
@@ -216,10 +236,10 @@ public class ActivityResturants extends AppCompatActivity {
                 })
 
         );
-
     }
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
+
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.resturant_sort_menu, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
@@ -238,7 +258,7 @@ public class ActivityResturants extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 // workaround to avoid issues with some emulators and keyboard devices firing twice if a keyboard enter is used
                 adapterClassResturant.filterData(query);
-               // return false;
+                // return false;
                 searchView.clearFocus();
 
                 return true;
@@ -252,7 +272,6 @@ public class ActivityResturants extends AppCompatActivity {
 
         });
         return super.onCreateOptionsMenu(menu);
-
     }
 
     @Override

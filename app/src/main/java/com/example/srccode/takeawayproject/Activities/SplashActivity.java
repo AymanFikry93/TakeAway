@@ -4,12 +4,14 @@ import android.*;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
+import android.provider.Settings;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.query.Select;
@@ -39,30 +42,58 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 public class SplashActivity extends AppCompatActivity {
 
-//    ProgressBar bar;
+    ProgressBar bar;
     boolean isnetwork;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
-//        bar = (ProgressBar) findViewById(R.id.progressBar);
+        bar = (ProgressBar) findViewById(R.id.progressBar);
 //        textView = (TextView) findViewById(R.id.textView);
-//        bar.setProgress(0);
-//        bar.setMax(100);
+        bar.setProgress(0);
+        bar.setMax(100);
         ActiveAndroid.initialize(this);
         AssetManager am = getApplicationContext().getAssets();
         typeface = Typeface.createFromAsset(am,
                 String.format(Locale.US, "Fonts/%s", "GESSTwoLight.otf"));
 
-//        if(ActivityCompat.checkSelfPermission(SplashActivity.this,Manifest.permission.ACCESS_NETWORK_STATE
-//        )!= PackageManager.PERMISSION_GRANTED){
+//        int a=ActivityCompat.checkSelfPermission(SplashActivity.this,Manifest.permission.ACCESS_NETWORK_STATE);
+//        if(ActivityCompat.checkSelfPermission(SplashActivity.this,Manifest.permission.ACCESS_NETWORK_STATE)
+//                != PackageManager.PERMISSION_GRANTED)
+//        {
+//            AlertDialog.Builder alertDialog = new AlertDialog.Builder(getApplicationContext());
+//            // Setting Dialog Title
+//            alertDialog.setTitle("Network  settings");
 //
+//            // Setting Dialog Message
+//            alertDialog.setMessage("Network is not enabled. Do you want to go to Network menu?");
+//
+//            // On pressing Settings button
+//            alertDialog.setPositiveButton("Network", new DialogInterface.OnClickListener() {
+//                public void onClick(DialogInterface dialog,int which) {
+//                    Intent intent = new Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS);
+//                    startActivity(intent);
+//                }
+//            });
+//
+//            // on pressing cancel button
+//            alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//                public void onClick(DialogInterface dialog, int which) {
+//                    dialog.cancel();
+//                }
+//            });
+//
+//            // Showing Alert Message
+//            alertDialog.show();
 //        }
 //        else{
 //            ActivityCompat.requestPermissions(SplashActivity.this,new String[]{
 //                    Manifest.permission.ACCESS_NETWORK_STATE
 //            },1);
+//
+//            new ProgressTask().execute();
+//            loadData();
 //        }
 
 
@@ -72,7 +103,8 @@ public class SplashActivity extends AppCompatActivity {
 
 
             if(isnetwork){
-                StartAnimations();
+               // StartAnimations();
+                new ProgressTask().execute();
                 loadData();
             }
                    else {
@@ -80,8 +112,8 @@ public class SplashActivity extends AppCompatActivity {
                 builder.setTitle("Need Network");
                 builder.setMessage("This app needs to access network.");
                 builder.show();
-                StartAnimations();
-
+               // StartAnimations();
+                new ProgressTask().execute();
             }
         }
         catch (Exception e){
@@ -137,12 +169,11 @@ public class SplashActivity extends AppCompatActivity {
 //        ImageView iv1 = (ImageView) findViewById(R.id.imageView);
 //        iv1.clearAnimation();
 //        iv1.startAnimation(anim);
-
-         anim = AnimationUtils.loadAnimation(this, R.anim.translate);
-        anim.reset();
-        ImageView iv = (ImageView) findViewById(R.id.imageView2);
-        iv.clearAnimation();
-        iv.startAnimation(anim);
+//         anim = AnimationUtils.lo adAnimation(this, R.anim.translate);
+//        anim.reset();
+//        ImageView iv = (ImageView) findViewById(R.id.imageView2);
+//        iv.clearAnimation();
+//        iv.startAnimation(anim);
 
         Thread splashTread = new Thread() {
             @Override
@@ -178,54 +209,56 @@ public class SplashActivity extends AppCompatActivity {
 
             }
         };
-        splashTread.start();
+       splashTread.start();
 
     }
 
-//    class ProgressTask extends AsyncTask<String, Integer, String> {
-//
-//        @Override
-//        protected void onPreExecute() {
-//            super.onPreExecute();
-//            // code will executed before task start (main thread)
-//        }
-//
-//        @Override
-//        protected String doInBackground(String... params) {
-//            // task will done in background
-//
-//            for (int i = 0; i < 100; i++) {
-//                try {
-//                    // sleep 100 millisecond every loop so progress will not finished fast with out see it
-//                    Thread.sleep(100);
-//                    publishProgress(i);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//            return null;
-//
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String s) {
-//            super.onPostExecute(s);
-//            // code executed after task finish hide progress and change text
-//            bar.animate().alpha(0).setDuration(2000).start();
+    class ProgressTask extends AsyncTask<String, Integer, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // code will executed before task start (main thread)
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            // task will done in background
+
+            for (int i = 0; i < 100; i++) {
+                try {
+                    // sleep 100 millisecond every loop so progress will not finished fast with out see it
+                    Thread.sleep(100);
+                    publishProgress(i);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            // code executed after task finish hide progress and change text
+            bar.animate().alpha(0).setDuration(2000).start();
 //            textView.setText("Don't wait any thing Do it Now");
-//        }
-//
-//        @Override
-//        protected void onProgressUpdate(Integer... values) {
-//            super.onProgressUpdate(values);
-//            // progress come as array maybe there is mote than one value or progress update so i put [0]
-//            bar.setProgress(values[0]);
-//
-//
-//        }
-//
-//
-//    }
+            Intent intent = new Intent(getApplicationContext(), Home_MainActivity.class);//Home_MainActivity ActivityClientView
+            startActivity(intent);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            // progress come as array maybe there is mote than one value or progress update so i put [0]
+            bar.setProgress(values[0]);
+
+
+        }
+
+
+    }
 
 }

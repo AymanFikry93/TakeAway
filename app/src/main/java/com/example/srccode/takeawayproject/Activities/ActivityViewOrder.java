@@ -45,35 +45,17 @@ public class ActivityViewOrder extends AppCompatActivity {
 
 
         ActiveAndroid.initialize(this);
-//        mToolbar = (Toolbar) findViewById(R.id.htab_toolbar);
-//        if (mToolbar != null) {
-//           this.setSupportActionBar(mToolbar);
-//        }
-//
-//        if (mToolbar != null) {
-//            this.getSupportActionBar()
-//                    .setDisplayHomeAsUpEnabled(true);
-//
-//            mToolbar.setNavigationIcon(R.drawable.back_arrow);
-//
-//        }
-//
-//        mToolbar.setTitleTextColor(Color.WHITE);
-//
-//        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            getBaseContext().getmDrawerLayout().openDrawer(GravityCompat.START);
-//            }
-//        });
 
         tableViewOrderDB = new Select().from(ClassViewOrderDb.class).execute();
+        Button submitbtn=(Button) findViewById(R.id.submitorderbtn);
 
+        if(tableViewOrderDB.size()==0){//&&!Restopening.equals("Opening")
+            submitbtn.setVisibility(View.GONE);
+        }else {
+            submitbtn.setVisibility(View.VISIBLE);
+        }
         createviewlist();
 
-
-
-        Button submitbtn=(Button) findViewById(R.id.submitorderbtn);
         AssetManager am = getApplicationContext().getAssets();
         Typeface typeface = Typeface.createFromAsset(am,
                 String.format(Locale.US, "Fonts/%s", "GESSTwoLight.otf"));
@@ -83,21 +65,15 @@ public class ActivityViewOrder extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ClientInformation = new Intent(getApplicationContext(), ActivityClientView.class);
                 startActivity(ClientInformation);
-
             }
         });
-
     }
 
     public  void createviewlist(){
-
-
-
         classViewOrderDBs = new ArrayList<ClassViewOrderDb>();
         for (int i = 0; i<tableViewOrderDB.size(); i++) {
             classViewOrderDBs.add(tableViewOrderDB.get(i));
         }
-
       //  Vieworderlist= (ListView) findViewById(R.id.vieworderlist);
        // adapterViewOrder = new AdapterViewOrder(getApplicationContext(),R.layout.vieworder_row, classViewOrderDBs);
 //        Vieworderlist.setAdapter(adapterViewOrder);

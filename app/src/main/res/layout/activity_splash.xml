@@ -26,11 +26,20 @@
         <!--android:text="www.takeaway.com"-->
         <!--android:id="@+id/textView5" />-->
 
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/takeawaylogo"
-        android:id="@+id/imageView2"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+    <!--<ImageView-->
+        <!--android:layout_width="120dp"-->
+        <!--android:layout_height="120dp"-->
+        <!--android:src="@drawable/takeawaylogo"-->
+        <!--android:id="@+id/imageView2"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        />
 </RelativeLayout>

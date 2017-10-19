@@ -188,7 +188,7 @@ public class ActivityItemDetailsTest extends AppCompatActivity {
                 ,additionsname,itemofferid,selectedcookcatid,currentusedresturantId);
         tableViewOrderDB.save();
         quantity=1;
-        Intent gotovieworder=new Intent(getApplicationContext(), PagerActivity.class);
+        Intent gotovieworder=new Intent(getApplicationContext(), ActivityCategory.class);
         startActivity(gotovieworder);
 
 

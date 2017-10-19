@@ -6,13 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.srccode.takeawayproject.Activities.ActivityResturants"
-
     >
-
-    <ImageView
+       <ImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="@drawable/homeimage"
+        android:layout_height="150dp"
+        android:src="@drawable/resturantimage1"
         android:id="@+id/restimage"
         android:background="#FF8342"
         android:padding="10dp"

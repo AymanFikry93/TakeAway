@@ -55,9 +55,6 @@ public class Home_MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__main);
 
-
-
-
         SharedPreferences sharedPreferences_show=getSharedPreferences("languagedata", Context.MODE_PRIVATE);// to get the contetnt of the data base
          languagetype =sharedPreferences_show.getString("languagetype","en");
 
@@ -70,13 +67,14 @@ public class Home_MainActivity extends AppCompatActivity
         SharedPreferences sharedPreferences_notify_show=getSharedPreferences("notifydata", Context.MODE_PRIVATE);// to get the contetnt of the data base
        boolean notify =sharedPreferences_notify_show.getBoolean("notifytype",false);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setHomeButtonEnabled(false);
         TextView tv = new TextView(getApplicationContext());
         tv.setTextSize(10);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
         if (mToolbar != null) {
             this.getSupportActionBar()
                     .setDisplayHomeAsUpEnabled(true);
@@ -86,7 +84,7 @@ public class Home_MainActivity extends AppCompatActivity
         }
 
         mToolbar.setTitleTextColor(Color.WHITE);
-        mToolbar.setTitle(R.string.action_home);
+        mToolbar.setTitle("");//R.string.action_home
 //
         MainFragment fragment=new MainFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
@@ -114,7 +112,7 @@ public class Home_MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -157,7 +155,12 @@ public class Home_MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container,fragmentPageOffer);
             fragmentTransaction.commit();
 
-        } else if (id == R.id.action_home) {
+        }
+        else if (id == R.id.action_cobon) {
+            Intent gotoCobon=new Intent(getApplicationContext(),ActivityCobon.class);
+            startActivity(gotoCobon);
+        }
+        else if (id == R.id.action_home) {
             if(cTimer!=null)
                 cTimer.cancel();
             finish();

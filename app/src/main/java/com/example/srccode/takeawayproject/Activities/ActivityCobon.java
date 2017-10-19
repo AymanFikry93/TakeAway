@@ -20,7 +20,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import static com.example.srccode.takeawayproject.Global.GlopalClass.CobonValue;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.accesstoken;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.cobonvauetype;
 
 public class ActivityCobon extends AppCompatActivity {
 
@@ -28,8 +31,9 @@ public class ActivityCobon extends AppCompatActivity {
     String cobonnum;
     Button cobonButton;
     String cobondata;
-   boolean isResponse ;
     String registerresponse;
+    boolean isResponse=false;
+    String returnresponse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,19 +43,17 @@ public class ActivityCobon extends AppCompatActivity {
         cobonnum = editcobon.getText().toString();
         cobonButton=(Button)findViewById(R.id.cobonbuttonid);
 
-        if( cobonnum.length() == 0 )
-            editcobon.setError( "Contact Email is required!" );
-           else {
-        cobonButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cobondata=  editcobon.getText().toString();
+        if( cobondata.length() == 0 )
+            editcobon.setError( "cobon number is required!" );
+        else if(accesstoken!=null){
+            new SendCobonDetails().execute("http://"+ HostName+"/api/Cobon?serial="+cobondata, ""); //http://192.168.1.65:7742/api   takeawayapi.afshat.com/api
 
-                new SendCobonDetails().execute("http://"+ HostName+"/Api/Cobon/4564",""); //http://192.168.1.65:7742/api   takeawayapi.afshat.com/api
-
-
-            }
-        });
+        }else {
+            Intent gotologin =new Intent(getApplicationContext(),ActivityLogin.class);
+            startActivity(gotologin);
         }
+
     }
     private class SendCobonDetails extends AsyncTask<String, Void, String> {
 
@@ -62,28 +64,16 @@ public class ActivityCobon extends AppCompatActivity {
 
 
             HttpURLConnection httpURLConnection = null;
+            int responseCode;
+
             try {
 
-                String urlParameters  =cobondata;
-                int    postDataLength = urlParameters.length();
-                String request        = "http://"+ HostName+"/Api/Cobon/4564";
-                URL url            = new URL( request );
+
+                URL url = new URL(params[0]);
                 httpURLConnection= (HttpURLConnection) url.openConnection();
-                httpURLConnection.setDoInput (true);
-                httpURLConnection.setDoOutput (true);
-                httpURLConnection.setUseCaches (false);
-                httpURLConnection.setInstanceFollowRedirects( false );
-                httpURLConnection.setRequestMethod( "PUT" );
-                httpURLConnection.setRequestProperty( "Content-Type", "text/json");
-                //  httpURLConnection.setRequestProperty( "charset", "utf-8");
-                httpURLConnection.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
-                httpURLConnection.setRequestProperty("Host",HostName);
+                httpURLConnection.setRequestMethod("GET");
+                httpURLConnection.setRequestProperty("Authorization","Bearer "+ accesstoken);
                 httpURLConnection.connect();
-                int responseCode;
-                DataOutputStream printout = new DataOutputStream(httpURLConnection.getOutputStream ());
-                printout.writeBytes(urlParameters);
-                printout.flush ();
-                printout.close ();
 
                 InputStream in;
                 responseCode = httpURLConnection.getResponseCode();
@@ -100,8 +90,7 @@ public class ActivityCobon extends AppCompatActivity {
                     }
                     String finalJson = buffer.toString();
                     JSONObject jsono = new JSONObject(finalJson);
-                     registerresponse=   jsono.getString("Message");
-
+                    returnresponse=   jsono.getString("Message");
                 }
 
                 if (responseCode == 200||responseCode ==201) {
@@ -116,6 +105,10 @@ public class ActivityCobon extends AppCompatActivity {
                         buffer.append(line);
                     }
                     String finalJson = buffer.toString();
+                    JSONObject jsono = new JSONObject(finalJson);
+                    CobonValue= Double.parseDouble(jsono.getString("Value"));
+                    cobonvauetype= Integer.parseInt(jsono.getString("Type"));
+                    returnresponse=   jsono.getString("Value");
 
                 }
 
@@ -132,13 +125,13 @@ public class ActivityCobon extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            if(isResponse){
-                Intent gotoActivityLogin = new Intent(ActivityCobon.this,Home_MainActivity.class);
-                startActivity(gotoActivityLogin);
-            }
-            else {
-
-                Toast.makeText(getApplicationContext(),registerresponse,Toast.LENGTH_LONG).show();
+           // custom.dismiss();
+            if(!isResponse) {
+            Toast.makeText(getApplicationContext(),returnresponse, Toast.LENGTH_LONG).show();
+            }else
+            {
+                Intent gotohome =new Intent(getApplicationContext(),Home_MainActivity.class);
+                startActivity(gotohome);
 
             }
 

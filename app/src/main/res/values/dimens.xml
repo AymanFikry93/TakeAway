@@ -8,6 +8,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="list_item_height">99dp</dimen>
     <dimen name="tool_bar_height">56dp</dimen>
-    <dimen name="text_size_small">10dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
 
 </resources>

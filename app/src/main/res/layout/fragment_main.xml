@@ -1,21 +1,11 @@
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_gravity="center_horizontal"-->
-     <!--android:gravity="center_horizontal"-->
-    <!--tools:context="com.example.srccode.takeawayproject.Activities.MainFragment"-->
-
-    <!--&gt;-->
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/homerelative"
-      android:background="@drawable/homeimage"
+    android:background="@drawable/homeimage"
     tools:context="com.example.srccode.takeawayproject.Activities.MainFragment"
-
     >
 
     <!-- TODO: Update blank fragment layout -->
@@ -65,7 +55,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_below="@+id/findbymap"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/homelinearlayoutid"
         android:layout_centerHorizontal="true"
         />
         <!--android:gravity="center_horizontal"-->
@@ -94,8 +85,7 @@
         android:gravity="center"
         android:background="@drawable/spinnershape"
         android:elevation="20dp"
-        android:layout_marginTop="250dp"
-        android:layout_below="@+id/hometitleId"
+        android:layout_above="@+id/spinner_Street"
         />
 
     <Spinner
@@ -116,11 +106,11 @@
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:gravity="center"
-        android:layout_below="@+id/spinner_city"
+        android:layout_above="@+id/findbymap"
         android:layout_marginTop="10dp"
         android:background="@drawable/spinnershape"
         android:elevation="20dp"
-        android:visibility="gone"
+        android:visibility="invisible"
           />
     <!--android:layout_toEndOf="@+id/StreetTextView"-->
 
@@ -137,35 +127,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/findresturantbymap"
-        android:layout_below="@+id/spinner_Street"
+        android:layout_above="@+id/Resturantsbutton"
         android:layout_marginTop="10dp"
         android:textColor="#4527d2"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         />
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/sittingbutton"
 
-    android:text="@string/action_settings"
-    android:textColor="#000"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/homelinearlayoutid"
     android:layout_alignParentBottom="true"
-    android:layout_margin="20dp"
-    android:background="@drawable/sitting"
-
-    />
-    <Button
+    android:orientation="horizontal"
+    android:background="@drawable/shape"
+  >
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lastorderbutton"
-        android:text="@string/LastOrder"
-        android:textColor="#000"
-        android:layout_alignParentBottom="true"
-       android:layout_alignParentLeft="true"
-        android:layout_margin="20dp"
-        android:background="@drawable/orders"
-        />
+        android:layout_margin="10dp"
+        >
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sittingbutton"
+            android:text="@string/action_settings"
+            android:textColor="#000"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/sitting"
+            />
+
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/action_settings"-->
+        <!--android:layout_above="@+id/sittingbutton"-->
+        <!--/>-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lastorderbutton"
+            android:text="@string/LastOrder"
+            android:textColor="#000"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/orders"
+            />
+
+    </RelativeLayout>
+</LinearLayout>
 </RelativeLayout>
 <!--</ScrollView>-->
