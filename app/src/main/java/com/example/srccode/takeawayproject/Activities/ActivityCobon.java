@@ -43,16 +43,22 @@ public class ActivityCobon extends AppCompatActivity {
         cobonnum = editcobon.getText().toString();
         cobonButton=(Button)findViewById(R.id.cobonbuttonid);
 
-        cobondata=  editcobon.getText().toString();
-        if( cobondata.length() == 0 )
-            editcobon.setError( "cobon number is required!" );
-        else if(accesstoken!=null){
-            new SendCobonDetails().execute("http://"+ HostName+"/api/Cobon?serial="+cobondata, ""); //http://192.168.1.65:7742/api   takeawayapi.afshat.com/api
+        cobonButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cobondata=  editcobon.getText().toString();
+                if( cobondata.length() == 0 )
+                    editcobon.setError( "cobon number is required!" );
+                else if(accesstoken!=null){
+                    new SendCobonDetails().execute("http://"+ HostName+"/api/Cobon?serial="+cobondata, ""); //http://192.168.1.65:7742/api   takeawayapi.afshat.com/api
 
-        }else {
-            Intent gotologin =new Intent(getApplicationContext(),ActivityLogin.class);
-            startActivity(gotologin);
-        }
+                }else {
+                    Intent gotologin =new Intent(getApplicationContext(),ActivityLogin.class);
+                    startActivity(gotologin);
+                }
+            }
+        });
+
 
     }
     private class SendCobonDetails extends AsyncTask<String, Void, String> {

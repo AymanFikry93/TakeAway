@@ -49,6 +49,17 @@
     <string name="DeliveryWay">DeliveryWayNameEn</string>
     <string name="FeeType">FeeTypeEn</string>
     <string name="PayWayName">PayWayNameEn</string>
+
+
+    <!-- filtration-->
+    <string name="filterby">filter by</string>
+    <string name="NameAsc">NameAsc</string>
+    <string name="NameDesc">NameDesc</string>
+    <string name="RateAsc">RateAsc</string>
+    <string name="RateDesc">RateDesc</string>
+
+
+
     <!-- translate name for category activity [CHAR LIMIT=20] -->
     <string name="Menulist">Menu List</string>
     <string name="Menu">Menu </string>

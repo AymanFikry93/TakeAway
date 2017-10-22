@@ -51,6 +51,12 @@
     <string name="FeeType">FeeTypeAr</string>
     <string name="PayWayName">PayWayNameAr</string>
 
+    <!-- filtration-->
+    <string name="filterby"> التنقية ب...</string>
+    <string name="NameAsc">الاسم تصاعديا</string>
+    <string name="NameDesc">الاسم تنازليا</string>
+    <string name="RateAsc">التقييم تصاعديا</string>
+    <string name="RateDesc">التقييم تنازليا</string>
 
     <!-- translate name for category activity [CHAR LIMIT=20] -->
     <string name="Menulist">قائمة الطعام</string>

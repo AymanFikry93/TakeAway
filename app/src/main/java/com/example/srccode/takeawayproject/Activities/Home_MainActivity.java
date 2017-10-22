@@ -161,12 +161,13 @@ public class Home_MainActivity extends AppCompatActivity
 
         if (id == R.id.action_resturantoffer) {
             // Handle the camera action
-            FragmentHomeResturant fragmentPageOffer=new FragmentHomeResturant();
-
-            android.support.v4.app.FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,fragmentPageOffer);
-            fragmentTransaction.commit();
-
+//            FragmentHomeResturant fragmentPageOffer=new FragmentHomeResturant();
+//
+//            android.support.v4.app.FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
+//            fragmentTransaction.replace(R.id.fragment_container,fragmentPageOffer);
+//            fragmentTransaction.commit();
+            Intent gotositting=new Intent(getApplicationContext(),ActivityRestOffer.class);
+            startActivity(gotositting);
         }
         else if (id == R.id.action_cobon) {
             Intent gotoCobon=new Intent(getApplicationContext(),ActivityCobon.class);

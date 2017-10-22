@@ -5,47 +5,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.srccode.takeawayproject.Activities.ActivityRestOffer">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchlayout"
-        android:background="#FF8342"
-        >
-        <SearchView
-            android:id="@+id/search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:iconifiedByDefault="false"
-            android:queryHint="@string/Restaurantsearch"
-            android:background="#fff"
-
-            />
-        <!--android:fontPath="fonts/GESSTwoLight.otf"-->
-
-    </LinearLayout>
-
-    <!--<ListView-->
-        <!--android:id="@+id/list"-->
+    <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
-        <!--tools:listitem="@layout/rest_offer_row"-->
-        <!--android:layout_below="@+id/searchlayout"-->
-        <!--android:layout_marginTop="20dp"-->
+        <!--android:id="@+id/searchlayout"-->
+        <!--android:background="#FF8342"-->
         <!--&gt;-->
-    <!--</ListView>-->
+        <!--<SearchView-->
+            <!--android:id="@+id/search"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:iconifiedByDefault="false"-->
+            <!--android:queryHint="@string/Restaurantsearch"-->
+            <!--android:background="#fff"-->
+
+            <!--/>-->
+        <!--&lt;!&ndash;android:fontPath="fonts/GESSTwoLight.otf"&ndash;&gt;-->
+
+    <!--</LinearLayout>-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/resturantimage1"
+        android:id="@+id/restimage"
+        android:background="#FB8C00"
+        android:padding="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#fff"
+        android:layout_below="@+id/restimage"
+        android:id="@+id/resttextid"
+        android:background="#FFA726"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:padding="10dp"/>
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_test_json"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.srccode.takeawayproject.Activities.ActivityResturants"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/resttextid">
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/searchlayout"
         android:scrollbars="vertical"
         />
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

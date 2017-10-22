@@ -17,6 +17,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import static com.example.srccode.takeawayproject.Activities.ActivityRestOffer.restoffernumber;
+import static com.example.srccode.takeawayproject.Activities.ActivityResturants.restnumber;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.FeeTypeid;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassRestOffer;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassResturant;
@@ -108,7 +110,9 @@ public class ResturantOfferWebService extends AsyncTask<String, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean result) {
+
             adapterClassRestOffer.notifyDataSetChanged();
+        restoffernumber.setText(classResturantsList.size()+mcontext.getResources().getString(R.string.Resturantsarefound));
 
 
         if (result == false) {

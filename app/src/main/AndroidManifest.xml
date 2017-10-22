@@ -162,7 +162,7 @@
         </activity>
         <activity
             android:name=".ActivityRestOffer"
-            android:label="@string/category_resturants"
+            android:label="@string/Resturantnbyoffers"
             android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

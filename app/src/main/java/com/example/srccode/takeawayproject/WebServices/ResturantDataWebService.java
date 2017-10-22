@@ -50,7 +50,9 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
 //                try {
 //                    pDialog = new ProgressDialog(mcontext);
 //                    pDialog.setMessage("Loading...");
-//                    pDialog.show();
+//            dialog.setTitle("Connecting Server");
+//            dialog.show();
+//            dialog.setCancelable(false);
 //                }catch (Exception e)
 //                {
 //                    e.getMessage();
@@ -61,12 +63,6 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
 //        Thread thread=new Thread(runnable);
 //        thread.start();
 
-
-//            dialog = new ProgressDialog(mcontext);
-//            dialog.setMessage("Please wait , Loading..");
-//            dialog.setTitle("Connecting Server");
-//            dialog.show();
-//            dialog.setCancelable(false);
     }
     @Override
     protected Boolean doInBackground(String... params) {

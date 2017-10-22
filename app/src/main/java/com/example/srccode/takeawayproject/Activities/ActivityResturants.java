@@ -123,23 +123,13 @@ public class ActivityResturants extends AppCompatActivity {
          if(findresturantmapflag==1){
              findresturantmapflag=0;
              resturantofferFlag=0;
-
-     new ResturantWebService(getApplicationContext()).execute("http://"+HostName+"/api/Restaurants?RegionID="+ClientInformationregionId);
+              new ResturantWebService(getApplicationContext()).
+             execute("http://"+HostName+"/api/Restaurants?RegionID="+ClientInformationregionId);
          }else {
              resturantofferFlag=0;
              findresturantmapflag=0;
-            // new ResturantDataWebService(getApplicationContext(),"http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
-//             Runnable RestWebServiceThread= new Runnable() {
-//                 @Override
-//                 public void run() {
-                     new ResturantDataWebService(getApplicationContext())
-                             .execute("http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
-//                 }
-//             };
-//
-//             Thread thread=new Thread(RestWebServiceThread);
-//             thread.start();
-
+              new ResturantDataWebService(getApplicationContext())
+               .execute("http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
          }
         tableviewOrderDb =new Select().from(ClassViewOrderDb.class).execute();
 

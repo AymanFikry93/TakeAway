@@ -4,7 +4,7 @@ package com.example.srccode.takeawayproject.Classes;
  * Created by ayman on 2017-08-02.
  */
 
-public class ClassRestOffer {
+public class ClassRestOffer{
 
     private String Id ;
     private String name ;
