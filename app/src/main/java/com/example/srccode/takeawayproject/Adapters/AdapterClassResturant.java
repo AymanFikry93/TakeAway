@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -53,7 +54,7 @@ Context mcontext;
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-
+        public LinearLayout rowlayout;
         public ImageView restimageView;
         public TextView restName;
         public TextView mincharge;
@@ -64,7 +65,7 @@ Context mcontext;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
+         this.rowlayout=(LinearLayout)itemView.findViewById(R.id.resturantrowid) ;
             this.restimageView = (ImageView)itemView.findViewById(R.id.resturantlogo);
             this.restofferimageView = (TextView)itemView.findViewById(R.id.resturantofferlogo);
             this.restName = (TextView)itemView.findViewById(R.id.restName);
@@ -89,6 +90,11 @@ Context mcontext;
         // if offline will appear the view of layout with ic image
         //  holder.restimageView.setImageResource(R.mipmap.ic_launcher);
     //    holder.restimageView.setImageUrl(classResturantsList.get(position).getImage(), imageLoader);
+        int viewtype=getItemViewType(position);
+        if(viewtype==111){
+           holder.rowlayout.setBackgroundColor(Color.parseColor("#FFCC80"));
+        }
+
         if (imageLoader == null)
             imageLoader = MyApplication.getInstance().getImageLoader();
         if(classResturantsList.get(position).getofferID()==0) {
@@ -116,10 +122,15 @@ Context mcontext;
     }
 
 
+    @Override
+    public int getItemViewType(int position) {
+        if(position%2!=0)
+        {
+      return 111;
+        }
 
-
-
-
+        return super.getItemViewType(position);
+    }
 
     public void filterData(String query){
 

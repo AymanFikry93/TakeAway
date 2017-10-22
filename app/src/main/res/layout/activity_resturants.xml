@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:src="@drawable/resturantimage1"
         android:id="@+id/restimage"
-        android:background="#FF8342"
+        android:background="#FB8C00"
         android:padding="10dp"
         />
     <TextView
@@ -22,7 +22,7 @@
         android:textColor="#fff"
         android:layout_below="@+id/restimage"
         android:id="@+id/resttextid"
-        android:background="#39687c"
+        android:background="#FFA726"
         android:gravity="center"
         android:textSize="15sp"
         android:padding="10dp"/>

@@ -157,49 +157,11 @@ public class ActivityCategory extends AppCompatActivity {
             }
         });
 
-//        Button cartimageButton=(Button)findViewById(R.id.backtovieworderbtn);
-//
-//        ActiveAndroid.initialize(this);
-        //List<ClassViewOrderDb> tableviewOrderDb;
-      //  tableviewOrderDb =new Select().from(ClassViewOrderDb.class).execute();
-
-//        if(tableviewOrderDb.size()==0){//&&!Restopening.equals("Opening")
-//            cartimageButton.setVisibility(View.GONE);
-//        }else {
-//            cartimageButton.setVisibility(View.VISIBLE);
-//            String viewOrderDbCount= String.valueOf(tableviewOrderDb.size());
-//            cartimageButton.setText(viewOrderDbCount);
-//        }
-//        cartimageButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityViewOrder.class);
-//                startActivity(ResturantsIntent);
-//            }
-//        });
 
     }
 
-//    @Override
-//    public boolean onPrepareOptionsMenu(Menu menu) {
-//        MenuItem item = menu.findItem(R.id.action_cart);
-//        NotificationCountSetClass.setAddToCart(ActivityCategory.this, item,1);//notificationCountCart
-//        // force the ActionBar to relayout its MenuItems.
-//        // onCreateOptionsMenu(Menu) will be called again.
-//        invalidateOptionsMenu();
-//        return super.onPrepareOptionsMenu(menu);
-//    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.chartmenu, menu);
-//        TextView tv = new TextView(this);
-//        tv.setText(notificationCountCart+"");
-//        tv.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.White));
-//        tv.setPadding(20, 0,0, 0);
-//        tv.setTypeface(null, Typeface.BOLD);
-//        tv.setTextSize(14);
-//        menu.add(0, 1, 1, "orders").setActionView(tv).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         getMenuInflater().inflate(R.menu.chartmenu,menu);
         this.menu = menu;
         MenuItem itemCart = menu.findItem(R.id.action_cart);

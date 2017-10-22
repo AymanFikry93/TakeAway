@@ -12,7 +12,8 @@
         android:elevation="20dp"
         android:orientation="horizontal"
     android:background="@drawable/arest_header_style"
-        android:weightSum="1">
+        android:weightSum="1"
+    android:id="@+id/resturantrowid">
 
         <ImageView
             android:id="@+id/resturantlogo"

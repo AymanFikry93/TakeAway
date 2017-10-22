@@ -140,17 +140,17 @@ public class SplashActivity extends AppCompatActivity {
 
                 }
             }
-            classeslistcountry = new ArrayList<ClassCountries>();
-            tableCountryDB = new Select().from(ClassCountries.class).execute();
-            if (tableCountryDB.size() != 0) {
-
-                for (int i = 0; i < tableCountryDB.size(); i++) {
-                    classeslistcountry.add(tableCountryDB.get(i));
-                    countryvalueslist.add(i, classeslistcountry.get(i).getCountryname());
-                }
-            } else {
-                new AreaJSONAsync(getApplicationContext()).execute("http://"+ HostName+"/api/Countries");
-            }
+//            classeslistcountry = new ArrayList<ClassCountries>();
+//            tableCountryDB = new Select().from(ClassCountries.class).execute();
+//            if (tableCountryDB.size() != 0) {
+//
+//                for (int i = 0; i < tableCountryDB.size(); i++) {
+//                    classeslistcountry.add(tableCountryDB.get(i));
+//                    countryvalueslist.add(i, classeslistcountry.get(i).getCountryname());
+//                }
+//            } else {
+//                new AreaJSONAsync(getApplicationContext()).execute("http://"+ HostName+"/api/Countries");
+//            }
         }
         catch (Exception ex)
         {

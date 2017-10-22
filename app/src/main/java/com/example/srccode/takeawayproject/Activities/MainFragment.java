@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,25 +75,21 @@ public class MainFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
         ActiveAndroid.initialize(getContext());
 
-//        TextView customtextView = (TextView) v.findViewById(R.id.hometitleId);
-//        customtextView.setTypeface(typeface);
-
         tableCityDB = new Select().from(ClassCity.class).execute();
-
-        countryspinner = (Spinner) v.findViewById(R.id.countryspinnerId);
+       // countryspinner = (Spinner) v.findViewById(R.id.countryspinnerId);
         cityspinner = (Spinner) v.findViewById(R.id.spinner_city);
         streetspinner = (Spinner) v.findViewById(R.id.spinner_Street);
 
-        customadapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, countryvalueslist);
-        customadapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        countryspinner.setAdapter(customadapter);
+//        customadapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, countryvalueslist);
+//        customadapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+       // countryspinner.setAdapter(customadapter);
 
-        countryspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, final int position, final long id) {
+//        countryspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, final int position, final long id) {
 
                 classeslistCity = new ArrayList<ClassCity>();
-                countrySelectedId = Integer.valueOf(classeslistcountry.get(position).getcountryId());
+                countrySelectedId =1;// Integer.valueOf(classeslistcountry.get(position).getcountryId());
                 if (tableCityDB.size() != 0) {
                     cityvalueslist.clear();
                     cityvalueslist.add(0, getString(R.string.selectancity));
@@ -168,14 +165,14 @@ public class MainFragment extends Fragment {
                     }
                 });
 
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(getContext(), getString(R.string.selectancity), Toast.LENGTH_LONG).show();
-
-            }
-        });
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                Toast.makeText(getContext(), getString(R.string.selectancity), Toast.LENGTH_LONG).show();
+//
+//            }
+//        });
         findbymap = (TextView)v.findViewById(R.id.findbymap);
         findbymap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -238,8 +235,8 @@ public class MainFragment extends Fragment {
 //
 //        });
 
-        Button gotolastorder = (Button) v.findViewById(R.id.lastorderbutton);
-        gotolastorder.setTypeface(typeface);
+        ImageButton gotolastorder = (ImageButton) v.findViewById(R.id.lastorderbutton);
+//        gotolastorder.setTypeface(typeface);
         gotolastorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -251,8 +248,8 @@ public class MainFragment extends Fragment {
 
 
         });
-         Button gotositting= (Button) v.findViewById(R.id.sittingbutton);
-        gotositting.setTypeface(typeface);
+        ImageButton gotositting= (ImageButton) v.findViewById(R.id.sittingbutton);
+//        gotositting.setTypeface(typeface);
         gotositting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

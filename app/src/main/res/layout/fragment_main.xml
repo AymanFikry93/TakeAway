@@ -87,17 +87,16 @@
         android:layout_above="@+id/spinner_Street"
         />
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/countryspinnerId"
-        android:background="@drawable/spinnershape"
-        android:gravity="center"
-        android:elevation="20dp"
-        android:visibility="invisible"
-        android:layout_alignParentTop="true"
-        />
-        <!--android:layout_toEndOf="@+id/StreetTextView"-->
+    <!--<Spinner-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:id="@+id/countryspinnerId"-->
+        <!--android:background="@drawable/spinnershape"-->
+        <!--android:gravity="center"-->
+        <!--android:elevation="20dp"-->
+        <!--android:visibility="invisible"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--/>-->
     <Spinner
         android:id="@+id/spinner_Street"
         android:layout_width="match_parent"
@@ -144,36 +143,48 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         >
 
-        <Button
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sittingbutton"
-            android:text="@string/action_settings"
-            android:textColor="#000"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
             android:background="@drawable/sitting"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="20dp"
             />
 
 
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/action_settings"-->
-        <!--android:layout_above="@+id/sittingbutton"-->
-        <!--/>-->
-        <Button
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_settings"
+            android:layout_below="@+id/sittingbutton"
+            android:paddingRight="20dp"
+            android:textColor="#fff"
+            android:textSize="12sp"
+        />
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lastorderbutton"
-            android:text="@string/LastOrder"
-            android:textColor="#000"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:background="@drawable/orders"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/LastOrder"
+            android:layout_below="@+id/lastorderbutton"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="20dp"
+            android:textColor="#fff"
+            android:textSize="12sp"
             />
 
     </RelativeLayout>

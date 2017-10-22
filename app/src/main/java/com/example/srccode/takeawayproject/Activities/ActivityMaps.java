@@ -126,10 +126,10 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
         LatLng sydney = new LatLng(latitude,longitude);//(24.68695241, 46.7578125);
         //Adding marker to that coordinate
         mMap.addMarker(new MarkerOptions().position(sydney).draggable(true).title("Here you are")
-               );
+               ).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(150), 2000, null);
-        mMap.getUiSettings().setZoomGesturesEnabled(true);
+        mMap.getUiSettings().setAllGesturesEnabled(true);
         mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
 
             @Override
@@ -137,7 +137,7 @@ public class ActivityMaps extends FragmentActivity implements OnMapReadyCallback
                 // Creating a marker
                 mMap.clear();
                 //Adding a new marker to the current pressed position we are also making the draggable true
-                mMap.addMarker(new MarkerOptions().position(latLng).draggable(true).title("My Location"));
+                mMap.addMarker(new MarkerOptions().position(latLng).draggable(true).title("My Location")).showInfoWindow();
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
                 if (resturantmapflag == 1) {
                   //  resturantmapflag = 0;
