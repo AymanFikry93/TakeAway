@@ -106,8 +106,14 @@ public AdapterViewOrder(Context context,ArrayList<ClassViewOrderDb> objects) {
             holder.orderName.setText(classViewOrderList.get(position).getOrdername());
 
             holder.orderName.setTypeface(typeface);
+                    holder.orderprice.setTypeface(typeface);
+                    holder.totalorderprice.setTypeface(typeface);
+                    holder.orderquantitytxt.setTypeface(typeface);
+                    holder.drinkName.setTypeface(typeface);
+                    holder.addtionName.setTypeface(typeface);
 
-            //classViewOrderList.get(position).getadditionName()
+
+                    //classViewOrderList.get(position).getadditionName()
             holder.orderprice.setText(mcontext.getString(R.string.Price)+" "+oldorderprice);
             holder.totalorderprice.setText(mcontext.getString(R.string.TotalPrice)+" "+String.valueOf(nprice) );
 

@@ -7,12 +7,18 @@
     android:layout_height="match_parent"
     tools:context="com.example.srccode.takeawayproject.Activities.ActivityResturants"
     >
-       <ImageView
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarlayoutid"/>
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:src="@drawable/resturantimage1"
         android:id="@+id/restimage"
-        android:background="#FB8C00"
+        android:background="#f15d10"
+        android:layout_below="@+id/toolbarlayoutid"
         android:padding="10dp"
         />
     <TextView
@@ -22,7 +28,7 @@
         android:textColor="#fff"
         android:layout_below="@+id/restimage"
         android:id="@+id/resttextid"
-        android:background="#FFA726"
+        android:background="#FF9800"
         android:gravity="center"
         android:textSize="15sp"
         android:padding="10dp"/>

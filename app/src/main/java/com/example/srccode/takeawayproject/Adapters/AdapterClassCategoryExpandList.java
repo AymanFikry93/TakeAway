@@ -27,6 +27,7 @@ import com.example.srccode.takeawayproject.WebServices.MyApplication;
 import java.util.ArrayList;
 
 import static com.example.srccode.takeawayproject.Global.GlopalClass.ExpandList;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 
 /**
@@ -81,7 +82,10 @@ public class AdapterClassCategoryExpandList extends BaseExpandableListAdapter {
         Glide.with(context).load(classItemFood.getImage()).apply(RequestOptions.circleCropTransform()).into( iv);
 
         tv.setText(classItemFood.getName().toString());
+        tv.setTypeface(typeface);
+        pv.setTypeface(typeface);
         pv.setText(context.getString(R.string.Price)+classItemFood.getPrice().toString());
+
         offerv.setVisibility(View.GONE);
         offerimagevText.setVisibility(View.GONE);
         double prce= Double.parseDouble(classItemFood.getPrice().toString());
@@ -99,7 +103,7 @@ public class AdapterClassCategoryExpandList extends BaseExpandableListAdapter {
             }
 
             offerv.setText(context.getString(R.string.newprice)+prce);
-
+            offerv.setTypeface(typeface);
         }
 
 
@@ -141,6 +145,7 @@ public class AdapterClassCategoryExpandList extends BaseExpandableListAdapter {
         }
         TextView tv = (TextView) convertView.findViewById(R.id.category_name);
         tv.setText(classCategory.getName());
+        tv.setTypeface(typeface);
         return convertView;
     }
 

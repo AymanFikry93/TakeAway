@@ -4,12 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -19,6 +24,24 @@ public class SittingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sitting);
+        // Always cast your custom Toolbar here, and set it as the ActionBar.
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        // Get the ActionBar here to configure the way it behaves.
+        final ActionBar ab = getSupportActionBar();
+        setSupportActionBar(mToolbar);
+        TextView mTitle = (TextView) findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.action_settings);
+        ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(getApplicationContext(), Home_MainActivity.class);
+                startActivity(homeIntent);
+            }
+        });
         RadioGroup languagegroup=(RadioGroup)findViewById(R.id.langgroup);
         String lang = Locale.getDefault().getDisplayLanguage();
 

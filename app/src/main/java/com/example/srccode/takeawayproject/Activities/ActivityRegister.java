@@ -9,13 +9,16 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +41,7 @@ import java.net.URL;
 import java.util.List;
 
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 
 public class ActivityRegister extends AppCompatActivity {
@@ -57,7 +61,26 @@ public class ActivityRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        // Always cast your custom Toolbar here, and set it as the ActionBar.
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
+        // Get the ActionBar here to configure the way it behaves.
+        final ActionBar ab = getSupportActionBar();
+        setSupportActionBar(mToolbar);
+        TextView  mTitle = (TextView) findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.Register);
+        mTitle.setTypeface(typeface);
+
+        ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(getApplicationContext(), ActivityCategory.class);
+                startActivity(homeIntent);
+            }
+        });
         final EditText etContactName = (EditText) findViewById(R.id.etContactName);
         final EditText etContactEmail = (EditText) findViewById(R.id.etContactEmail);
           etContactPhone = (EditText) findViewById(R.id.etcontactphone);
@@ -65,6 +88,11 @@ public class ActivityRegister extends AppCompatActivity {
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final EditText etconfirmPassword = (EditText) findViewById(R.id.etconfirmPassword);
+        etContactName.setTypeface(typeface);
+        etContactEmail.setTypeface(typeface);
+        etContactPhone.setTypeface(typeface);
+        etUsername.setTypeface(typeface);
+
         ActiveAndroid.initialize(this);
         tableClientInformation = new Select().from(ClassClientInformation.class).execute();
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED
@@ -129,20 +157,20 @@ public class ActivityRegister extends AppCompatActivity {
                 confirmPassword = etconfirmPassword.getText().toString();
                 username = etUsername.getText().toString();
                 if( ContactEmail.length() == 0 )
-                    etContactEmail.setError( "Contact Email is required!" );
+                    etContactEmail.setError( String.valueOf(R.string.contactreq));
               else if( ContactName.length() == 0 )
-                    etContactName.setError( "Contact Name is required!" );
+                    etContactName.setError( String.valueOf(R.string.contactnamereq)  );
 
                else if( username.length() == 0 )
-                    etUsername.setError( "username is required!" );
+                    etUsername.setError( String.valueOf(R.string.emailreq));
 
                else if(ContactPhone.equals("")||ContactPhone.equals(null)){
-                    Toast.makeText(getApplicationContext(),"Your phone number is required",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),String.valueOf(R.string.phonereq) ,Toast.LENGTH_LONG).show();
 
                 }
                else if(!password.equals(confirmPassword)){
-                    etPassword.setError( "Passwords is not matched !" );
-                    etconfirmPassword.setError( "Passwords is not matched !" );
+                    etPassword.setError( String.valueOf(R.string.passmatch)  );
+                    etconfirmPassword.setError( String.valueOf(R.string.passmatch));
 
                 }
                 else if(tableClientInformation.size()==0){

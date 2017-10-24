@@ -5,7 +5,7 @@
     android:background="#edd3c2"
     >
 
-    <TextView
+    <com.example.srccode.takeawayproject.UI.CustomTextView
         android:text="@string/filterby"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

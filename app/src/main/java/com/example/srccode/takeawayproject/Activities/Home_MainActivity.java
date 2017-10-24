@@ -72,10 +72,6 @@ public class Home_MainActivity extends AppCompatActivity
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(mToolbar);
 //        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//
-//        TextView tv = new TextView(getApplicationContext());
-//        tv.setTextSize(10);
-//
 //        if (mToolbar != null) {
 //            this.getSupportActionBar()
 //                    .setDisplayHomeAsUpEnabled(true);
@@ -83,10 +79,6 @@ public class Home_MainActivity extends AppCompatActivity
 //                    .setCustomView(tv);
 //            mToolbar.setNavigationIcon(R.drawable.back_arrow);
 //        }
-//
-//        mToolbar.setTitleTextColor(Color.WHITE);
-//        mToolbar.setTitle("");//R.string.action_home
-//
         MainFragment fragment=new MainFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container,fragment);
@@ -110,17 +102,6 @@ public class Home_MainActivity extends AppCompatActivity
 //        }
 
           drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        final CustomDrawerButton customDrawerButton = (CustomDrawerButton)findViewById(R.id.btnOpenDrawer);
-//        customDrawerButton.setDrawerLayout( drawer );
-//        customDrawerButton.getDrawerLayout().addDrawerListener( customDrawerButton );
-//        customDrawerButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                customDrawerButton.changeState();
-//            }
-//        });
-
-
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);

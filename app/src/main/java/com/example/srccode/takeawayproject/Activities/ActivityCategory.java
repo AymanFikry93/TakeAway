@@ -9,14 +9,17 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -64,6 +67,26 @@ public class ActivityCategory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_category);
+        // Always cast your custom Toolbar here, and set it as the ActionBar.
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
+        // Get the ActionBar here to configure the way it behaves.
+        final ActionBar ab = getSupportActionBar();
+        setSupportActionBar(mToolbar);
+        TextView  mTitle = (TextView) findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.Menulist);
+        mTitle.setTypeface(typeface);
+        ImageButton   imageButton=(ImageButton)findViewById(R.id.next_btn_search);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(getApplicationContext(), ActivityResturants.class);
+                startActivity(homeIntent);
+            }
+        });
+
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.activity_refresh);
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
@@ -183,4 +206,7 @@ public class ActivityCategory extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }

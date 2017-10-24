@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -84,13 +86,47 @@ public class ActivityResturants extends AppCompatActivity {
     private SwipeRefreshLayout swipeContainer;
     Dialog custom;
    public static TextView restnumber;
+    ImageButton imageButton;
+    TextView mTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resturants);
 
         ActiveAndroid.initialize(this);
+// Always cast your custom Toolbar here, and set it as the ActionBar.
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
+        // Get the ActionBar here to configure the way it behaves.
+        final ActionBar ab = getSupportActionBar();
+        setSupportActionBar(mToolbar);
+         mTitle = (TextView) findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.category_resturants);
+        mTitle.setTypeface(typeface);
+         imageButton=(ImageButton)findViewById(R.id.next_btn_search);
+
+//        if(languagetype.equals("ar")){
+//            Drawable d = ResourcesCompat.getDrawable(getResources(),R.drawable.next,null);
+//
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                imageButton.setBackground(d);
+//            }
+//        }else
+//        {
+//            Drawable d = ResourcesCompat.getDrawable(getResources(),R.drawable.back_arrow,null);
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                imageButton.setBackground(d);
+//            }
+//
+//        }
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(getApplicationContext(), Home_MainActivity.class);
+                startActivity(homeIntent);
+            }
+        });
 
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.activity_test_json);
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
@@ -115,6 +151,7 @@ public class ActivityResturants extends AppCompatActivity {
             }
         });
          restnumber=(TextView)findViewById(R.id.resttextid);
+        restnumber.setTypeface(typeface);
 
         classResturantsList = new ArrayList<ClassResturants>();
         originalList = new ArrayList<ClassResturants>();
@@ -132,10 +169,6 @@ public class ActivityResturants extends AppCompatActivity {
                .execute("http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
          }
         tableviewOrderDb =new Select().from(ClassViewOrderDb.class).execute();
-
-//        listView = (ListView) findViewById(R.id.list);
-//        adapterClassResturant = new AdapterClassResturant(getApplicationContext(), R.layout.resturants_row, classResturantsList, originalList);
-//        listView.setAdapter(adapterClassResturant);
 
         recyclerresturantView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerresturantView.setHasFixedSize(true);
@@ -233,6 +266,7 @@ public class ActivityResturants extends AppCompatActivity {
 
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.resturant_sort_menu, menu);
+
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
 //        searchItem.expandActionView();
@@ -271,7 +305,7 @@ public class ActivityResturants extends AppCompatActivity {
             case R.id.context_menu:
                 custom = new Dialog(ActivityResturants.this);
                 custom.setContentView(R.layout.resturantfilter);
-                custom.setTitle("filter");
+//                custom.setTitle("filter");
                 RadioGroup filtergroup=(RadioGroup)custom.findViewById(R.id.langgroup);
                 filtergroup.setOnCheckedChangeListener(new
                                            RadioGroup.OnCheckedChangeListener() {
@@ -308,7 +342,44 @@ public class ActivityResturants extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+ public void CustomFilterDialog(){
 
+     custom = new Dialog(ActivityResturants.this);
+     custom.setContentView(R.layout.resturantfilter);
+     custom.setTitle("filter");
+     RadioGroup filtergroup=(RadioGroup)custom.findViewById(R.id.langgroup);
+     filtergroup.setOnCheckedChangeListener(new
+                                                    RadioGroup.OnCheckedChangeListener() {
+                                                        @Override
+                                                        public void onCheckedChanged(RadioGroup group, int checkedId) {
+                                                            switch (checkedId) {
+                                                                case R.id.NameAsc:
+                                                                    adapterClassResturant.sortByNameAsc();
+                                                                    custom.dismiss();
+                                                                    break;
+                                                                case R.id.NameDesc:
+                                                                    adapterClassResturant.sortByNameDesc();
+                                                                    custom.dismiss();
+                                                                    break;
+                                                                case R.id.RateAsc:
+                                                                    adapterClassResturant.sortByRateAsc();
+                                                                    custom.dismiss();
+                                                                    break;
+                                                                case R.id.RateDesc:
+                                                                    adapterClassResturant.sortByRateDesc();
+                                                                    custom.dismiss();
+                                                                    break;
+                                                                default:
+                                                                    custom.dismiss();
+                                                                    break;
+                                                            }
+                                                        }
+                                                    });
+
+     custom.show();
+
+
+ }
 
 }
 

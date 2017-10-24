@@ -3,12 +3,15 @@ package com.example.srccode.takeawayproject.Activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,7 @@ import java.net.URL;
 
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.accesstoken;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 
 public class ActivityLogin extends AppCompatActivity {
@@ -41,12 +45,36 @@ public class ActivityLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        // Always cast your custom Toolbar here, and set it as the ActionBar.
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
+        // Get the ActionBar here to configure the way it behaves.
+        final ActionBar ab = getSupportActionBar();
+        setSupportActionBar(mToolbar);
+        TextView  mTitle = (TextView) findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.Login);
+        mTitle.setTypeface(typeface);
+
+        ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(getApplicationContext(), ActivityCategory.class);
+                startActivity(homeIntent);
+            }
+        });
 
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final TextView tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
         final Button bLogin = (Button) findViewById(R.id.bSignIn);
+        tvRegisterLink.setTypeface(typeface);
+        bLogin.setTypeface(typeface);
+        etPassword.setTypeface(typeface);
+        etUsername.setTypeface(typeface);
+
 
         tvRegisterLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,9 +94,9 @@ public class ActivityLogin extends AppCompatActivity {
                 password = etPassword.getText().toString();
 
                 if( username.length() == 0 )
-                    etUsername.setError( "username is required!" );
+                    etUsername.setError(String.valueOf(R.string.emailreq));
                 else if( password.length() == 0 )
-                    etPassword.setError( "Password is required!" );
+                    etPassword.setError(String.valueOf(R.string.passreq));
                 else {
 
                    // new SendLoginDetails().execute("http://"+ HostName+"/Token",username,password); //http://192.168.1.65:7742/api   takeawayapi.afshat.com/api

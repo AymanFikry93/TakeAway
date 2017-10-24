@@ -1,13 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?actionBarSize">-->
+    <!--<TextView-->
+        <!--android:id="@+id/tv_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:textSize="22dp"-->
+        <!--style="@style/Regular"/>-->
+<!--</android.support.v7.widget.Toolbar>-->
+<android.support.design.widget.AppBarLayout
+    android:id="@+id/appbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="?actionBarSize">
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="22dp"
-        style="@style/Regular"/>
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:layout_collapseMode="pin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- This is a centered logo -->
+        <!--<ImageView-->
+            <!--android:id="@+id/toolbar_logo"-->
+            <!--android:src="@drawable/takeawaylogo"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_marginRight="?attr/actionBarSize"-->
+            <!--android:layout_marginTop="4dp"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--/>-->
+
+        <!-- This is a centered title -->
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/action_home"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            />
+
+        <!-- This is a custom left side button -->
+              <ImageButton
+        android:id="@+id/next_btn_search"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="start|center_vertical"
+        android:src="@drawable/next"
+        style="@style/Widget.AppCompat.ActionButton" />
+
+
+        <!--&lt;!&ndash; This is a custom right side button &ndash;&gt;-->
+        <!--<ImageButton-->
+            <!--android:id="@+id/next_btn_search"-->
+            <!--android:layout_width="?attr/actionBarSize"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:layout_gravity="end"-->
+            <!--android:src="@drawable/back_arrow"-->
+            <!--style="@style/Widget.AppCompat.ActionButton" />-->
+
+        <!-- This is a custom Basket side button -->
+        <!--<ImageButton-->
+            <!--android:id="@+id/chart_btn_search"-->
+            <!--android:layout_width="?attr/actionBarSize"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:layout_gravity="end"-->
+            <!--android:src="@drawable/cart_white"-->
+            <!--android:layout_marginLeft="25dp"-->
+            <!--android:layout_marginRight="25dp"-->
+            <!--android:visibility="invisible"-->
+            <!--style="@style/Widget.AppCompat.ActionButton" />-->
+        <!-- This is a custom Filter  button -->
+        <!--<ImageButton-->
+            <!--android:id="@+id/Filter_btn_settings"-->
+            <!--android:layout_width="?attr/actionBarSize"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:layout_marginRight="?attr/actionBarSize"-->
+            <!--android:layout_gravity="start|center_vertical"-->
+            <!--android:visibility="invisible"-->
+            <!--android:src="@drawable/edit_blue"-->
+            <!--style="@style/Widget.AppCompat.ActionButton" />-->
+
+
+
+        <!--<android.support.v7.widget.SearchView-->
+            <!--android:id="@+id/searchView1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:visibility="invisible"-->
+
+            <!--&gt;-->
+        <!--</android.support.v7.widget.SearchView>-->
+    </FrameLayout>
 </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>

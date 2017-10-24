@@ -102,6 +102,8 @@
     <string name="submitorder">تنفيذ الطلب </string>
     <string name="saveandaddmore"> حفظ واضافة المزيد </string>
     <string name="submit"> اطلب </string>
+    <string name="SAR"> ريال سعودي </string>
+
 
     <string name="thanks"> شكرا لاستخدامكم تطبيق تيك اواي </string>
     <string name="laststring"> سيقوم المطعم بتوصيل الطعام باسرع وقتولكن من الممكن ان يكون هناك تأخير بسبب وقت الصلاة </string>

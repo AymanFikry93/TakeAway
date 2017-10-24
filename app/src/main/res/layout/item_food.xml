@@ -9,6 +9,7 @@
     <!--android:layout_margin="5dp"-->
     <!--android:elevation="3dp"-->
     <!--card_view:cardCornerRadius="0dp">-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
         android:text="TextView"
         android:textColor="#000"
         android:textStyle="bold"
-
+        android:textSize="12sp"
         />
         <TextView
             android:id="@+id/itemfood_price"
@@ -54,6 +55,7 @@
             android:textColor="#000"
             android:layout_marginTop="10dp"
             android:text="@string/Price"
+
             />
         <TextView
             android:layout_width="match_parent"
@@ -73,6 +75,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
+
         >
         <TextView
             android:id="@+id/itemfood_offerimage"

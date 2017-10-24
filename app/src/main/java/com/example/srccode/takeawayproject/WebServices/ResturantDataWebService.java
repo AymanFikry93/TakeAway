@@ -3,6 +3,8 @@ package com.example.srccode.takeawayproject.WebServices;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -40,28 +42,30 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
         mcontext=context;
 //        urlll=urll;
 
+
     }
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-//        Runnable runnable=new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    pDialog = new ProgressDialog(mcontext);
-//                    pDialog.setMessage("Loading...");
-//            dialog.setTitle("Connecting Server");
-//            dialog.show();
-//            dialog.setCancelable(false);
-//                }catch (Exception e)
-//                {
-//                    e.getMessage();
-//
-//                }
-//            }
-//        };
-//        Thread thread=new Thread(runnable);
-//        thread.start();
+
+                try {
+                    pDialog = new ProgressDialog(mcontext, R.style.CustomDialog);
+        pDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+//                    pDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//                    pDialog.setContentView(R.layout.activity_counter);
+//                      pDialog.setMessage("Loading...");
+//                    pDialog.setTitle("Connecting Server");
+//                    pDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                    pDialog.setMessage("Loading...");
+                    pDialog.show();
+                    pDialog.setCancelable(false);
+                }catch (Exception e)
+                {
+                    e.getMessage();
+
+                }
+
+
 
     }
     @Override
@@ -99,7 +103,6 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                     adapterClassResturant.notifyDataSetChanged();
                     restnumber.setText(classResturantsList.size()+mcontext.getResources().getString(R.string.Resturantsarefound));
 
-                    //   pDialog.hide();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -107,13 +110,17 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //  PD.dismiss();
-                // pDialog.hide();
             }
         });
         MyApplication.getInstance().addToReqQueue(jsonObjReq, "jreq");
         return null;
     }
 
+    @Override
+    protected void onPostExecute(Boolean aBoolean) {
+        super.onPostExecute(aBoolean);
+        pDialog.dismiss();
+         pDialog.hide();
 
+    }
 }

@@ -11,18 +11,21 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.SearchView;
@@ -90,7 +93,24 @@ public class ActivityRestOffer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_offer);
         ActiveAndroid.initialize(this);
+        // Always cast your custom Toolbar here, and set it as the ActionBar.
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
+        // Get the ActionBar here to configure the way it behaves.
+        final ActionBar ab = getSupportActionBar();
+        setSupportActionBar(mToolbar);
+        TextView  mTitle = (TextView) findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.Resturantnbyoffers);
+        ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(getApplicationContext(), Home_MainActivity.class);
+                startActivity(homeIntent);
+            }
+        });
         classResturantsList = new ArrayList<ClassResturants>();
         originalList = new ArrayList<ClassResturants>();
         swipeContainer = (SwipeRefreshLayout) findViewById(R.id.activity_test_json);

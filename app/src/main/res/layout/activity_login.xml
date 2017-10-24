@@ -13,6 +13,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarlayoutid"/>
     <ImageView
         android:layout_width="80dp"
         android:layout_height="110dp"
@@ -21,6 +26,7 @@
         android:layout_marginTop="65dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+      android:layout_below="@+id/toolbarlayoutid"
        />
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,6 +43,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Login"
             android:textColor="#fff"
+            android:textSize="12sp"
             android:background="@drawable/btn_place_order_style"
             android:padding="15dp"
             android:layout_weight="1"
@@ -51,6 +58,7 @@
             android:layout_height="wrap_content"
             android:text="@string/SignUp"
             android:textColor="#fff"
+            android:textSize="12sp"
             android:background="@drawable/btn_place_order_style"
             android:padding="15dp"
             android:layout_weight="1"
@@ -93,7 +101,7 @@
                     android:textColorHint="#ec7441"
                     android:layout_marginLeft="15dp"
                     android:letterSpacing="0.1"
-                    android:textSize="16dp"
+                    android:textSize="12sp"
                     android:textColor="#ec7441"
                     android:inputType="text"
                     android:gravity="center"
@@ -125,7 +133,7 @@
                     android:layout_marginLeft="15dp"
                     android:inputType="textPassword"
                     android:letterSpacing="0.1"
-                    android:textSize="16dp"
+                    android:textSize="12sp"
                     android:textColor="#ec7441"
                     android:gravity="center"
                     style="@style/Widget.AppCompat.EditText"

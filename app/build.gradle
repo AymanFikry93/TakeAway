@@ -51,6 +51,7 @@ dependencies {
     compile 'com.yalantis:contextmenu:1.0.7'
     compile 'com.google.android.gms:play-services-appindexing:9.6.1'
     compile 'com.google.android.gms:play-services-gcm:9.6.1'
+    compile 'com.github.d-max:spots-dialog:0.4@aar'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
 }

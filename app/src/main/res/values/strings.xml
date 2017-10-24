@@ -101,6 +101,8 @@
     <string name="submitorder"> submit order </string>
     <string name="saveandaddmore">save and add more </string>
     <string name="submit"> submit </string>
+    <string name="SAR">  SAR</string>
+
     <string name="thanks"> Thanks for using takeaway app</string>
     <string name="laststring"> The restaurant will deliver food as soon as possible, but there may be delay due to prayer time
  </string>
@@ -116,12 +118,12 @@
 
 
     <string name="title_activity_maps">Map</string>
-    <string name="err_region">Telephone Number please</string>
-    <string name="err_street">Telephone Number please</string>
-    <string name="err_floornum">Telephone Number please</string>
-    <string name="err_apartmentnum">Telephone Number please</string>
-    <string name="err_buildingnum">Telephone Number please</string>
-    <string name="err_tel">Telephone Number please</string>
+    <string name="emailreq">username is required</string>
+    <string name="passreq">Password is required!</string>
+    <string name="contactreq">Contact Email is required!</string>
+    <string name="contactnamereq">Contact Name is required!</string>
+    <string name="phonereq">Your phone number is required</string>
+    <string name="passmatch">Passwords is not matched !</string>
 
     <string name="Getlocation">Get My location</string>
 

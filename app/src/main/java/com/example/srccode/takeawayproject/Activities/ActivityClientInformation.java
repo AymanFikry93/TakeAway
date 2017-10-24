@@ -4,14 +4,18 @@ package com.example.srccode.takeawayproject.Activities;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.activeandroid.ActiveAndroid;
@@ -77,7 +81,23 @@ public class ActivityClientInformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_information);
         ActiveAndroid.initialize(this);
+        // Always cast your custom Toolbar here, and set it as the ActionBar.
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        // Get the ActionBar here to configure the way it behaves.
+        final ActionBar ab = getSupportActionBar();
+        setSupportActionBar(mToolbar);
+        TextView mTitle = (TextView) findViewById(R.id.toolbar_title);
+        mTitle.setText(R.string.Addressinformation);
+        ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
 
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(getApplicationContext(), ActivityClientView.class);
+                startActivity(homeIntent);
+            }
+        });
         addresstxt = (EditText) findViewById(R.id.addresstxt);
 
         classeslistcountry =new ArrayList<ClassCountries>();

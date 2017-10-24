@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.query.Select;
+import com.example.srccode.takeawayproject.AdapterSpinner;
 import com.example.srccode.takeawayproject.Classes.ClassArea;
 import com.example.srccode.takeawayproject.Classes.ClassCity;
 import com.example.srccode.takeawayproject.WebServices.AreaJSONAsync;
@@ -103,7 +104,9 @@ public class MainFragment extends Fragment {
 
                 customadapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, cityvalueslist);
                 customadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                cityspinner.setAdapter(customadapter);
+       // AdapterSpinner  adapter = new AdapterSpinner(getActivity(), R.layout.spinner_row, cityvalueslist);
+
+        cityspinner.setAdapter(customadapter);
                 cityspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -174,6 +177,7 @@ public class MainFragment extends Fragment {
 //            }
 //        });
         findbymap = (TextView)v.findViewById(R.id.findbymap);
+        findbymap.setTypeface(typeface);
         findbymap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -73,7 +73,7 @@
 
                 android:orientation="vertical">
                 <!-- mincharge -->
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/minchargerest"
@@ -91,7 +91,7 @@
                     android:textSize="10sp" />
 
                 <!-- restdelivery -->
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/deliveryrest"

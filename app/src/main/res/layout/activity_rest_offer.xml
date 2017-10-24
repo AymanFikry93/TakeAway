@@ -28,6 +28,11 @@
         <!--&lt;!&ndash;android:fontPath="fonts/GESSTwoLight.otf"&ndash;&gt;-->
 
     <!--</LinearLayout>-->
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarlayoutid"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -35,6 +40,7 @@
         android:id="@+id/restimage"
         android:background="#FB8C00"
         android:padding="10dp"
+        android:layout_below="@+id/toolbarlayoutid"
         />
     <TextView
         android:layout_width="match_parent"

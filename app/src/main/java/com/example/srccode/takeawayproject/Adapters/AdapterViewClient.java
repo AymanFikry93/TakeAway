@@ -75,6 +75,8 @@ public AdapterViewClient(Context context,ArrayList<ClassClientInformation> objec
           holder.regionName.setText(mcontext.getString(R.string.region)+classViewClientList.get(position).getregionname());
             holder.addressName.setText(classViewClientList.get(position).getadress());
             holder.addressName.setTypeface(typeface);
+            holder.regionName.setTypeface(typeface);
+            holder.locationName.setTypeface(typeface);
 
         }
 

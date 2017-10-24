@@ -10,9 +10,13 @@
     android:id="@+id/activity_counter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#f9f3f3"
     tools:context="com.example.srccode.takeawayproject.Activities.ActivityCounter">
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarlayoutid"/>
     <!--<ImageView-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="150dp"-->
@@ -29,6 +33,7 @@
        android:layout_marginTop="5dp"
        android:layout_marginLeft="@dimen/activity_horizontal_margin"
        android:layout_marginRight="@dimen/activity_horizontal_margin"
+     android:layout_below="@+id/toolbarlayoutid"
        >
        <!--android:layout_below="@+id/welcome_img"-->
        <android.support.v7.widget.CardView

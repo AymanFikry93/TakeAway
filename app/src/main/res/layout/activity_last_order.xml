@@ -13,9 +13,13 @@
     android:id="@+id/activity_last_order"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#f9f3f3"
     android:orientation="vertical">
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarlayoutid"/>
     <!--<ListView-->
         <!--android:id="@+id/vieworderlist"-->
         <!--android:layout_width="fill_parent"-->
@@ -32,7 +36,8 @@
         android:layout_margin="16dp"
         android:divider="#fff"
         android:dividerHeight="5dp"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical"
+        />
 
 </LinearLayout>
     </ScrollView>
