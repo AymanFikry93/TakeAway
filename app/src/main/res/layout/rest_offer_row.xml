@@ -28,7 +28,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
             android:orientation="vertical">
-            <TextView
+            <com.example.srccode.takeawayproject.UI.CustomTextView
                 android:id="@+id/restName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,14 +70,14 @@
 
                 android:orientation="vertical">
                 <!-- mincharge -->
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/minchargerest"
                     android:layout_marginTop="5dp"
                     android:textColor="#666666"
                     android:textSize="13dip" />
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:id="@+id/minchargeid"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -87,14 +87,14 @@
                     android:textSize="13dip" />
 
                 <!-- restdelivery -->
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/deliveryrest"
                     android:layout_marginTop="5dp"
                     android:textColor="#666666"
                     android:textSize="13dip" />
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:id="@+id/restdeliveryid"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                     android:textColor="#666666"
                     android:textSize="13dip" />
             </LinearLayout>
-            <TextView
+            <com.example.srccode.takeawayproject.UI.CustomTextView
                 android:id="@+id/resturantofferlogo"
                 android:layout_width="80dp"
                 android:layout_height="80dp"

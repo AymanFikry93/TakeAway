@@ -43,6 +43,9 @@
     <string name="deliveryrest">التوصيل</string>
     <string name="Resturantsarefound">مطاعم موجودين</string>
 
+    <string name="Offer">عرض</string>
+
+
     <string name="Restaurantname">RestNameAr</string>
     <string name="RestDataname">RestDatanameAr </string>
     <string name="RestaurantDescrption">RestaurantDescrption</string>
@@ -103,6 +106,7 @@
     <string name="saveandaddmore"> حفظ واضافة المزيد </string>
     <string name="submit"> اطلب </string>
     <string name="SAR"> ريال سعودي </string>
+    <string name="minpurchases">  المشتريات يجب ان تكون اكبر من الحد الادني </string>
 
 
     <string name="thanks"> شكرا لاستخدامكم تطبيق تيك اواي </string>
@@ -152,7 +156,7 @@
     <string name="Register">تسجيل </string>
     <string name="AlreadyHaveAnAccount">بالفعل لدي اكونت ! دخول</string>
 
-    <string name="Counter">عداد</string>
+    <string name="Counter">مؤقت تنازي</string>
 
 
 

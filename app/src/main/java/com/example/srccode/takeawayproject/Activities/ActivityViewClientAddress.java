@@ -24,6 +24,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterclie
 import static com.example.srccode.takeawayproject.Global.GlopalClass.classViewOrderDB;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.clientadresslist;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.tableClientInformationDB;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 
 public class ActivityViewClientAddress extends AppCompatActivity {
@@ -67,6 +68,7 @@ public class ActivityViewClientAddress extends AppCompatActivity {
         });
 
         Button addadressbtn=(Button)findViewById(R.id.addadressbtn);
+        addadressbtn.setTypeface(typeface);
         addadressbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

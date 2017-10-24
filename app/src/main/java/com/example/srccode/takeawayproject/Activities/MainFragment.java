@@ -29,6 +29,7 @@ import com.example.srccode.takeawayproject.WebServices.AreaJSONAsync;
 import java.util.ArrayList;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.Areaadapter;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.GlobalRegionID;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.RegionId;
@@ -104,9 +105,9 @@ public class MainFragment extends Fragment {
 
                 customadapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, cityvalueslist);
                 customadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       // AdapterSpinner  adapter = new AdapterSpinner(getActivity(), R.layout.spinner_row, cityvalueslist);
+         Areaadapter = new AdapterSpinner(getActivity(), cityvalueslist);
 
-        cityspinner.setAdapter(customadapter);
+        cityspinner.setAdapter(Areaadapter);
                 cityspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -134,8 +135,10 @@ public class MainFragment extends Fragment {
 
                             customadapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, streetvalues);
                             customadapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+                             Areaadapter = new AdapterSpinner(getActivity(), streetvalues);
+
                             streetspinner.setVisibility(view.VISIBLE);
-                            streetspinner.setAdapter(customadapter);
+                            streetspinner.setAdapter(Areaadapter);
                             streetspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
                                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

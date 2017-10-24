@@ -38,6 +38,8 @@
     <string name="RestaurantrateAsc">Ascending by rate</string>
     <string name="Resturantsarefound"> Resturants are found</string>
 
+    <string name="Offer">Offer</string>
+
 
     <string name="Restaurantname">RestNameEn</string>
     <string name="RestDataname">RestDatanameEn</string>
@@ -102,6 +104,8 @@
     <string name="saveandaddmore">save and add more </string>
     <string name="submit"> submit </string>
     <string name="SAR">  SAR</string>
+    <string name="minpurchases">  purchases value must be more than minimum charge</string>
+
 
     <string name="thanks"> Thanks for using takeaway app</string>
     <string name="laststring"> The restaurant will deliver food as soon as possible, but there may be delay due to prayer time

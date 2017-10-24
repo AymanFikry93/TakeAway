@@ -20,6 +20,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import static com.example.srccode.takeawayproject.Global.GlopalClass.Areaadapter;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.cityvalueslist;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.classeslistCity;
@@ -140,8 +141,8 @@ public class AreaJSONAsync  extends AsyncTask<String, Void, Boolean> {
         @Override
         protected void onPostExecute(Boolean result) {
            // dialog.cancel();
-            customadapter.notifyDataSetChanged();
-
+           // customadapter.notifyDataSetChanged();
+          Areaadapter.notifyDataSetChanged();
             if (result == false) {
                 Toast.makeText(mcontext, "Unable to fetch data from server", Toast.LENGTH_LONG).show();
             }

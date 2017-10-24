@@ -168,14 +168,14 @@ public class ActivityPlaceOrder extends AppCompatActivity {
             public void onClick(View v) {
 //                btnSubmit.setVisibility(v.GONE);
                 if(totalplaceprice<mincharge){
-                    Toast.makeText(getApplicationContext(),"purchases value must be more than minimum charge",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),R.string.minpurchases,Toast.LENGTH_LONG).show();
 
                     Intent gotologin =new Intent(getApplicationContext(),PagerActivity.class);
                     startActivity(gotologin);
 
                 }
                 else if(accesstoken!=null){
-                    new PostOrderJson(getApplicationContext()).execute(HostName+"/api/Orders",""); //http://192.168.1.65:7742/api   takeawayapi.afshat.com/api
+                    new PostOrderJson(getApplicationContext()).execute(HostName+"/api/Orders","");
                 }else {
                     Intent gotologin =new Intent(getApplicationContext(),ActivityLogin.class);
                     startActivity(gotologin);

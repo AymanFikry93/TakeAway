@@ -80,7 +80,7 @@
                     android:layout_marginTop="5dp"
                     android:textColor="#000"
                     android:textSize="10sp" />
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:id="@+id/minchargeid"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                     android:layout_marginTop="3dp"
                     android:textColor="#666666"
                     android:textSize="10sp" />
-                <TextView
+                <com.example.srccode.takeawayproject.UI.CustomTextView
                     android:id="@+id/restdeliveryid"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
@@ -108,13 +108,13 @@
                     android:textStyle="bold"
                     android:textSize="10sp" />
             </LinearLayout>
-            <TextView
+            <com.example.srccode.takeawayproject.UI.CustomTextView
                 android:id="@+id/resturantofferlogo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/offer"
                 android:layout_margin="15dp"
-                android:text="Offer"
+                android:text="@string/Offer"
                 android:textSize="10sp"
                 android:textStyle="bold"
                 android:paddingTop="15dp"

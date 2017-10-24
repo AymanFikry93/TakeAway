@@ -13,6 +13,7 @@ import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.srccode.takeawayproject.AdapterSpinner;
 import com.example.srccode.takeawayproject.Adapters.AdapterClassCategoryExpandList;
 import com.example.srccode.takeawayproject.Adapters.AdapterClassItemExpandList;
 import com.example.srccode.takeawayproject.Adapters.AdapterClassPlaceOrder;
@@ -61,6 +62,7 @@ public class GlopalClass {
     public static int  restfragment=0;
  // for  main fragment
    public static ArrayAdapter<String> customadapter;
+    public static  AdapterSpinner Areaadapter;
     public static List<ClassCountries> tableCountryDB;
     public static ArrayList<ClassCountries> classeslistcountry;
     public static List<ClassCity> tableCityDB;
