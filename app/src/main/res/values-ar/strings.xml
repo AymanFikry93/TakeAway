@@ -112,13 +112,12 @@
 
     <string name="title_activity_maps">خريظة</string>
 
-    <string name="err_region">Telephone Number please</string>
-    <string name="err_street">Telephone Number please</string>
-    <string name="err_floornum">Telephone Number please</string>
-    <string name="err_apartmentnum">Telephone Number please</string>
-    <string name="err_buildingnum">Telephone Number please</string>
-
-    <string name="err_tel">Telephone Number please</string>
+    <string name="emailreq">اسم المستخدم مطلوب</string>
+    <string name="passreq">الباسوورد مطلوب</string>
+    <string name="contactreq">ايميل الاتصال مطلوب</string>
+    <string name="contactnamereq">اسم الاتصال مطلوب </string>
+    <string name="phonereq">رقم التليفون مطلوب</string>
+    <string name="passmatch">الباسوورد</string>
 
     <string name="Addaddress">اضف عنوان  </string>
     <string name="Address"> العنوان</string>
@@ -152,6 +151,9 @@
     <string name="confirmPassword">تاكيد الباسورد</string>
     <string name="Register">تسجيل </string>
     <string name="AlreadyHaveAnAccount">بالفعل لدي اكونت ! دخول</string>
+
+    <string name="Counter">عداد</string>
+
 
 
 

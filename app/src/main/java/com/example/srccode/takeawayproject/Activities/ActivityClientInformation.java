@@ -89,6 +89,8 @@ public class ActivityClientInformation extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         TextView mTitle = (TextView) findViewById(R.id.toolbar_title);
         mTitle.setText(R.string.Addressinformation);
+        mTitle.setTypeface(typeface);
+
         ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +101,7 @@ public class ActivityClientInformation extends AppCompatActivity {
             }
         });
         addresstxt = (EditText) findViewById(R.id.addresstxt);
+        addresstxt.setTypeface(typeface);
 
         classeslistcountry =new ArrayList<ClassCountries>();
         tableCountryDB = new Select().from(ClassCountries.class).execute();
@@ -241,6 +244,8 @@ public class ActivityClientInformation extends AppCompatActivity {
         });
         // Find the View that shows the Resturants
         Button Resturants = (Button) findViewById(R.id.addressbutton);
+        Resturants.setTypeface(typeface);
+
         // Set a click listener on that View
         Resturants.setOnClickListener(new View.OnClickListener() {
             //  The code in this method will be executed when the numbers category is clicked on.

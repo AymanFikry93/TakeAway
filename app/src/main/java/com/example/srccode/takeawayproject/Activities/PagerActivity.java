@@ -59,15 +59,18 @@ public class PagerActivity extends FragmentActivity {
 
         TextView restName =(TextView)findViewById(R.id.RestName);
         restName.setText(Restname);
+        restName.setTypeface(typeface);
 
         TextView minchargeName =(TextView)findViewById(R.id.minchargeid);
         minchargeName.setText(mincharge+"");
         TextView restdeliveryName =(TextView)findViewById(R.id.restdeliveryid);
         restdeliveryName.setText(FeeDeliveryValue+"");
+        restdeliveryName.setTypeface(typeface);
 
         restName.setTypeface(typeface);
         TextView restopened =(TextView)findViewById(R.id.Restopening);
         restopened.setText(Restopening);
+        restopened.setTypeface(typeface);
 
          RatingBar restRating=(RatingBar)findViewById(R.id.Restrating_bar);
         restRating.setRating(Restrating);

@@ -113,6 +113,7 @@ public class ActivityCategory extends AppCompatActivity {
         restName.setTypeface(typeface);
         TextView restopened =(TextView)findViewById(R.id.Restopening);
         restopened.setText(Restopening);
+        restopened.setTypeface(typeface);
 
         RatingBar restRating=(RatingBar)findViewById(R.id.Restrating_bar);
         restRating.setRating(Restrating);

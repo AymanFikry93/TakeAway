@@ -96,8 +96,6 @@ public class SplashActivity extends AppCompatActivity {
 //            loadData();
 //        }
 
-
-
         try{
             isnetwork=isNetworkConnected();
 

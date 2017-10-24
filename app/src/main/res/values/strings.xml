@@ -148,5 +148,6 @@
     <string name="Register">Register </string>
     <string name="AlreadyHaveAnAccount">Already Have An Account ! Login </string>
 
+    <string name="Counter">Counter</string>
 
 </resources>

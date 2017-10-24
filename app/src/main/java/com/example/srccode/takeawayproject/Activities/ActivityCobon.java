@@ -28,6 +28,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.CobonValue;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.accesstoken;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.cobonvauetype;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 public class ActivityCobon extends AppCompatActivity {
 
@@ -50,6 +51,7 @@ public class ActivityCobon extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         TextView mTitle = (TextView) findViewById(R.id.toolbar_title);
         mTitle.setText(R.string.GetnewCobon);
+        mTitle.setTypeface(typeface);
         ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +65,8 @@ public class ActivityCobon extends AppCompatActivity {
        cobondata=  editcobon.getText().toString();
         cobonnum = editcobon.getText().toString();
         cobonButton=(Button)findViewById(R.id.cobonbuttonid);
+        cobonButton.setTypeface(typeface);
+        editcobon.setTypeface(typeface);
 
         cobonButton.setOnClickListener(new View.OnClickListener() {
             @Override

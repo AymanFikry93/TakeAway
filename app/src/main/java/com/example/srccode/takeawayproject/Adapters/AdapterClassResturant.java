@@ -15,20 +15,16 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.srccode.takeawayproject.Activities.PagerActivity;
 import com.example.srccode.takeawayproject.Activities.R;
 import com.example.srccode.takeawayproject.Classes.ClassResturants;
-import com.example.srccode.takeawayproject.WebServices.DownloadImageTask;
 import com.example.srccode.takeawayproject.WebServices.MyApplication;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import static com.example.srccode.takeawayproject.Global.GlopalClass.Restimage;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
 /**

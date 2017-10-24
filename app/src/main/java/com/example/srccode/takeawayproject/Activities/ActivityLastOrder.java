@@ -48,6 +48,7 @@ public class ActivityLastOrder extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         TextView mTitle = (TextView) findViewById(R.id.toolbar_title);
         mTitle.setText(R.string.LastOrderdetails);
+
         ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
 
         imageButton.setOnClickListener(new View.OnClickListener() {

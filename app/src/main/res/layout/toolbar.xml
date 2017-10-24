@@ -46,8 +46,7 @@
             <!--/>-->
 
         <!-- This is a centered title -->
-
-        <TextView
+        <com.example.srccode.takeawayproject.UI.CustomTextView
             android:id="@+id/toolbar_title"
             android:orientation="horizontal"
             android:layout_width="wrap_content"

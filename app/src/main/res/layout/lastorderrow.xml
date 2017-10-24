@@ -42,7 +42,8 @@
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:orientation="vertical">
-        <TextView
+        <com.example.srccode.takeawayproject.UI.CustomTextView
+
             android:id="@+id/ordername"
             android:text="order name"
             android:layout_width="80dp"
@@ -50,7 +51,8 @@
             android:textSize="12sp"
             android:textColor="#000"
             android:textStyle="bold" />
-        <TextView
+        <com.example.srccode.takeawayproject.UI.CustomTextView
+
             android:id="@+id/addtionname"
             android:text=""
             android:layout_width="wrap_content"
@@ -58,7 +60,8 @@
 
             android:textSize="10dp"
             android:textStyle="bold" />
-        <TextView
+        <com.example.srccode.takeawayproject.UI.CustomTextView
+
             android:id="@+id/drinkname"
             android:text=""
             android:layout_width="wrap_content"
@@ -80,7 +83,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/quantitylayout"
             android:orientation="horizontal">
-            <TextView
+            <com.example.srccode.takeawayproject.UI.CustomTextView
+
                 android:id="@+id/quantity"
                 android:text="@string/quantity"
                 android:layout_width="0dp"
@@ -107,6 +111,7 @@
                     android:background="@drawable/buttonaddshape"
                     />
                 <TextView
+
                     android:id="@+id/orderquantity"
                     android:text="1"
                     android:layout_width="30dp"
@@ -125,7 +130,8 @@
             </LinearLayout>
         </LinearLayout>
         <!-- rprice -->
-        <TextView
+        <com.example.srccode.takeawayproject.UI.CustomTextView
+
             android:id="@+id/itemorderprice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -135,7 +141,8 @@
             android:textSize="12sp" />
 
         <!--  totalitemorderprice -->
-        <TextView
+        <com.example.srccode.takeawayproject.UI.CustomTextView
+
             android:id="@+id/totalitemorderprice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

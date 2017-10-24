@@ -64,7 +64,6 @@ public class ActivityClientView extends AppCompatActivity {
 
 
         Button addnewaddress=(Button) findViewById(R.id.addnewaddress);
-
         addnewaddress.setTypeface(typeface);
         addnewaddress.setOnClickListener(new View.OnClickListener() {
             @Override

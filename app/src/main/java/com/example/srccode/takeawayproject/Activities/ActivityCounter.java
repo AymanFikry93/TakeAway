@@ -43,7 +43,8 @@ public class ActivityCounter extends AppCompatActivity {
         final ActionBar ab = getSupportActionBar();
         setSupportActionBar(mToolbar);
         TextView  mTitle = (TextView) findViewById(R.id.toolbar_title);
-        mTitle.setText("Counter");
+        mTitle.setText(R.string.Counter);
+        mTitle.setTypeface(typeface);
         ImageButton imageButton=(ImageButton)findViewById(R.id.next_btn_search);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
