@@ -6,7 +6,9 @@ import android.os.AsyncTask;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.android.volley.Cache;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -17,6 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.concurrent.RunnableFuture;
 
@@ -112,6 +115,53 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
             public void onErrorResponse(VolleyError error) {
             }
         });
+
+        // Load response of any request from cache
+        RequestQueue requestQueue = MyApplication.getInstance().getReqQueue();
+        if (requestQueue != null) {
+            Cache cache = requestQueue.getCache();
+            if (cache != null) {
+                Cache.Entry entry = cache.get(params[0]);
+                if (entry != null) {
+                    // Handle the data here....
+                } else {
+                    // data is not present in the cache..so send server request...
+                }
+            }
+        }
+
+        //Invalidate the cache
+        //        If you do not want to delete the data present in the cache, instead of it, you want to invalidate the cache. You can do it as below. Later on, when data comes from the server, it will replace the old data present in the cache.
+        requestQueue = MyApplication.getInstance().getReqQueue();
+        if (requestQueue != null) {
+            Cache cache = requestQueue.getCache();
+            if(cache != null) {
+                cache.invalidate(params[0], true);
+            }
+        }
+
+        //        Deleting cached data for any url
+//        If you want to delete any cached data, you can do it as below.
+         requestQueue = MyApplication.getInstance().getReqQueue();
+        if (requestQueue != null) {
+            Cache cache = requestQueue.getCache();
+            if(cache != null) {
+                cache.remove(params[0]);
+            }
+        }
+
+       // Deleting all cached data
+       // If you want to delete all cached data, you can do it as below.
+         requestQueue = MyApplication.getInstance().getReqQueue();
+
+        if (requestQueue != null) {
+            Cache cache = requestQueue.getCache();
+            if(cache != null) {
+                cache.clear();
+            }
+        }
+
+
         MyApplication.getInstance().addToReqQueue(jsonObjReq, "jreq");
         return null;
     }

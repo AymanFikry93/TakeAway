@@ -27,11 +27,7 @@ public class AdapterSpinner extends BaseAdapter  {
         this.context = context;
         this.countryNames = items;
         inflter = (LayoutInflater.from(context));
-
     }
-
-
-
 
     @Override
     public int getCount() {
