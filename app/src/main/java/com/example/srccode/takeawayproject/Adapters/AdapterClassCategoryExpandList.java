@@ -84,7 +84,7 @@ public class AdapterClassCategoryExpandList extends BaseExpandableListAdapter {
         tv.setText(classItemFood.getName().toString());
         tv.setTypeface(typeface);
         pv.setTypeface(typeface);
-        pv.setText(context.getString(R.string.Price)+classItemFood.getPrice().toString());
+        pv.setText(context.getString(R.string.Price)+classItemFood.getPrice().toString()+context.getResources().getString(R.string.SAR));
 
         offerv.setVisibility(View.GONE);
         offerimagevText.setVisibility(View.GONE);
@@ -102,7 +102,7 @@ public class AdapterClassCategoryExpandList extends BaseExpandableListAdapter {
                 prce=prce-offerval;
             }
 
-            offerv.setText(context.getString(R.string.newprice)+prce);
+            offerv.setText(context.getString(R.string.newprice)+prce+context.getResources().getString(R.string.SAR));
             offerv.setTypeface(typeface);
         }
 

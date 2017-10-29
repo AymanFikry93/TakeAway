@@ -2,6 +2,7 @@ package com.example.srccode.takeawayproject.Activities;
 
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.activeandroid.query.Select;
 import com.example.srccode.takeawayproject.AdapterSpinner;
 import com.example.srccode.takeawayproject.Classes.ClassArea;
 import com.example.srccode.takeawayproject.Classes.ClassCity;
+import com.example.srccode.takeawayproject.Classes.ClassLastOrderDb;
 import com.example.srccode.takeawayproject.WebServices.AreaJSONAsync;
 
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.RegionId;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.Regionname;
 import static com.example.srccode.takeawayproject.Global.GlopalClass._regionname;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.accesstoken;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.cTimer;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.citySelectedID;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.cityspinner;
@@ -51,6 +54,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.streetclass
 import static com.example.srccode.takeawayproject.Global.GlopalClass.streetspinner;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.streetvalues;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.tableCityDB;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.tableListLastOrderDB;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.tableRegionDB;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 
@@ -60,7 +64,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.typeface;
 public class MainFragment extends Fragment {
 
 
-    TextView findbymap;
+    Button findbymap;
 
     Button button;
 //    private ViewPager mViewPager;
@@ -179,7 +183,7 @@ public class MainFragment extends Fragment {
 //
 //            }
 //        });
-        findbymap = (TextView)v.findViewById(R.id.findbymap);
+        findbymap = (Button)v.findViewById(R.id.findbymap);
         findbymap.setTypeface(typeface);
         findbymap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -247,9 +251,18 @@ public class MainFragment extends Fragment {
         gotolastorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences sharedPreferences_show=getActivity().getSharedPreferences("accessTokendata", Context.MODE_PRIVATE);// to get the contetnt of the data base
+                accesstoken =sharedPreferences_show.getString("accesstokenkey",null);
+                 if(accesstoken==null)
+                 {
+                     Intent gologin = new Intent(getContext(),ActivityLogin.class);
+                     startActivity(gologin);
+                 }
+                 else{
+                     Intent gotolastorder = new Intent(getContext(),ActivityLastOrder.class);
+                     startActivity(gotolastorder);
+                 }
 
-                Intent gotolastorder = new Intent(getContext(),ActivityLastOrder.class);
-                startActivity(gotolastorder);
 
             }
 

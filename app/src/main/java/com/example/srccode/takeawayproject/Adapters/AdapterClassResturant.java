@@ -97,11 +97,15 @@ Context mcontext;
             //  holder.restofferimageView.setPaintFlags(pv.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
            holder.restofferimageView.setVisibility(View.INVISIBLE);
         }
+        else {
+            holder.restofferimageView.setVisibility(View.VISIBLE);
+
+        }
         holder.restName.setText(classResturantsList.get(position).getName());
         holder.restName.setTypeface(typeface);
         holder.restRating.setRating((classResturantsList.get(position).getRating()/2));
-        holder.mincharge.setText((classResturantsList.get(position).getmincharge()));
-        holder.restdelivery.setText((classResturantsList.get(position).getFeeDeliveryValue())+"");
+        holder.mincharge.setText((classResturantsList.get(position).getmincharge()+mcontext.getResources().getString(R.string.SAR)));
+        holder.restdelivery.setText((classResturantsList.get(position).getFeeDeliveryValue())+mcontext.getResources().getString(R.string.SAR));
 
         LayerDrawable stars = (LayerDrawable)  holder.restRating.getProgressDrawable();
         stars.getDrawable(2).setColorFilter(Color.rgb(255,131,66), PorterDuff.Mode.SRC_ATOP);
@@ -152,7 +156,8 @@ Context mcontext;
             if(newList.size() > 0){
         ClassResturants nresturant = new ClassResturants(resturant.getId(),resturant.getName(),
                 resturant.getopenandclose(),resturant.getmincharge(),resturant.getRating(),resturant.getImage()
-                ,resturant.getofferValue(),resturant.getOfferFeeTypeId());
+                ,resturant.getofferValue(),resturant.getOfferFeeTypeId()
+        ,resturant.getFeeDeliveryValue(),resturant.getofferID());
                 classResturantsList.add(nresturant);
             }
                 }

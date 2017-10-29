@@ -34,6 +34,7 @@
     <style name="AppTheme.NoActionBar" >
         <!-- Customize your theme here. @android:style/Theme.NoTitleBar.Fullscreen -->
         <item name="colorPrimary">#f15d10</item>
+        <item name="colorPrimaryDark">#f15d10</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     <item name="android:actionBarSize">40dp</item>
@@ -41,6 +42,15 @@
 
     </style>
 
+    <style name="Base.Theme.AppCompat.Light.NoActionBar" >
+        <!-- Customize your theme here. @android:style/Theme.NoTitleBar.Fullscreen  AppTheme.NoActionBar-->
+        <item name="colorPrimary">#f15d10</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionBarSize">40dp</item>
+        <item name="android:windowFullscreen">true</item>
+
+    </style>
     <style name="Widget.MyApp.ActionBar" parent="@android:style/Widget.ActionBar">
         <item name="android:background">#FF8342</item>
         <item name="android:height">8dp</item>
@@ -66,8 +76,8 @@
 
     <style name="CustomDialog" parent="android:Theme.DeviceDefault.Dialog">
         <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
-        <item name="DialogTitleText">Please Wait</item>
-        <!--<item name="DialogSpotColor">@android:color/holo_orange_dark</item>-->
+        <item name="DialogTitleText">@string/Loading</item>
+        <item name="DialogSpotColor">#000</item>
         <item name="DialogSpotCount">8</item>
         <item name="android:background">#7BC047</item>
         <item name="android:textColor">#FFFFFF</item>

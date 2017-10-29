@@ -38,6 +38,7 @@ android:layout_marginTop="20dp"
 android:padding="10dp"
 android:id="@+id/languagelinearid"
     android:layout_below="@+id/toolbarlayoutid"
+    android:orientation="vertical"
 
     >
 <TextView
@@ -81,30 +82,24 @@ android:id="@+id/languagelinearid"
         android:text="Arabic"/>
 </RadioGroup>
 
+
 </LinearLayout>
 
 
 
 
-<!--<ImageView-->
-<!--android:id="@+id/toolbar_bottom"-->
-<!--android:layout_height="65dp"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_alignParentBottom="true"-->
-<!--android:background="@drawable/takeawayfooter"-->
-<!--android:minHeight="?attr/actionBarSize" />-->
 
-<!--<Switch-->
-<!--android:id="@+id/notify_switch"-->
-<!--android:layout_width="wrap_content"-->
-<!--android:layout_height="wrap_content"-->
-<!--android:text="@string/notifyme"-->
-<!--android:layout_marginRight="50dp"-->
-<!--android:layout_marginLeft="50dp"-->
-<!--android:layout_marginTop="10dp"-->
-<!--android:padding="10dp"-->
-<!--android:textSize="20sp"-->
-<!--android:layout_below="@+id/languagelinearid"-->
-<!--android:layout_alignStart="@+id/languagelinearid" />-->
+<Switch
+android:id="@+id/notify_switch"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="@string/notifyme"
+android:layout_marginRight="50dp"
+android:layout_marginLeft="50dp"
+android:layout_marginTop="10dp"
+android:padding="10dp"
+android:textSize="20sp"
+android:layout_below="@+id/languagelinearid"
+android:layout_alignStart="@+id/languagelinearid" />
 
 </RelativeLayout>

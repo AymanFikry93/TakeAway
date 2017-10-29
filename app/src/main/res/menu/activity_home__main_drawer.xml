@@ -13,6 +13,14 @@
             android:icon="@drawable/home"
             android:title="@string/GetnewCobon"
             />
+
+        <item
+            android:id="@+id/action_site_link"
+            android:orderInCategory="100"
+            android:icon="@drawable/home"
+            android:title="TakeAway.com"
+            android:actionMenuTextColor="#bb8ef5"
+            />
     </group>
 
     <!--<classCategory android:checkableBehavior="single">-->
@@ -27,22 +35,22 @@
     <!--</classCategory>-->
 
 
-    <item android:title="@string/action_settings">
+    <item >
         <menu>
+            <item
+                android:id="@+id/action_home"
+                android:orderInCategory="100"
+                android:icon="@drawable/home_pic"
+                android:title="@string/action_home"
+                />
 
             <item
                 android:id="@+id/action_settings"
                 android:orderInCategory="100"
-                android:icon="@drawable/sitting"
+                android:icon="@drawable/setting_image"
                 android:title="@string/action_settings"
                  />
             <!--android:title="Share" />-->
-            <item
-                android:id="@+id/action_home"
-                android:orderInCategory="100"
-                android:icon="@drawable/home"
-                android:title="@string/action_home"
-                />
 
         </menu>
     </item>

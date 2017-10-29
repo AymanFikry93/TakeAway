@@ -42,6 +42,10 @@
     <string name="minchargerest">الحد الادني</string>
     <string name="deliveryrest">التوصيل</string>
     <string name="Resturantsarefound">مطاعم موجودين</string>
+    <string name="ConnectingServer"> الاتصال بالسيرفر</string>
+    <string name="Loading"> تحميل المطاعم....</string>
+
+
 
     <string name="Offer">عرض</string>
 

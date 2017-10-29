@@ -148,7 +148,7 @@ public class ActivityRestOffer extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         recyclerView.setHasFixedSize(true);
-        adapterClassRestOffer = new AdapterClassRestOffer(classResturantsList, originalList);
+        adapterClassRestOffer = new AdapterClassRestOffer(getApplicationContext(),classResturantsList, originalList);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

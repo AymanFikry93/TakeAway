@@ -1,5 +1,6 @@
 package com.example.srccode.takeawayproject.WebServices;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -23,6 +24,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.concurrent.RunnableFuture;
 
+import dmax.dialog.SpotsDialog;
 import retrofit2.http.Url;
 
 import static com.example.srccode.takeawayproject.Activities.ActivityResturants.restnumber;
@@ -39,8 +41,8 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantDa
 public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
 
     Context mcontext;
-    String urlll;
-    ProgressDialog pDialog;
+    String Resturanturl;
+    AlertDialog pDialog;
     public ResturantDataWebService(Context context){
         mcontext=context;
 //        urlll=urll;
@@ -52,14 +54,12 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
         super.onPreExecute();
 
                 try {
-                    pDialog = new ProgressDialog(mcontext, R.style.CustomDialog);
-        pDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-//                    pDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//                    pDialog.setContentView(R.layout.activity_counter);
-//                      pDialog.setMessage("Loading...");
-//                    pDialog.setTitle("Connecting Server");
+                    pDialog = new SpotsDialog(mcontext, R.style.CustomDialog);//, R.style.CustomDialog
+                    pDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 //                    pDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                    pDialog.setMessage("Loading...");
+//                    pDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    pDialog.setTitle(mcontext.getResources().getString(R.string.ConnectingServer));
+                    pDialog.setMessage(mcontext.getResources().getString(R.string.Loading));
                     pDialog.show();
                     pDialog.setCancelable(false);
                 }catch (Exception e)
@@ -73,7 +73,8 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
     }
     @Override
     protected Boolean doInBackground(String... params) {
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, params[0], null, new Response.Listener<JSONObject>() {
+        Resturanturl=params[0];
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,Resturanturl, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
 
@@ -91,12 +92,10 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                                     ,object.getString(mcontext.getResources().getString(R.string.OpenOrClose)),object.getString("MinimumOrderPrice")
                                     ,4,"http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg")
                                     ,object.getDouble("OfferValue"),object.getInt("OfferFeeTypeId")
+                                       ,object.getDouble("DeliveryValue"),object.getInt("OfferID")
+
                             );
                             resturantDataId =object.getInt("RestDataID");
-                            classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname) ));
-                            classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
-                            classResturants.setofferID(object.getInt("OfferID"));
-
                             FeeTypeid=1;
                             classResturantsList.add(classResturants);
                             originalList.add(classResturants);
@@ -163,7 +162,7 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
 
 
         MyApplication.getInstance().addToReqQueue(jsonObjReq, "jreq");
-        return null;
+        return false;
     }
 
     @Override
@@ -171,6 +170,5 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
         super.onPostExecute(aBoolean);
         pDialog.dismiss();
          pDialog.hide();
-
     }
 }

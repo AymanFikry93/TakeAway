@@ -197,7 +197,7 @@ public class FragmentHomeResturant extends Fragment
         fragmentManager =getActivity().getSupportFragmentManager();
        // initMenuFragment();
 
-        adapterClassRestOffer = new AdapterClassRestOffer(classResturantsList, originalList);
+        adapterClassRestOffer = new AdapterClassRestOffer(getActivity(),classResturantsList, originalList);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

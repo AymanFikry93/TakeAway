@@ -80,20 +80,12 @@ public class ResturantWebService  extends AsyncTask<String, Void, Boolean> {
                             ,object.getString(mcontext.getResources().getString(R.string.OpenOrClose)),object.getString("MinimumOrderPrice")
                             ,4,"http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg")
                             ,object.getDouble("OfferValue"),object.getInt("OfferFeeTypeId")
-                               );
+                                    ,object.getDouble("DeliveryValue"),object.getInt("OfferID")  );
                             resturantDataId =object.getInt("RestDataID");
-                    classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname) ));
-                    classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
-                    classResturants.setofferID(object.getInt("OfferID"));
+//                    classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname) ));
+//                    classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
+//                    classResturants.setofferID(object.getInt("OfferID"));
                     FeeTypeid=1;
-                         // classResturants.setId(object.getString("RestID"));
-                           // classResturants.setopenandclose(object.getString(mcontext.getResources().getString(R.string.OpenOrClose)));
-                          //  classResturants.setmincharge(object.getString("MinimumOrderPrice"));
-                           // classResturants.setRating(4);//object.getInt("Stars")
-                            //  classResturants.setImage(object.getString("LogUrl"));
-                           // classResturants.setImage("https://aymanfikryeng.000webhostapp.com/italian-restaurant-background_23-2147555520.jpg");
-                       // classResturants.setofferValue(object.getDouble("OfferValue"));
-                      //  classResturants.setOfferFeeTypeId(object.getInt("OfferFeeTypeId"));
                             classResturantsList.add(classResturants);
                             originalList.add(classResturants);
                }

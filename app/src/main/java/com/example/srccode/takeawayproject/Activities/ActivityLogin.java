@@ -212,7 +212,6 @@ public class ActivityLogin extends AppCompatActivity {
 
             }
             else {
-
                     Toast.makeText(getApplicationContext(),returnresponse,Toast.LENGTH_LONG).show();
             }
             super.onPostExecute(result);

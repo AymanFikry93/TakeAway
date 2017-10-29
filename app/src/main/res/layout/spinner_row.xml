@@ -9,8 +9,8 @@ android:layout_height="match_parent"
         android:id="@+id/countryName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
-        android:textColor="#f15d10"
+        android:textSize="10sp"
+        android:textColor="#000"
         android:layout_margin="10dp"
        />
 </LinearLayout>

@@ -76,20 +76,29 @@ public class ResturantOfferWebService extends AsyncTask<String, Void, Boolean> {
                 JSONObject object = jarray.getJSONObject(i);
 
                     if(object.getInt("OfferID")!=0){
-                        ClassResturants classResturants = new ClassResturants();
+                       // ClassResturants classResturants = new ClassResturants();
                         resturantDataId =object.getInt("RestDataID");
-                        classResturants.setId(object.getString("RestID"));
-                        classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname)));
-                        classResturants.setopenandclose(object.getString(mcontext.getResources().getString(R.string.OpenOrClose)));
-                        classResturants.setmincharge(object.getString("MinimumOrderPrice"));
-                        classResturants.setRating(4);//object.getInt("Stars")
-                        classResturants.setImage("http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg"));
+                        FeeTypeid=1;
+//                        classResturants.setId(object.getString("RestID"));
+//                        classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname)));
+//                        classResturants.setopenandclose(object.getString(mcontext.getResources().getString(R.string.OpenOrClose)));
+//                        classResturants.setmincharge(object.getString("MinimumOrderPrice"));
+//                        classResturants.setRating(4);//object.getInt("Stars")
+//                        classResturants.setImage("http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg"));
+//                        classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
+//                        classResturants.setofferID(object.getInt("OfferID"));
+//                        classResturants.setofferValue(object.getDouble("OfferValue"));
+//                        classResturants.setOfferFeeTypeId(object.getInt("OfferFeeTypeId"));
 
-                        //    classResturants.setImage(object.getString("LogUrl"));
-                        classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
-                        classResturants.setofferID(object.getInt("OfferID"));
-                        classResturants.setofferValue(object.getDouble("OfferValue"));
-                        classResturants.setOfferFeeTypeId(object.getInt("OfferFeeTypeId"));
+                        ClassResturants classResturants = new ClassResturants(
+                                object.getString("RestID"),
+                                object.getString(mcontext.getResources().getString(R.string.RestDataname))//Restaurantname  RestDataname
+                                ,object.getString(mcontext.getResources().getString(R.string.OpenOrClose)),object.getString("MinimumOrderPrice")
+                                ,4,"http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg")
+                                ,object.getDouble("OfferValue"),object.getInt("OfferFeeTypeId")
+                                ,object.getDouble("DeliveryValue"),object.getInt("OfferID")
+
+                        );
                         classResturantsList.add(classResturants);
                         originalList.add(classResturants);
 

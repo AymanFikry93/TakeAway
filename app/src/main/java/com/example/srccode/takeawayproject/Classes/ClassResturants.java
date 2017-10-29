@@ -24,7 +24,8 @@ public class ClassResturants {
     }
 
                                            //, double rating
-    public ClassResturants(String Id, String name, String openandclose, String mincharge, int rating,String image,double offerValue ,int OfferFeeTypeId
+    public ClassResturants(String Id, String name, String openandclose, String mincharge, int rating,String image,double offerValue
+            ,int OfferFeeTypeId,double FeeDeliveryValue,int offerID
                        ) {
         this.Id = Id;
         this.name = name;
@@ -34,6 +35,9 @@ public class ClassResturants {
         this.image = image;
         this.offerValue = offerValue;
         this.OfferFeeTypeId = OfferFeeTypeId;
+        this.offerID = offerID;
+        this.FeeDeliveryValue = FeeDeliveryValue;
+
 
 
     }

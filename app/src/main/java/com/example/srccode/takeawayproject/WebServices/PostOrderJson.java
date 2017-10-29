@@ -139,7 +139,6 @@ public class PostOrderJson   extends AsyncTask<String, Void, String> {
             super.onPostExecute(result);
             Log.e("TAG", result); // this is expecting a response code to be sent from your server upon receiving the POST data
         }
-
     public String jsondata(){
 
         double totalplaceprice=0.0;

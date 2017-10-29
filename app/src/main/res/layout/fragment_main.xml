@@ -42,23 +42,7 @@
 
 
 
-    <Button
-        android:text="@string/FindResturants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Resturantsbutton"
-        android:onClick="Press"
-        android:textSize="12sp"
-        android:background="@drawable/btn_place_order_style"
-        android:textColor="#fff"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@+id/homelinearlayoutid"
-        android:layout_centerHorizontal="true"
 
-        />
         <!--android:gravity="center_horizontal"-->
 
         <!--<Button-->
@@ -79,9 +63,9 @@
     <Spinner
         android:id="@+id/spinner_city"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginLeft="75dp"
         android:gravity="center"
         android:background="@drawable/spinnershape"
         android:elevation="20dp"
@@ -101,37 +85,62 @@
     <Spinner
         android:id="@+id/spinner_Street"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginLeft="75dp"
         android:gravity="center"
         android:layout_above="@+id/findbymap"
         android:layout_marginTop="10dp"
         android:background="@drawable/spinnershape"
         android:elevation="20dp"
-        android:visibility="invisible"
+        android:visibility="visible"
           />
     <!--android:layout_toEndOf="@+id/StreetTextView"-->
 
 
-    <ImageView
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/map_select_blue"-->
+        <!--android:layout_below="@+id/spinner_Street"-->
+        <!--android:layout_above="@+id/Resturantsbutton"-->
+       <!---->
+        <!--/>-->
+    <Button
+        android:text="@string/FindResturants"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/map_select_blue"
-        android:layout_below="@+id/spinner_Street"
-        android:layout_toLeftOf="@+id/findbymap"
+        android:layout_height="30dp"
+        android:id="@+id/Resturantsbutton"
+        android:onClick="Press"
+        android:textSize="12sp"
+        android:background="@drawable/btn_place_order_style"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginRight="78dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_above="@+id/homelinearlayoutid"
+        android:layout_alignParentLeft="true"
         />
-    <TextView
+    <Button
         android:id="@+id/findbymap"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="@string/findresturantbymap"
-        android:layout_above="@+id/Resturantsbutton"
-        android:layout_marginTop="10dp"
-        android:textColor="#4527d2"
+        android:background="@drawable/btn_place_order_style"
+        android:layout_above="@+id/homelinearlayoutid"
+        android:textColor="#fff"
         android:textSize="12sp"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginRight="78dp"
+        android:layout_alignParentRight="true"
+
         />
 
 <LinearLayout
@@ -148,10 +157,11 @@
         >
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/sittingbutton"
-            android:background="@drawable/sitting"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/setting_image"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
@@ -164,19 +174,22 @@
         android:text="@string/action_settings"
             android:layout_below="@+id/sittingbutton"
             android:paddingRight="30dp"
+            android:paddingLeft="30dp"
             android:textColor="#fff"
             android:textSize="12sp"
+            android:layout_alignParentRight="true"
+
 
             />
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/lastorderbutton"
             android:layout_alignParentLeft="true"
-            android:background="@drawable/orders"
+            android:background="@drawable/last_orders_image"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             />
 
         <com.example.srccode.takeawayproject.UI.CustomTextView

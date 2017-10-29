@@ -38,7 +38,7 @@ public class AdapterClassRestOffer extends RecyclerView.Adapter<AdapterClassRest
     ArrayList<ClassResturants> classResturantsList;
     ArrayList<ClassResturants> originalList;
     ImageLoader imageLoader = MyApplication.getInstance().getImageLoader();
-
+Context mcontext;
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewName,mincharge;
@@ -60,10 +60,11 @@ public class AdapterClassRestOffer extends RecyclerView.Adapter<AdapterClassRest
         }
     }
 
-    public AdapterClassRestOffer( ArrayList<ClassResturants> objects, ArrayList<ClassResturants> objects2) {
+    public AdapterClassRestOffer(Context context, ArrayList<ClassResturants> objects, ArrayList<ClassResturants> objects2) {
 
         classResturantsList = objects;
         originalList=objects2;
+        mcontext=context;
     }
 
 
@@ -91,8 +92,8 @@ public class AdapterClassRestOffer extends RecyclerView.Adapter<AdapterClassRest
             holder.restofferimageView.setVisibility(View.GONE);
         }
         restName.setText(classResturantsList.get(position).getName());
-        mincharge.setText(classResturantsList.get(position).getmincharge());
-        holder.restdelivery.setText((classResturantsList.get(position).getFeeDeliveryValue())+"");
+        mincharge.setText(classResturantsList.get(position).getmincharge()+mcontext.getResources().getString(R.string.SAR));
+        holder.restdelivery.setText((classResturantsList.get(position).getFeeDeliveryValue())+mcontext.getResources().getString(R.string.SAR));
 
         restName.setTypeface(typeface);
         restRating.setRating((classResturantsList.get(position).getRating()/2));
@@ -134,7 +135,7 @@ public class AdapterClassRestOffer extends RecyclerView.Adapter<AdapterClassRest
                 if(newList.size() > 0){
                     ClassResturants nresturant = new ClassResturants(resturant.getId(),resturant.getName(),
                             resturant.getopenandclose(),resturant.getmincharge(),resturant.getRating(),resturant.getImage()
-                            ,resturant.getofferValue(),resturant.getOfferFeeTypeId());
+                            ,resturant.getofferValue(),resturant.getOfferFeeTypeId() ,resturant.getFeeDeliveryValue(),resturant.getofferID());
                     classResturantsList.add(nresturant);
                 }
             }

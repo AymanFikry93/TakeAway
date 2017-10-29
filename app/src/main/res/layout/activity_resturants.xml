@@ -14,21 +14,20 @@
         android:id="@+id/toolbarlayoutid"/>
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/resturantimage1"
+        android:layout_height="110dp"
+        android:src="@drawable/resturantimage"
         android:id="@+id/restimage"
         android:background="#f15d10"
         android:layout_below="@+id/toolbarlayoutid"
-        android:padding="10dp"
         />
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:text=""
         android:textColor="#fff"
         android:layout_below="@+id/restimage"
         android:id="@+id/resttextid"
-        android:background="#FF9800"
+        android:background="#000"
         android:gravity="center"
         android:textSize="15sp"
         android:padding="10dp"/>

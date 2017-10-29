@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -168,6 +169,11 @@ public class Home_MainActivity extends AppCompatActivity
             Intent gotositting=new Intent(getApplicationContext(),SittingActivity.class);
             startActivity(gotositting);
 
+        }
+           else  if(id==R.id.action_site_link){
+            Intent browse = new Intent( Intent.ACTION_VIEW , Uri.parse( "http://takeaway.sa.com/store/home" ) );
+
+            startActivity( browse );
         }
 
         //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

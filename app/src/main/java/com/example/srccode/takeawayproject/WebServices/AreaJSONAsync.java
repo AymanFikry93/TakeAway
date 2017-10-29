@@ -140,7 +140,7 @@ public class AreaJSONAsync  extends AsyncTask<String, Void, Boolean> {
 
         @Override
         protected void onPostExecute(Boolean result) {
-           // dialog.cancel();
+            dialog.cancel();
            // customadapter.notifyDataSetChanged();
           Areaadapter.notifyDataSetChanged();
             if (result == false) {

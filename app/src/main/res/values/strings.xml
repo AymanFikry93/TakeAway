@@ -16,16 +16,16 @@
     <string name="welcome">Hello!</string>
     <string name="ResturantnbyRegions">Resturants by Regions</string>
     <string name="LastOrder">Last Orders</string>
-    <string name="Resturantnbyoffers">Resturantn by offers</string>
+    <string name="Resturantnbyoffers">Resturants by offers</string>
     <string name="CookingCatName"> CookingCatNameEN </string>
     <string name="OrderStatus"> OrderStatus_En </string>
-    <string name="findresturantbymap"> find resturant by map </string>
+    <string name="findresturantbymap"> search by map </string>
     <string name="Search"> Search </string>
 
     <string name="City">City </string>
     <string name="Area">Area </string>
     <string name="Country">Country</string>
-    <string name="FindResturants">Find Resturants</string>
+    <string name="FindResturants">Search Resturants</string>
     <string name="selectancity"> select the city </string>
     <string name="selectanarea"> select an area </string>
     <string name="CountryName"> CountryNameEn </string>
@@ -37,6 +37,8 @@
     <string name="RestaurantrateDsc">Descending by rate</string>
     <string name="RestaurantrateAsc">Ascending by rate</string>
     <string name="Resturantsarefound"> Resturants are found</string>
+    <string name="ConnectingServer"> Connecting Server </string>
+    <string name="Loading"> Loading Resturants... </string>
 
     <string name="Offer">Offer</string>
 
@@ -59,7 +61,6 @@
     <string name="NameDesc">NameDesc</string>
     <string name="RateAsc">RateAsc</string>
     <string name="RateDesc">RateDesc</string>
-
 
 
     <!-- translate name for category activity [CHAR LIMIT=20] -->

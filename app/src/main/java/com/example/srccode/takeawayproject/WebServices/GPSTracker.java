@@ -17,6 +17,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
+import android.view.WindowManager;
 
 /**
  * Created by ayman on 2017-09-27.
@@ -100,6 +101,8 @@ public class GPSTracker extends Service implements LocationListener {
                             // to handle the case where the user grants the permission. See the documentation
                             // for ActivityCompat#requestPermissions for more details.
                             //return ;
+                            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            mContext.startActivity(intent);
                         }
                         locationManager.requestLocationUpdates(
                                 LocationManager.GPS_PROVIDER,
@@ -115,6 +118,9 @@ public class GPSTracker extends Service implements LocationListener {
                             }
                         }
                     }
+                }
+                else {
+                  //  showSettingsAlert();
                 }
             }
 
@@ -188,7 +194,7 @@ public class GPSTracker extends Service implements LocationListener {
      * */
     public void showSettingsAlert(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-
+      //  alertDialog.getContext().get.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
         // Setting Dialog Title
         alertDialog.setTitle("GPS is settings");
 
