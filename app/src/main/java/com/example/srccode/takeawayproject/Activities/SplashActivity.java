@@ -33,6 +33,8 @@ import com.example.srccode.takeawayproject.Classes.ClassCookingDB;
 import com.example.srccode.takeawayproject.Classes.ClassCountries;
 import com.example.srccode.takeawayproject.WebServices.AreaJSONAsync;
 import com.example.srccode.takeawayproject.WebServices.CookingJSONAsync;
+import com.example.srccode.takeawayproject.WebServices.NotificationClass;
+
 import java.util.ArrayList;
 import java.util.Locale;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.HostName;
@@ -181,10 +183,11 @@ public class SplashActivity extends AppCompatActivity {
 //            loadData();
 //        }
 
+//"http://"+ HostName+"/api/GetNotificationMsgsForUserCategory?UserCategory=1"
+       // new NotificationClass(getApplicationContext()).execute("http://192.168.1.65:7742/api/GetNotificationMsgsForUserCategory?UserCategory=1", ""); //http://192.168.1.65:7742/api   takeawayapi.afshat.com/api
 
-
-      //  isNetworkConnected();
-        new ProgressTask().execute();
+       isNetworkConnected();
+       // new ProgressTask().execute();
        // loadData();
 //        api/GetNotificationMsgsForUserCategory?UserCategory=1
 

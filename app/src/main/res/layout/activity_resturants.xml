@@ -12,20 +12,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toolbarlayoutid"/>
-    <ImageView
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="110dp"-->
+        <!--android:src="@drawable/resturantimage"-->
+        <!--android:id="@+id/restimage"-->
+        <!--android:background="#f15d10"-->
+        <!--android:layout_below="@+id/toolbarlayoutid"-->
+        <!--/>-->
+    <com.glide.slider.library.SliderLayout
+        android:id="@+id/slider"
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:src="@drawable/resturantimage"
-        android:id="@+id/restimage"
-        android:background="#f15d10"
-        android:layout_below="@+id/toolbarlayoutid"
-        />
+        android:layout_below="@+id/toolbarlayoutid"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="35dp"
         android:text=""
         android:textColor="#fff"
-        android:layout_below="@+id/restimage"
+        android:layout_below="@+id/slider"
         android:id="@+id/resttextid"
         android:background="#000"
         android:gravity="center"

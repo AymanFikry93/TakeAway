@@ -13,8 +13,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.srccode.takeawayproject.Activities.R;
 import com.example.srccode.takeawayproject.Classes.ClassResturants;
+import com.glide.slider.library.Animations.DescriptionAnimation;
+import com.glide.slider.library.SliderLayout;
+import com.glide.slider.library.SliderTypes.TextSliderView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +31,7 @@ import java.util.concurrent.RunnableFuture;
 import dmax.dialog.SpotsDialog;
 import retrofit2.http.Url;
 
+import static com.example.srccode.takeawayproject.Activities.ActivityResturants.mDemoSlider;
 import static com.example.srccode.takeawayproject.Activities.ActivityResturants.restnumber;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.FeeTypeid;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassResturant;
@@ -103,7 +108,7 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                     } // while loop end
 
                     adapterClassResturant.notifyDataSetChanged();
-                    restnumber.setText(classResturantsList.size()+mcontext.getResources().getString(R.string.Resturantsarefound));
+                    restnumber.setText(classResturantsList.size()+" "+mcontext.getResources().getString(R.string.Resturantsarefound));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -168,6 +173,7 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
     @Override
     protected void onPostExecute(Boolean aBoolean) {
         super.onPostExecute(aBoolean);
+
         pDialog.dismiss();
          pDialog.hide();
     }

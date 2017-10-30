@@ -1,16 +1,10 @@
 package com.example.srccode.takeawayproject.Activities;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.os.Build;
 import android.os.Handler;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
@@ -19,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -40,13 +33,19 @@ import com.activeandroid.ActiveAndroid;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
 
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.srccode.takeawayproject.Adapters.AdapterClassResturant;
 import com.example.srccode.takeawayproject.Classes.ClassResturants;
 import com.example.srccode.takeawayproject.Classes.ClassViewOrderDb;
-import com.example.srccode.takeawayproject.Classes.SetNotificationCount;
 import com.example.srccode.takeawayproject.UI.RecyclerItemClickListener;
 import com.example.srccode.takeawayproject.WebServices.ResturantDataWebService;
 import com.example.srccode.takeawayproject.WebServices.ResturantWebService;
+import com.glide.slider.library.Animations.DescriptionAnimation;
+import com.glide.slider.library.Indicators.PagerIndicator;
+import com.glide.slider.library.SliderLayout;
+import com.glide.slider.library.SliderTypes.BaseSliderView;
+import com.glide.slider.library.SliderTypes.TextSliderView;
+
 import java.util.ArrayList;
 
 import static com.example.srccode.takeawayproject.Global.GlopalClass.ClientInformationregionId;
@@ -67,7 +66,6 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.classRestur
 import static com.example.srccode.takeawayproject.Global.GlopalClass.currentusedresturantId;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.findresturantmapflag;
 
-import static com.example.srccode.takeawayproject.Global.GlopalClass.languagetype;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.mincharge;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.offerID;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.originalList;
@@ -88,18 +86,37 @@ public class ActivityResturants extends AppCompatActivity {
    public static TextView restnumber;
     ImageButton imageButton;
     TextView mTitle;
+
+    public static SliderLayout mDemoSlider;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resturants);
+        mDemoSlider = (SliderLayout)findViewById(R.id.slider);
 
+        int[] GalImages = new int[] {R.drawable.resturantimage, R.drawable.resturantimage1, R.drawable.resturantimage2};
+
+        for(int image : GalImages) {
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description("")/// description of the image
+                    .image(image).setBitmapTransformation(new CenterCrop())
+                   ;
+            mDemoSlider.addSlider(textSliderView);
+        }
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);//Accordion
+        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);//Center_Bottom
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
         ActiveAndroid.initialize(this);
 // Always cast your custom Toolbar here, and set it as the ActionBar.
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
         // Get the ActionBar here to configure the way it behaves.
-        final ActionBar ab = getSupportActionBar();
+//        final ActionBar ab = getSupportActionBar();
         setSupportActionBar(mToolbar);
          mTitle = (TextView) findViewById(R.id.toolbar_title);
         mTitle.setText(R.string.category_resturants);
@@ -168,6 +185,7 @@ public class ActivityResturants extends AppCompatActivity {
               new ResturantDataWebService(getApplicationContext())
                .execute("http://"+HostName+"/api/Restaurants?RegionID=" + GlobalRegionID);
          }
+
         tableviewOrderDb =new Select().from(ClassViewOrderDb.class).execute();
 
         recyclerresturantView = (RecyclerView) findViewById(R.id.my_recycler_view);
@@ -260,6 +278,12 @@ public class ActivityResturants extends AppCompatActivity {
                 })
 
         );
+    }
+    @Override
+    protected void onStop() {
+        // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
+        mDemoSlider.stopAutoCycle();
+        super.onStop();
     }
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
