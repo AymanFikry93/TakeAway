@@ -1,10 +1,8 @@
 package com.example.srccode.takeawayproject.WebServices;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.view.Window;
 import android.view.WindowManager;
 
 import com.android.volley.Cache;
@@ -13,31 +11,21 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.srccode.takeawayproject.Activities.R;
 import com.example.srccode.takeawayproject.Classes.ClassResturants;
-import com.glide.slider.library.Animations.DescriptionAnimation;
-import com.glide.slider.library.SliderLayout;
-import com.glide.slider.library.SliderTypes.TextSliderView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
-import java.util.concurrent.RunnableFuture;
 
 import dmax.dialog.SpotsDialog;
-import retrofit2.http.Url;
-
-import static com.example.srccode.takeawayproject.Activities.ActivityResturants.mDemoSlider;
 import static com.example.srccode.takeawayproject.Activities.ActivityResturants.restnumber;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.FeeTypeid;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassResturant;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.classResturantsList;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.originalList;
-import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantDataId;
 
 /**
  * Created by ayman on 2017-10-03.
@@ -92,7 +80,7 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                         for (int i = 0; i < ja.length(); i++) {
                             JSONObject object = ja.getJSONObject(i);
                             ClassResturants classResturants = new ClassResturants(
-                                    object.getString("RestID"),
+                                    object.getString("RestID"),object.getInt("RestDataID"),
                                     object.getString(mcontext.getResources().getString(R.string.RestDataname))//Restaurantname  RestDataname
                                     ,object.getString(mcontext.getResources().getString(R.string.OpenOrClose)),object.getString("MinimumOrderPrice")
                                     ,4,"http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg")
@@ -100,7 +88,6 @@ public class ResturantDataWebService  extends AsyncTask<String, Void, Boolean> {
                                        ,object.getDouble("DeliveryValue"),object.getInt("OfferID")
 
                             );
-                            resturantDataId =object.getInt("RestDataID");
                             FeeTypeid=1;
                             classResturantsList.add(classResturants);
                             originalList.add(classResturants);

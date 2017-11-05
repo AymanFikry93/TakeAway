@@ -154,7 +154,7 @@ Context mcontext;
                     }
 
             if(newList.size() > 0){
-        ClassResturants nresturant = new ClassResturants(resturant.getId(),resturant.getName(),
+        ClassResturants nresturant = new ClassResturants(resturant.getId(),resturant.getresturantDataId(),resturant.getName(),
                 resturant.getopenandclose(),resturant.getmincharge(),resturant.getRating(),resturant.getImage()
                 ,resturant.getofferValue(),resturant.getOfferFeeTypeId()
         ,resturant.getFeeDeliveryValue(),resturant.getofferID());

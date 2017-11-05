@@ -6,6 +6,8 @@ package com.example.srccode.takeawayproject.Classes;
 
 public class ClassResturants {
     private String Id ;
+    private int ResturantDataId ;
+
     private String name ;
     private String openandclose ;
     private String mincharge ;
@@ -24,10 +26,11 @@ public class ClassResturants {
     }
 
                                            //, double rating
-    public ClassResturants(String Id, String name, String openandclose, String mincharge, int rating,String image,double offerValue
+    public ClassResturants(String Id, int ResturantDataId,String name, String openandclose, String mincharge, int rating,String image,double offerValue
             ,int OfferFeeTypeId,double FeeDeliveryValue,int offerID
                        ) {
         this.Id = Id;
+        this.ResturantDataId = ResturantDataId;
         this.name = name;
         this.openandclose = openandclose;
         this.mincharge = mincharge;
@@ -44,6 +47,12 @@ public class ClassResturants {
 
     public String getId() {
         return Id;
+    }
+    public int getresturantDataId() {
+        return ResturantDataId;
+    }
+    public void setresturantDataId(int ResturantDataId) {
+        this.ResturantDataId = ResturantDataId;
     }
 
     public String getName() {

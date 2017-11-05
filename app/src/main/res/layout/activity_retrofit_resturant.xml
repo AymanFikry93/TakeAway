@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_retrofit_resturant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.srccode.takeawayproject.Activities.RetrofitResturantActivity">
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbarlayoutid"/>
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="110dp"-->
+    <!--android:src="@drawable/resturantimage"-->
+    <!--android:id="@+id/restimage"-->
+    <!--android:background="#f15d10"-->
+    <!--android:layout_below="@+id/toolbarlayoutid"-->
+    <!--/>-->
+    <com.glide.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@+id/toolbarlayoutid"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:text=""
+        android:textColor="#fff"
+        android:layout_below="@+id/slider"
+        android:id="@+id/resttextid"
+        android:background="#000"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:padding="10dp"/>
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_test_json"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/resttextid">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

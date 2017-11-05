@@ -19,13 +19,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import static com.example.srccode.takeawayproject.Global.GlopalClass.FeeTypeid;
-import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassRestOffer;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassResturant;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.classResturantsList;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.originalList;
-import static com.example.srccode.takeawayproject.Global.GlopalClass.regionfoundbymap;
-import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantDataId;
-import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantofferFlag;
 
 /**
  * Created by ayman on 2017-08-12.
@@ -76,12 +72,12 @@ public class ResturantWebService  extends AsyncTask<String, Void, Boolean> {
                     JSONObject object = jarray.getJSONObject(i);
 
                             ClassResturants classResturants = new ClassResturants(
-                             object.getString("RestID"),object.getString(mcontext.getResources().getString(R.string.RestDataname))
+                             object.getString("RestID"), object.getInt("RestDataID"),object.getString(mcontext.getResources().getString(R.string.RestDataname))
                             ,object.getString(mcontext.getResources().getString(R.string.OpenOrClose)),object.getString("MinimumOrderPrice")
                             ,4,"http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg")
                             ,object.getDouble("OfferValue"),object.getInt("OfferFeeTypeId")
                                     ,object.getDouble("DeliveryValue"),object.getInt("OfferID")  );
-                            resturantDataId =object.getInt("RestDataID");
+//                            resturantDataId =object.getInt("RestDataID");
 //                    classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname) ));
 //                    classResturants.setFeeDeliveryValue(object.getDouble("DeliveryValue"));
 //                    classResturants.setofferID(object.getInt("OfferID"));

@@ -71,15 +71,7 @@ public class Home_MainActivity extends AppCompatActivity
        boolean notify =sharedPreferences_notify_show.getBoolean("notifytype",false);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(mToolbar);
-//        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//        if (mToolbar != null) {
-//            this.getSupportActionBar()
-//                    .setDisplayHomeAsUpEnabled(true);
-//            this.getSupportActionBar()
-//                    .setCustomView(tv);
-//            mToolbar.setNavigationIcon(R.drawable.back_arrow);
-//        }
+
         MainFragment fragment=new MainFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container,fragment);

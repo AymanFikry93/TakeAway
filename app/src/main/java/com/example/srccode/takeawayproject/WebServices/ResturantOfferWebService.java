@@ -18,14 +18,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import static com.example.srccode.takeawayproject.Activities.ActivityRestOffer.restoffernumber;
-import static com.example.srccode.takeawayproject.Activities.ActivityResturants.restnumber;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.FeeTypeid;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassRestOffer;
-import static com.example.srccode.takeawayproject.Global.GlopalClass.adapterClassResturant;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.classResturantsList;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.originalList;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantDataId;
-import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantofferFlag;
 
 /**
  * Created by ayman on 2017-09-12.
@@ -77,7 +74,6 @@ public class ResturantOfferWebService extends AsyncTask<String, Void, Boolean> {
 
                     if(object.getInt("OfferID")!=0){
                        // ClassResturants classResturants = new ClassResturants();
-                        resturantDataId =object.getInt("RestDataID");
                         FeeTypeid=1;
 //                        classResturants.setId(object.getString("RestID"));
 //                        classResturants.setName(object.getString(mcontext.getResources().getString(R.string.RestDataname)));
@@ -91,20 +87,15 @@ public class ResturantOfferWebService extends AsyncTask<String, Void, Boolean> {
 //                        classResturants.setOfferFeeTypeId(object.getInt("OfferFeeTypeId"));
 
                         ClassResturants classResturants = new ClassResturants(
-                                object.getString("RestID"),
+                                object.getString("RestID"), object.getInt("RestDataID"),
                                 object.getString(mcontext.getResources().getString(R.string.RestDataname))//Restaurantname  RestDataname
                                 ,object.getString(mcontext.getResources().getString(R.string.OpenOrClose)),object.getString("MinimumOrderPrice")
                                 ,4,"http://takeaway.afshat.com/Images/Restaurant/"+object.getString("RestImg")
                                 ,object.getDouble("OfferValue"),object.getInt("OfferFeeTypeId")
                                 ,object.getDouble("DeliveryValue"),object.getInt("OfferID")
-
                         );
                         classResturantsList.add(classResturants);
                         originalList.add(classResturants);
-
-
-
-
                 }
             }
         } catch (Exception e) {
@@ -112,14 +103,11 @@ public class ResturantOfferWebService extends AsyncTask<String, Void, Boolean> {
         } finally {
             urlConnection.disconnect();
         }
-
-
         return true;
     }
 
     @Override
     protected void onPostExecute(Boolean result) {
-
             adapterClassRestOffer.notifyDataSetChanged();
         restoffernumber.setText(classResturantsList.size()+mcontext.getResources().getString(R.string.Resturantsarefound));
 

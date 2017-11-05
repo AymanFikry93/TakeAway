@@ -94,8 +94,8 @@ public class GlopalClass {
     public static ArrayList<ClassResturants> classResturantsList;
     public static ArrayList<ClassResturants> originalList;
 
-    public static List<RetofitResturantClass>  retofitResturantClass;
-    public static List<RetofitResturantClass> retofitoriginalList;
+    public static ArrayList<RetofitResturantClass>  retofitResturantClass;
+    public static ArrayList<RetofitResturantClass> retofitoriginalList;
     public static AdapterResturantRetrofit adapterResturantRetrofit;
 
 

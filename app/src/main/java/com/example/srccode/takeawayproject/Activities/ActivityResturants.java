@@ -46,6 +46,7 @@ import com.glide.slider.library.SliderLayout;
 import com.glide.slider.library.SliderTypes.BaseSliderView;
 import com.glide.slider.library.SliderTypes.TextSliderView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import static com.example.srccode.takeawayproject.Global.GlopalClass.ClientInformationregionId;
@@ -69,6 +70,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.findrestura
 import static com.example.srccode.takeawayproject.Global.GlopalClass.mincharge;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.offerID;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.originalList;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantDataId;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantId;
 
 import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantofferFlag;
@@ -225,7 +227,10 @@ public class ActivityResturants extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "You cleared your order", Toast.LENGTH_SHORT).show();
                             Toast.makeText(getApplicationContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
                             Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
+//                           ClassResturants resturant=classResturantsList.get(position);
+//                            ResturantsIntent.putExtra("hero", (Serializable) resturant);
                             resturantId = Integer.parseInt(classResturantsList.get(position).getId());
+                            resturantDataId =classResturantsList.get(position).getresturantDataId();
                             Restname = classResturantsList.get(position).getName();
                             Restimage = classResturantsList.get(position).getImage();
                             Restrating = classResturantsList.get(position).getRating();
@@ -260,6 +265,7 @@ public class ActivityResturants extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
                     Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
                     resturantId = Integer.parseInt(classResturantsList.get(position).getId());
+                    resturantDataId =classResturantsList.get(position).getresturantDataId();
                     Restname = classResturantsList.get(position).getName();
                     Restimage = classResturantsList.get(position).getImage();
                     Restrating = classResturantsList.get(position).getRating();
@@ -366,44 +372,6 @@ public class ActivityResturants extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
- public void CustomFilterDialog(){
-
-     custom = new Dialog(ActivityResturants.this);
-     custom.setContentView(R.layout.resturantfilter);
-     custom.setTitle("filter");
-     RadioGroup filtergroup=(RadioGroup)custom.findViewById(R.id.langgroup);
-     filtergroup.setOnCheckedChangeListener(new
-                                                    RadioGroup.OnCheckedChangeListener() {
-                                                        @Override
-                                                        public void onCheckedChanged(RadioGroup group, int checkedId) {
-                                                            switch (checkedId) {
-                                                                case R.id.NameAsc:
-                                                                    adapterClassResturant.sortByNameAsc();
-                                                                    custom.dismiss();
-                                                                    break;
-                                                                case R.id.NameDesc:
-                                                                    adapterClassResturant.sortByNameDesc();
-                                                                    custom.dismiss();
-                                                                    break;
-                                                                case R.id.RateAsc:
-                                                                    adapterClassResturant.sortByRateAsc();
-                                                                    custom.dismiss();
-                                                                    break;
-                                                                case R.id.RateDesc:
-                                                                    adapterClassResturant.sortByRateDesc();
-                                                                    custom.dismiss();
-                                                                    break;
-                                                                default:
-                                                                    custom.dismiss();
-                                                                    break;
-                                                            }
-                                                        }
-                                                    });
-
-     custom.show();
-
-
- }
 
 }
 

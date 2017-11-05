@@ -35,6 +35,7 @@ import android.widget.Toast;
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.query.Delete;
 import com.activeandroid.query.Select;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.example.srccode.takeawayproject.Adapters.AdapterClassRestOffer;
 import com.example.srccode.takeawayproject.Classes.ClassResturants;
 import com.example.srccode.takeawayproject.Classes.ClassViewOrderDb;
@@ -46,6 +47,9 @@ import com.example.srccode.takeawayproject.WebServices.ResturantWebService;
 import com.example.srccode.takeawayproject.service.AdapterResturantRetrofit;
 import com.example.srccode.takeawayproject.service.RetrofitClass;
 import com.example.srccode.takeawayproject.service.RetrofitService;
+import com.glide.slider.library.Animations.DescriptionAnimation;
+import com.glide.slider.library.SliderLayout;
+import com.glide.slider.library.SliderTypes.TextSliderView;
 import com.yalantis.contextmenu.lib.ContextMenuDialogFragment;
 import com.yalantis.contextmenu.lib.MenuObject;
 import com.yalantis.contextmenu.lib.MenuParams;
@@ -74,6 +78,7 @@ import static com.example.srccode.takeawayproject.Global.GlopalClass.mincharge;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.offerID;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.originalList;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.recyclerView;
+import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantDataId;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantId;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.resturantofferFlag;
 import static com.example.srccode.takeawayproject.Global.GlopalClass.retofitResturantClass;
@@ -87,11 +92,29 @@ public class ActivityRestOffer extends AppCompatActivity {
     Dialog custom;
     SwipeRefreshLayout swipeContainer;
     public static TextView restoffernumber;
+    public static SliderLayout mDemoSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rest_offer);
+        mDemoSlider = (SliderLayout)findViewById(R.id.slider);
+
+        int[] GalImages = new int[] {R.drawable.resturantimage, R.drawable.resturantimage1, R.drawable.resturantimage2};
+
+        for(int image : GalImages) {
+            TextSliderView textSliderView = new TextSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .description("")/// description of the image
+                    .image(image).setBitmapTransformation(new CenterCrop())
+            ;
+            mDemoSlider.addSlider(textSliderView);
+        }
+        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);//Accordion
+        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);//Center_Bottom
+        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
+        mDemoSlider.setDuration(4000);
         ActiveAndroid.initialize(this);
         // Always cast your custom Toolbar here, and set it as the ActionBar.
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -182,6 +205,7 @@ public class ActivityRestOffer extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
                                     Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
                                     resturantId = Integer.parseInt(classResturantsList.get(position).getId());
+                                    resturantDataId =classResturantsList.get(position).getresturantDataId();
                                     Restname = classResturantsList.get(position).getName();
                                     Restimage = classResturantsList.get(position).getImage();
                                     Restrating = classResturantsList.get(position).getRating();
@@ -216,6 +240,7 @@ public class ActivityRestOffer extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), classResturantsList.get(position).getName(), Toast.LENGTH_LONG).show();
                             Intent ResturantsIntent = new Intent(getApplicationContext(), ActivityCategory.class);
                             resturantId = Integer.parseInt(classResturantsList.get(position).getId());
+                            resturantDataId =classResturantsList.get(position).getresturantDataId();
                             Restname = classResturantsList.get(position).getName();
                             Restimage = classResturantsList.get(position).getImage();
                             Restrating = classResturantsList.get(position).getRating();

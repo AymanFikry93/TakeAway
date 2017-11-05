@@ -239,7 +239,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityResturants" />
         </activity>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".RetrofitResturantActivity"></activity>
     </application>
 
 </manifest>

@@ -213,7 +213,7 @@ public class MainFragment extends Fragment {
                     GlobalRegionID=RegionId;
 //                    if(cTimer!=null)
 //                        cTimer.cancel();
-                    Intent ResturantsIntent = new Intent(getContext(), ActivityResturants.class);
+                    Intent ResturantsIntent = new Intent(getContext(), ActivityResturants.class);//RetrofitResturantActivity ActivityResturants
                     startActivity(ResturantsIntent);
 
                 } else if (citySelectedID == 0) {
